@@ -48,6 +48,14 @@ css = `
     width: 100%;
     flex-wrap: wrap;
 }
+
+.active-filter:target .filter-active,
+.completed-filter:target .filter-completed,
+.completed-filter:not(:target) .active-filter:not(:target) .filter-all {
+    border-color: rgba(175, 47, 47, 0.2);
+}
+
+
 `
 
 const MAX_ITEMS = 5
@@ -104,15 +112,15 @@ function generateTodo(i) {
             order: ${getOrder(90)};
         }
 
-        .active-filter:target #done-checkbox-${i}:checked ~ #todo-input-${i},
-        .active-filter:target #done-checkbox-${i}:checked ~ #mark-done-checkbox-label-${i},
-        .active-filter:target #done-checkbox-${i}:checked ~ #mark-undone-checkbox-label-${i} {
+        .active-filter:target #add-checkbox-${i}:checked ~ #done-checkbox-${i}:checked ~ #todo-input-${i},
+        .active-filter:target #add-checkbox-${i}:checked ~ #done-checkbox-${i}:checked ~ #mark-done-checkbox-label-${i},
+        .active-filter:target #add-checkbox-${i}:checked ~ #done-checkbox-${i}:checked ~ #mark-undone-checkbox-label-${i} {
             display: none !important;
         }
 
-        .completed-filter:target #done-checkbox-${i}:not(:checked) ~ #todo-input-${i},
-        .completed-filter:target #done-checkbox-${i}:not(:checked) ~ #mark-done-checkbox-label-${i},
-        .completed-filter:target #done-checkbox-${i}:not(:checked) ~ #mark-undone-checkbox-label-${i} {
+        .completed-filter:target #add-checkbox-${i}:checked ~ #done-checkbox-${i}:not(:checked) ~ #todo-input-${i},
+        .completed-filter:target #add-checkbox-${i}:checked ~ #done-checkbox-${i}:not(:checked) ~ #mark-done-checkbox-label-${i},
+        .completed-filter:target #add-checkbox-${i}:checked ~ #done-checkbox-${i}:not(:checked) ~ #mark-undone-checkbox-label-${i} {
             display: none !important;
         }
     `
@@ -148,34 +156,34 @@ html += `<!doctype html>
         <link rel="stylesheet" href="./todomvc-app.css" />
     </head>
     <body>
-        <section class="todoapp">
-            <header class="header">
-                <h1>todos</h1>
-            </header>
-            <div id="/completed" class="completed-filter">
-                <div id="/active" class="active-filter">
+        <div id="/completed" class="completed-filter">
+            <div id="/active" class="active-filter">
+                <section class="todoapp">
+                    <header class="header">
+                        <h1>todos</h1>
+                    </header>
                     ${generateTodo(1)}
-                </div>
-            </div>
-            <footer class="footer" style="display: block;">
-    			<span class="todo-count"><strong>2</strong> items left</span>
-    			<ul class="filters">
-    				<li>
-    					<a class="selected" href="#/">All</a>
-    				</li>
-    				<li>
-    					<a href="#/active">Active</a>
-    				</li>
-    				<li>
-    					<a href="#/completed">Completed</a>
-    				</li>
-    			</ul>
-    		</footer>
+                    <footer class="footer" style="display: block;">
+            			<span class="todo-count"><strong>2</strong> items left</span>
+            			<ul class="filters">
+            				<li>
+            					<a class="filter-all" href="#/">All</a>
+            				</li>
+            				<li>
+            					<a class="filter-active" href="#/active">Active</a>
+            				</li>
+            				<li>
+            					<a class="filter-completed" href="#/completed">Completed</a>
+            				</li>
+            			</ul>
+            		</footer>
 
-            <div>
-                Styles based on <a href="https://github.com/tastejs/todomvc/blob/master/app-spec.md">TodoMVC CSS</a>.
+                    <div>
+                        Styles based on <a href="https://github.com/tastejs/todomvc/blob/master/app-spec.md">TodoMVC CSS</a>.
+                    </div>
+                </section>
             </div>
-        </section>
+        </div>
     </body>
 </html>`
 html += `<style>${css}</style>`

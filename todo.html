@@ -4,12 +4,12 @@
         <link rel="stylesheet" href="./todomvc-app.css" />
     </head>
     <body>
-        <section class="todoapp">
-            <header class="header">
-                <h1>todos</h1>
-            </header>
-            <div id="/completed" class="completed-filter">
-                <div id="/active" class="active-filter">
+        <div id="/completed" class="completed-filter">
+            <div id="/active" class="active-filter">
+                <section class="todoapp">
+                    <header class="header">
+                        <h1>todos</h1>
+                    </header>
                     
         <div id="todo-1" class="todo">
             <input type="checkbox" id="add-checkbox-1" />
@@ -61,27 +61,27 @@
     
         </div>
     
-                </div>
-            </div>
-            <footer class="footer" style="display: block;">
-    			<span class="todo-count"><strong>2</strong> items left</span>
-    			<ul class="filters">
-    				<li>
-    					<a class="selected" href="#/">All</a>
-    				</li>
-    				<li>
-    					<a href="#/active">Active</a>
-    				</li>
-    				<li>
-    					<a href="#/completed">Completed</a>
-    				</li>
-    			</ul>
-    		</footer>
+                    <footer class="footer" style="display: block;">
+            			<span class="todo-count"><strong>2</strong> items left</span>
+            			<ul class="filters">
+            				<li>
+            					<a class="filter-all" href="#/">All</a>
+            				</li>
+            				<li>
+            					<a class="filter-active" href="#/active">Active</a>
+            				</li>
+            				<li>
+            					<a class="filter-completed" href="#/completed">Completed</a>
+            				</li>
+            			</ul>
+            		</footer>
 
-            <div>
-                Styles based on <a href="https://github.com/tastejs/todomvc/blob/master/app-spec.md">TodoMVC CSS</a>.
+                    <div>
+                        Styles based on <a href="https://github.com/tastejs/todomvc/blob/master/app-spec.md">TodoMVC CSS</a>.
+                    </div>
+                </section>
             </div>
-        </section>
+        </div>
     </body>
 </html><style>
 #todo-1 {
@@ -131,6 +131,14 @@
     flex-wrap: wrap;
 }
 
+.active-filter:target .filter-active,
+.completed-filter:target .filter-completed,
+.completed-filter:not(:target) .active-filter:not(:target) .filter-all {
+    border-color: rgba(175, 47, 47, 0.2);
+}
+
+
+
         #add-checkbox-1:not(:checked) ~ #todo-input-1 {
             position: absolute;
             top: 0;
@@ -170,15 +178,15 @@
             order: 1190;
         }
 
-        .active-filter:target #done-checkbox-1:checked ~ #todo-input-1,
-        .active-filter:target #done-checkbox-1:checked ~ #mark-done-checkbox-label-1,
-        .active-filter:target #done-checkbox-1:checked ~ #mark-undone-checkbox-label-1 {
+        .active-filter:target #add-checkbox-1:checked ~ #done-checkbox-1:checked ~ #todo-input-1,
+        .active-filter:target #add-checkbox-1:checked ~ #done-checkbox-1:checked ~ #mark-done-checkbox-label-1,
+        .active-filter:target #add-checkbox-1:checked ~ #done-checkbox-1:checked ~ #mark-undone-checkbox-label-1 {
             display: none !important;
         }
 
-        .completed-filter:target #done-checkbox-1:not(:checked) ~ #todo-input-1,
-        .completed-filter:target #done-checkbox-1:not(:checked) ~ #mark-done-checkbox-label-1,
-        .completed-filter:target #done-checkbox-1:not(:checked) ~ #mark-undone-checkbox-label-1 {
+        .completed-filter:target #add-checkbox-1:checked ~ #done-checkbox-1:not(:checked) ~ #todo-input-1,
+        .completed-filter:target #add-checkbox-1:checked ~ #done-checkbox-1:not(:checked) ~ #mark-done-checkbox-label-1,
+        .completed-filter:target #add-checkbox-1:checked ~ #done-checkbox-1:not(:checked) ~ #mark-undone-checkbox-label-1 {
             display: none !important;
         }
     
@@ -221,15 +229,15 @@
             order: 1290;
         }
 
-        .active-filter:target #done-checkbox-2:checked ~ #todo-input-2,
-        .active-filter:target #done-checkbox-2:checked ~ #mark-done-checkbox-label-2,
-        .active-filter:target #done-checkbox-2:checked ~ #mark-undone-checkbox-label-2 {
+        .active-filter:target #add-checkbox-2:checked ~ #done-checkbox-2:checked ~ #todo-input-2,
+        .active-filter:target #add-checkbox-2:checked ~ #done-checkbox-2:checked ~ #mark-done-checkbox-label-2,
+        .active-filter:target #add-checkbox-2:checked ~ #done-checkbox-2:checked ~ #mark-undone-checkbox-label-2 {
             display: none !important;
         }
 
-        .completed-filter:target #done-checkbox-2:not(:checked) ~ #todo-input-2,
-        .completed-filter:target #done-checkbox-2:not(:checked) ~ #mark-done-checkbox-label-2,
-        .completed-filter:target #done-checkbox-2:not(:checked) ~ #mark-undone-checkbox-label-2 {
+        .completed-filter:target #add-checkbox-2:checked ~ #done-checkbox-2:not(:checked) ~ #todo-input-2,
+        .completed-filter:target #add-checkbox-2:checked ~ #done-checkbox-2:not(:checked) ~ #mark-done-checkbox-label-2,
+        .completed-filter:target #add-checkbox-2:checked ~ #done-checkbox-2:not(:checked) ~ #mark-undone-checkbox-label-2 {
             display: none !important;
         }
     
@@ -278,15 +286,15 @@
             order: 1390;
         }
 
-        .active-filter:target #done-checkbox-3:checked ~ #todo-input-3,
-        .active-filter:target #done-checkbox-3:checked ~ #mark-done-checkbox-label-3,
-        .active-filter:target #done-checkbox-3:checked ~ #mark-undone-checkbox-label-3 {
+        .active-filter:target #add-checkbox-3:checked ~ #done-checkbox-3:checked ~ #todo-input-3,
+        .active-filter:target #add-checkbox-3:checked ~ #done-checkbox-3:checked ~ #mark-done-checkbox-label-3,
+        .active-filter:target #add-checkbox-3:checked ~ #done-checkbox-3:checked ~ #mark-undone-checkbox-label-3 {
             display: none !important;
         }
 
-        .completed-filter:target #done-checkbox-3:not(:checked) ~ #todo-input-3,
-        .completed-filter:target #done-checkbox-3:not(:checked) ~ #mark-done-checkbox-label-3,
-        .completed-filter:target #done-checkbox-3:not(:checked) ~ #mark-undone-checkbox-label-3 {
+        .completed-filter:target #add-checkbox-3:checked ~ #done-checkbox-3:not(:checked) ~ #todo-input-3,
+        .completed-filter:target #add-checkbox-3:checked ~ #done-checkbox-3:not(:checked) ~ #mark-done-checkbox-label-3,
+        .completed-filter:target #add-checkbox-3:checked ~ #done-checkbox-3:not(:checked) ~ #mark-undone-checkbox-label-3 {
             display: none !important;
         }
     
@@ -335,15 +343,15 @@
             order: 1490;
         }
 
-        .active-filter:target #done-checkbox-4:checked ~ #todo-input-4,
-        .active-filter:target #done-checkbox-4:checked ~ #mark-done-checkbox-label-4,
-        .active-filter:target #done-checkbox-4:checked ~ #mark-undone-checkbox-label-4 {
+        .active-filter:target #add-checkbox-4:checked ~ #done-checkbox-4:checked ~ #todo-input-4,
+        .active-filter:target #add-checkbox-4:checked ~ #done-checkbox-4:checked ~ #mark-done-checkbox-label-4,
+        .active-filter:target #add-checkbox-4:checked ~ #done-checkbox-4:checked ~ #mark-undone-checkbox-label-4 {
             display: none !important;
         }
 
-        .completed-filter:target #done-checkbox-4:not(:checked) ~ #todo-input-4,
-        .completed-filter:target #done-checkbox-4:not(:checked) ~ #mark-done-checkbox-label-4,
-        .completed-filter:target #done-checkbox-4:not(:checked) ~ #mark-undone-checkbox-label-4 {
+        .completed-filter:target #add-checkbox-4:checked ~ #done-checkbox-4:not(:checked) ~ #todo-input-4,
+        .completed-filter:target #add-checkbox-4:checked ~ #done-checkbox-4:not(:checked) ~ #mark-done-checkbox-label-4,
+        .completed-filter:target #add-checkbox-4:checked ~ #done-checkbox-4:not(:checked) ~ #mark-undone-checkbox-label-4 {
             display: none !important;
         }
     
@@ -392,15 +400,15 @@
             order: 1590;
         }
 
-        .active-filter:target #done-checkbox-5:checked ~ #todo-input-5,
-        .active-filter:target #done-checkbox-5:checked ~ #mark-done-checkbox-label-5,
-        .active-filter:target #done-checkbox-5:checked ~ #mark-undone-checkbox-label-5 {
+        .active-filter:target #add-checkbox-5:checked ~ #done-checkbox-5:checked ~ #todo-input-5,
+        .active-filter:target #add-checkbox-5:checked ~ #done-checkbox-5:checked ~ #mark-done-checkbox-label-5,
+        .active-filter:target #add-checkbox-5:checked ~ #done-checkbox-5:checked ~ #mark-undone-checkbox-label-5 {
             display: none !important;
         }
 
-        .completed-filter:target #done-checkbox-5:not(:checked) ~ #todo-input-5,
-        .completed-filter:target #done-checkbox-5:not(:checked) ~ #mark-done-checkbox-label-5,
-        .completed-filter:target #done-checkbox-5:not(:checked) ~ #mark-undone-checkbox-label-5 {
+        .completed-filter:target #add-checkbox-5:checked ~ #done-checkbox-5:not(:checked) ~ #todo-input-5,
+        .completed-filter:target #add-checkbox-5:checked ~ #done-checkbox-5:not(:checked) ~ #mark-done-checkbox-label-5,
+        .completed-filter:target #add-checkbox-5:checked ~ #done-checkbox-5:not(:checked) ~ #mark-undone-checkbox-label-5 {
             display: none !important;
         }
     
