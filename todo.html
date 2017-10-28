@@ -8,46 +8,48 @@
             <header class="header">
                 <h1>todos</h1>
             </header>
-            
+            <div id="/completed" class="completed-filter">
+                <div id="/active" class="active-filter">
+                    
         <div id="todo-1" class="todo">
             <input type="checkbox" id="add-checkbox-1" />
-            <input type="text" value="todo 1" id="todo-input-1" class="todo-input" placeholder="What needs to be done?"/>
             <label for="add-checkbox-1" class="add-checkbox-label" id="add-checkbox-label-1">Add</label>
             <input type="checkbox" id="done-checkbox-1"/>
             <label for="done-checkbox-1" id="mark-done-checkbox-label-1" class="mark-done-checkbox-label"></label>
             <label for="done-checkbox-1" id="mark-undone-checkbox-label-1" class="mark-undone-checkbox-label"></label>
+            <input type="text" value="todo 1" id="todo-input-1" class="todo-input" placeholder="What needs to be done?"/>
             
         <div id="todo-2" class="todo">
             <input type="checkbox" id="add-checkbox-2" />
-            <input type="text" value="todo 2" id="todo-input-2" class="todo-input" placeholder="What needs to be done?"/>
             <label for="add-checkbox-2" class="add-checkbox-label" id="add-checkbox-label-2">Add</label>
             <input type="checkbox" id="done-checkbox-2"/>
             <label for="done-checkbox-2" id="mark-done-checkbox-label-2" class="mark-done-checkbox-label"></label>
             <label for="done-checkbox-2" id="mark-undone-checkbox-label-2" class="mark-undone-checkbox-label"></label>
+            <input type="text" value="todo 2" id="todo-input-2" class="todo-input" placeholder="What needs to be done?"/>
             
         <div id="todo-3" class="todo">
             <input type="checkbox" id="add-checkbox-3" />
-            <input type="text" value="todo 3" id="todo-input-3" class="todo-input" placeholder="What needs to be done?"/>
             <label for="add-checkbox-3" class="add-checkbox-label" id="add-checkbox-label-3">Add</label>
             <input type="checkbox" id="done-checkbox-3"/>
             <label for="done-checkbox-3" id="mark-done-checkbox-label-3" class="mark-done-checkbox-label"></label>
             <label for="done-checkbox-3" id="mark-undone-checkbox-label-3" class="mark-undone-checkbox-label"></label>
+            <input type="text" value="todo 3" id="todo-input-3" class="todo-input" placeholder="What needs to be done?"/>
             
         <div id="todo-4" class="todo">
             <input type="checkbox" id="add-checkbox-4" />
-            <input type="text" value="todo 4" id="todo-input-4" class="todo-input" placeholder="What needs to be done?"/>
             <label for="add-checkbox-4" class="add-checkbox-label" id="add-checkbox-label-4">Add</label>
             <input type="checkbox" id="done-checkbox-4"/>
             <label for="done-checkbox-4" id="mark-done-checkbox-label-4" class="mark-done-checkbox-label"></label>
             <label for="done-checkbox-4" id="mark-undone-checkbox-label-4" class="mark-undone-checkbox-label"></label>
+            <input type="text" value="todo 4" id="todo-input-4" class="todo-input" placeholder="What needs to be done?"/>
             
         <div id="todo-5" class="todo">
             <input type="checkbox" id="add-checkbox-5" />
-            <input type="text" value="todo 5" id="todo-input-5" class="todo-input" placeholder="What needs to be done?"/>
             <label for="add-checkbox-5" class="add-checkbox-label" id="add-checkbox-label-5">Add</label>
             <input type="checkbox" id="done-checkbox-5"/>
             <label for="done-checkbox-5" id="mark-done-checkbox-label-5" class="mark-done-checkbox-label"></label>
             <label for="done-checkbox-5" id="mark-undone-checkbox-label-5" class="mark-undone-checkbox-label"></label>
+            <input type="text" value="todo 5" id="todo-input-5" class="todo-input" placeholder="What needs to be done?"/>
             
         </div>
     
@@ -59,6 +61,23 @@
     
         </div>
     
+                </div>
+            </div>
+            <footer class="footer" style="display: block;">
+    			<span class="todo-count"><strong>2</strong> items left</span>
+    			<ul class="filters">
+    				<li>
+    					<a class="selected" href="#/">All</a>
+    				</li>
+    				<li>
+    					<a href="#/active">Active</a>
+    				</li>
+    				<li>
+    					<a href="#/completed">Completed</a>
+    				</li>
+    			</ul>
+    		</footer>
+
             <div>
                 Styles based on <a href="https://github.com/tastejs/todomvc/blob/master/app-spec.md">TodoMVC CSS</a>.
             </div>
@@ -112,13 +131,14 @@
     flex-wrap: wrap;
 }
 
-
         #add-checkbox-1:not(:checked) ~ #todo-input-1 {
             position: absolute;
             top: 0;
 
         }
-
+        #todo-input-1 {
+            order: 1110;
+        }
         #add-checkbox-1 {
             display: none;
         }
@@ -150,13 +170,20 @@
             order: 1190;
         }
 
+        .active-filter:target #done-checkbox-1:checked ~ #todo-input-1,
+        .active-filter:target #done-checkbox-1:checked ~ #mark-done-checkbox-label-1,
+        .active-filter:target #done-checkbox-1:checked ~ #mark-undone-checkbox-label-1 {
+            display: none !important;
+        }
     
         #add-checkbox-2:not(:checked) ~ #todo-input-2 {
             position: absolute;
             top: 0;
 
         }
-
+        #todo-input-2 {
+            order: 1210;
+        }
         #add-checkbox-2 {
             display: none;
         }
@@ -188,6 +215,11 @@
             order: 1290;
         }
 
+        .active-filter:target #done-checkbox-2:checked ~ #todo-input-2,
+        .active-filter:target #done-checkbox-2:checked ~ #mark-done-checkbox-label-2,
+        .active-filter:target #done-checkbox-2:checked ~ #mark-undone-checkbox-label-2 {
+            display: none !important;
+        }
     
             #add-checkbox-1:checked ~ #todo-2 > #todo-input-2,
             #add-checkbox-1:checked ~ #todo-2 > #add-checkbox-label-2 {
@@ -200,7 +232,9 @@
             top: 0;
 
         }
-
+        #todo-input-3 {
+            order: 1310;
+        }
         #add-checkbox-3 {
             display: none;
         }
@@ -232,6 +266,11 @@
             order: 1390;
         }
 
+        .active-filter:target #done-checkbox-3:checked ~ #todo-input-3,
+        .active-filter:target #done-checkbox-3:checked ~ #mark-done-checkbox-label-3,
+        .active-filter:target #done-checkbox-3:checked ~ #mark-undone-checkbox-label-3 {
+            display: none !important;
+        }
     
             #add-checkbox-2:checked ~ #todo-3 > #todo-input-3,
             #add-checkbox-2:checked ~ #todo-3 > #add-checkbox-label-3 {
@@ -244,7 +283,9 @@
             top: 0;
 
         }
-
+        #todo-input-4 {
+            order: 1410;
+        }
         #add-checkbox-4 {
             display: none;
         }
@@ -276,6 +317,11 @@
             order: 1490;
         }
 
+        .active-filter:target #done-checkbox-4:checked ~ #todo-input-4,
+        .active-filter:target #done-checkbox-4:checked ~ #mark-done-checkbox-label-4,
+        .active-filter:target #done-checkbox-4:checked ~ #mark-undone-checkbox-label-4 {
+            display: none !important;
+        }
     
             #add-checkbox-3:checked ~ #todo-4 > #todo-input-4,
             #add-checkbox-3:checked ~ #todo-4 > #add-checkbox-label-4 {
@@ -288,7 +334,9 @@
             top: 0;
 
         }
-
+        #todo-input-5 {
+            order: 1510;
+        }
         #add-checkbox-5 {
             display: none;
         }
@@ -320,6 +368,11 @@
             order: 1590;
         }
 
+        .active-filter:target #done-checkbox-5:checked ~ #todo-input-5,
+        .active-filter:target #done-checkbox-5:checked ~ #mark-done-checkbox-label-5,
+        .active-filter:target #done-checkbox-5:checked ~ #mark-undone-checkbox-label-5 {
+            display: none !important;
+        }
     
             #add-checkbox-4:checked ~ #todo-5 > #todo-input-5,
             #add-checkbox-4:checked ~ #todo-5 > #add-checkbox-label-5 {

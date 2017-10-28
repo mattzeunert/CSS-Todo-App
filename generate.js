@@ -48,7 +48,6 @@ css = `
     width: 100%;
     flex-wrap: wrap;
 }
-
 `
 
 const MAX_ITEMS = 5
@@ -71,7 +70,9 @@ function generateTodo(i) {
             top: 0;
 
         }
-
+        #todo-input-${i} {
+            order: ${getOrder(10)};
+        }
         #add-checkbox-${i} {
             display: none;
         }
@@ -103,6 +104,11 @@ function generateTodo(i) {
             order: ${getOrder(90)};
         }
 
+        .active-filter:target #done-checkbox-${i}:checked ~ #todo-input-${i},
+        .active-filter:target #done-checkbox-${i}:checked ~ #mark-done-checkbox-label-${i},
+        .active-filter:target #done-checkbox-${i}:checked ~ #mark-undone-checkbox-label-${i} {
+            display: none !important;
+        }
     `
     if (i > 1) {
         const previousI = i - 1;
@@ -118,11 +124,11 @@ function generateTodo(i) {
     return `
         <div id="todo-${i}" class="todo">
             <input type="checkbox" id="add-checkbox-${i}" />
-            <input type="text" value="todo ${i}" id="todo-input-${i}" class="todo-input" placeholder="What needs to be done?"/>
             <label for="add-checkbox-${i}" class="add-checkbox-label" id="add-checkbox-label-${i}">Add</label>
             <input type="checkbox" id="done-checkbox-${i}"/>
             <label for="done-checkbox-${i}" id="mark-done-checkbox-label-${i}" class="mark-done-checkbox-label"></label>
             <label for="done-checkbox-${i}" id="mark-undone-checkbox-label-${i}" class="mark-undone-checkbox-label"></label>
+            <input type="text" value="todo ${i}" id="todo-input-${i}" class="todo-input" placeholder="What needs to be done?"/>
             ${generateTodo(i + 1)}
         </div>
     `
@@ -140,7 +146,26 @@ html += `<!doctype html>
             <header class="header">
                 <h1>todos</h1>
             </header>
-            ${generateTodo(1)}
+            <div id="/completed" class="completed-filter">
+                <div id="/active" class="active-filter">
+                    ${generateTodo(1)}
+                </div>
+            </div>
+            <footer class="footer" style="display: block;">
+    			<span class="todo-count"><strong>2</strong> items left</span>
+    			<ul class="filters">
+    				<li>
+    					<a class="selected" href="#/">All</a>
+    				</li>
+    				<li>
+    					<a href="#/active">Active</a>
+    				</li>
+    				<li>
+    					<a href="#/completed">Completed</a>
+    				</li>
+    			</ul>
+    		</footer>
+
             <div>
                 Styles based on <a href="https://github.com/tastejs/todomvc/blob/master/app-spec.md">TodoMVC CSS</a>.
             </div>
