@@ -1,10 +1,41 @@
 const fs = require('fs')
 
-html = '<h1>CSS Todo App</h1>'
+html = ''
 css = `
 #todo-1 {
     position: relative;
     padding-top: 40px;
+}
+.todo-input {
+    left: 45px;
+    padding: 16px 16px 16px 60px;
+    border: none;
+    background: rgba(0, 0, 0, 0.003);
+    box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
+    position: relative;
+    margin: 0;
+    width: 60%;
+    font-size: 24px;
+    font-family: inherit;
+    font-weight: inherit;
+    line-height: 1.4em;
+    border: 0;
+    outline: none;
+    color: inherit;
+    padding: 6px;
+    border: 1px solid #999;
+    box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+.add-checkbox-label {
+    position: absolute;
+    top: 0;
+    right: 0px;
+    width: 20%;
+    cursor: pointer;
 }
 .todo-input:not(#todo-input-1) {
     display: none;
@@ -17,6 +48,7 @@ css = `
     width: 100%;
     flex-wrap: wrap;
 }
+
 `
 
 const MAX_ITEMS = 5
@@ -37,12 +69,9 @@ function generateTodo(i) {
         #add-checkbox-${i}:not(:checked) ~ #todo-input-${i} {
             position: absolute;
             top: 0;
+
         }
-        #add-checkbox-${i}:not(:checked) ~ #add-checkbox-label-${i} {
-            position: absolute;
-            top: 0;
-            left: 200px;
-        }
+
         #add-checkbox-${i} {
             display: none;
         }
@@ -61,9 +90,6 @@ function generateTodo(i) {
         #mark-done-checkbox-label-${i},
         #mark-undone-checkbox-label-${i} {
             display: none;
-            border: 1px solid #777;
-            width: 15px;
-            height: 15px;
         }
         #add-checkbox-${i}:checked ~ #done-checkbox-${i}:not(:checked) ~ #mark-done-checkbox-label-${i} {
             display: inline-block;
@@ -92,11 +118,11 @@ function generateTodo(i) {
     return `
         <div id="todo-${i}" class="todo">
             <input type="checkbox" id="add-checkbox-${i}" />
-            <input type="text" value="todo ${i}" id="todo-input-${i}" class="todo-input"/>
-            <label for="add-checkbox-${i}" class="add-checkbox-label" id="add-checkbox-label-${i}">Add ${i}</label>
+            <input type="text" value="todo ${i}" id="todo-input-${i}" class="todo-input" placeholder="What needs to be done?"/>
+            <label for="add-checkbox-${i}" class="add-checkbox-label" id="add-checkbox-label-${i}">Add</label>
             <input type="checkbox" id="done-checkbox-${i}"/>
-            <label for="done-checkbox-${i}" id="mark-done-checkbox-label-${i}">&nbsp;</label>
-            <label for="done-checkbox-${i}" id="mark-undone-checkbox-label-${i}">&#x2713;</label>
+            <label for="done-checkbox-${i}" id="mark-done-checkbox-label-${i}" class="mark-done-checkbox-label"></label>
+            <label for="done-checkbox-${i}" id="mark-undone-checkbox-label-${i}" class="mark-undone-checkbox-label"></label>
             ${generateTodo(i + 1)}
         </div>
     `
@@ -104,7 +130,23 @@ function generateTodo(i) {
 
 }
 
-html += generateTodo(1)
+html += `<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./todomvc-app.css" />
+    </head>
+    <body>
+        <section class="todoapp">
+            <header class="header">
+                <h1>todos</h1>
+            </header>
+            ${generateTodo(1)}
+            <div>
+                Styles based on <a href="https://github.com/tastejs/todomvc/blob/master/app-spec.md">TodoMVC CSS</a>.
+            </div>
+        </section>
+    </body>
+</html>`
 html += `<style>${css}</style>`
 
 fs.writeFileSync('todo.html', html);
