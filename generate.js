@@ -6,6 +6,9 @@ css = `
     position: relative;
     padding-top: 40px;
 }
+body  {
+    counter-reset: items-left;
+}
 .todo-input {
     left: 45px;
     padding: 16px 16px 16px 60px;
@@ -47,6 +50,7 @@ css = `
     display: flex;
     width: 100%;
     flex-wrap: wrap;
+
 }
 
 .active-filter:target .filter-active,
@@ -54,8 +58,12 @@ css = `
 .completed-filter:not(:target) .active-filter:not(:target) .filter-all {
     border-color: rgba(175, 47, 47, 0.2);
 }
-
-
+#items-left:before {
+    content: counter(items-left);
+}
+.mark-done-checkbox-label {
+    counter-increment: items-left;
+}
 `
 
 const MAX_ITEMS = 5
@@ -76,7 +84,6 @@ function generateTodo(i) {
         #add-checkbox-${i}:not(:checked) ~ #todo-input-${i} {
             position: absolute;
             top: 0;
-
         }
         #todo-input-${i} {
             order: ${getOrder(10)};
@@ -84,6 +91,7 @@ function generateTodo(i) {
         #add-checkbox-${i} {
             display: none;
         }
+
         #add-checkbox-${i}:checked + input {
             border: none;
         }
@@ -139,7 +147,7 @@ function generateTodo(i) {
         <div id="todo-${i}" class="todo">
             <input type="checkbox" id="add-checkbox-${i}" />
             <label for="add-checkbox-${i}" class="add-checkbox-label" id="add-checkbox-label-${i}">Add</label>
-            <input type="checkbox" id="done-checkbox-${i}"/>
+            <input type="checkbox" class="done-checkbox" id="done-checkbox-${i}"/>
             <label for="done-checkbox-${i}" id="mark-done-checkbox-label-${i}" class="mark-done-checkbox-label"></label>
             <label for="done-checkbox-${i}" id="mark-undone-checkbox-label-${i}" class="mark-undone-checkbox-label"></label>
             <input type="text" value="todo ${i}" id="todo-input-${i}" class="todo-input" placeholder="What needs to be done?"/>
@@ -164,7 +172,7 @@ html += `<!doctype html>
                     </header>
                     ${generateTodo(1)}
                     <footer class="footer" style="display: block;">
-            			<span class="todo-count"><strong>2</strong> items left</span>
+            			<span class="todo-count"><strong id="items-left"></strong> items left</span>
             			<ul class="filters">
             				<li>
             					<a class="filter-all" href="#/">All</a>
