@@ -175,6 +175,12 @@
         .active-filter:target #done-checkbox-1:checked ~ #mark-undone-checkbox-label-1 {
             display: none !important;
         }
+
+        .completed-filter:target #done-checkbox-1:not(:checked) ~ #todo-input-1,
+        .completed-filter:target #done-checkbox-1:not(:checked) ~ #mark-done-checkbox-label-1,
+        .completed-filter:target #done-checkbox-1:not(:checked) ~ #mark-undone-checkbox-label-1 {
+            display: none !important;
+        }
     
         #add-checkbox-2:not(:checked) ~ #todo-input-2 {
             position: absolute;
@@ -218,6 +224,12 @@
         .active-filter:target #done-checkbox-2:checked ~ #todo-input-2,
         .active-filter:target #done-checkbox-2:checked ~ #mark-done-checkbox-label-2,
         .active-filter:target #done-checkbox-2:checked ~ #mark-undone-checkbox-label-2 {
+            display: none !important;
+        }
+
+        .completed-filter:target #done-checkbox-2:not(:checked) ~ #todo-input-2,
+        .completed-filter:target #done-checkbox-2:not(:checked) ~ #mark-done-checkbox-label-2,
+        .completed-filter:target #done-checkbox-2:not(:checked) ~ #mark-undone-checkbox-label-2 {
             display: none !important;
         }
     
@@ -271,6 +283,12 @@
         .active-filter:target #done-checkbox-3:checked ~ #mark-undone-checkbox-label-3 {
             display: none !important;
         }
+
+        .completed-filter:target #done-checkbox-3:not(:checked) ~ #todo-input-3,
+        .completed-filter:target #done-checkbox-3:not(:checked) ~ #mark-done-checkbox-label-3,
+        .completed-filter:target #done-checkbox-3:not(:checked) ~ #mark-undone-checkbox-label-3 {
+            display: none !important;
+        }
     
             #add-checkbox-2:checked ~ #todo-3 > #todo-input-3,
             #add-checkbox-2:checked ~ #todo-3 > #add-checkbox-label-3 {
@@ -322,6 +340,12 @@
         .active-filter:target #done-checkbox-4:checked ~ #mark-undone-checkbox-label-4 {
             display: none !important;
         }
+
+        .completed-filter:target #done-checkbox-4:not(:checked) ~ #todo-input-4,
+        .completed-filter:target #done-checkbox-4:not(:checked) ~ #mark-done-checkbox-label-4,
+        .completed-filter:target #done-checkbox-4:not(:checked) ~ #mark-undone-checkbox-label-4 {
+            display: none !important;
+        }
     
             #add-checkbox-3:checked ~ #todo-4 > #todo-input-4,
             #add-checkbox-3:checked ~ #todo-4 > #add-checkbox-label-4 {
@@ -371,6 +395,12 @@
         .active-filter:target #done-checkbox-5:checked ~ #todo-input-5,
         .active-filter:target #done-checkbox-5:checked ~ #mark-done-checkbox-label-5,
         .active-filter:target #done-checkbox-5:checked ~ #mark-undone-checkbox-label-5 {
+            display: none !important;
+        }
+
+        .completed-filter:target #done-checkbox-5:not(:checked) ~ #todo-input-5,
+        .completed-filter:target #done-checkbox-5:not(:checked) ~ #mark-done-checkbox-label-5,
+        .completed-filter:target #done-checkbox-5:not(:checked) ~ #mark-undone-checkbox-label-5 {
             display: none !important;
         }
     

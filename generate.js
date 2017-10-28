@@ -109,6 +109,12 @@ function generateTodo(i) {
         .active-filter:target #done-checkbox-${i}:checked ~ #mark-undone-checkbox-label-${i} {
             display: none !important;
         }
+
+        .completed-filter:target #done-checkbox-${i}:not(:checked) ~ #todo-input-${i},
+        .completed-filter:target #done-checkbox-${i}:not(:checked) ~ #mark-done-checkbox-label-${i},
+        .completed-filter:target #done-checkbox-${i}:not(:checked) ~ #mark-undone-checkbox-label-${i} {
+            display: none !important;
+        }
     `
     if (i > 1) {
         const previousI = i - 1;
