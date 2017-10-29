@@ -16,50 +16,50 @@
             <label for="created-checkbox-1" class="created-checkbox-label" id="created-checkbox-label-1">Add</label>
             <input type="checkbox" class="deleted-checkbox" id="deleted-checkbox-1" />
             <input type="checkbox" class="done-checkbox" id="done-checkbox-1"  checked />
-            <label for="deleted-checkbox-1" id="deleted-checkbox-label-1" class="deleted-checkbox-label">delete</label>
             <label for="done-checkbox-1" id="mark-done-checkbox-label-1" class="mark-done-checkbox-label"></label>
             <label for="done-checkbox-1" id="mark-undone-checkbox-label-1" class="mark-undone-checkbox-label"></label>
             <input type="text" value="Build Todo CSS" id="todo-input-1" class="todo-input" placeholder="What needs to be done?"/>
+            <label for="deleted-checkbox-1" id="deleted-checkbox-label-1" class="deleted-checkbox-label"></label>
             
         <div id="todo-2" class="todo">
             <input type="checkbox" id="created-checkbox-2"  checked />
             <label for="created-checkbox-2" class="created-checkbox-label" id="created-checkbox-label-2">Add</label>
             <input type="checkbox" class="deleted-checkbox" id="deleted-checkbox-2" />
             <input type="checkbox" class="done-checkbox" id="done-checkbox-2"  />
-            <label for="deleted-checkbox-2" id="deleted-checkbox-label-2" class="deleted-checkbox-label">delete</label>
             <label for="done-checkbox-2" id="mark-done-checkbox-label-2" class="mark-done-checkbox-label"></label>
             <label for="done-checkbox-2" id="mark-undone-checkbox-label-2" class="mark-undone-checkbox-label"></label>
             <input type="text" value="Eat cookies" id="todo-input-2" class="todo-input" placeholder="What needs to be done?"/>
+            <label for="deleted-checkbox-2" id="deleted-checkbox-label-2" class="deleted-checkbox-label"></label>
             
         <div id="todo-3" class="todo">
             <input type="checkbox" id="created-checkbox-3"  />
             <label for="created-checkbox-3" class="created-checkbox-label" id="created-checkbox-label-3">Add</label>
             <input type="checkbox" class="deleted-checkbox" id="deleted-checkbox-3" />
             <input type="checkbox" class="done-checkbox" id="done-checkbox-3"  />
-            <label for="deleted-checkbox-3" id="deleted-checkbox-label-3" class="deleted-checkbox-label">delete</label>
             <label for="done-checkbox-3" id="mark-done-checkbox-label-3" class="mark-done-checkbox-label"></label>
             <label for="done-checkbox-3" id="mark-undone-checkbox-label-3" class="mark-undone-checkbox-label"></label>
             <input type="text" value="" id="todo-input-3" class="todo-input" placeholder="What needs to be done?"/>
+            <label for="deleted-checkbox-3" id="deleted-checkbox-label-3" class="deleted-checkbox-label"></label>
             
         <div id="todo-4" class="todo">
             <input type="checkbox" id="created-checkbox-4"  />
             <label for="created-checkbox-4" class="created-checkbox-label" id="created-checkbox-label-4">Add</label>
             <input type="checkbox" class="deleted-checkbox" id="deleted-checkbox-4" />
             <input type="checkbox" class="done-checkbox" id="done-checkbox-4"  />
-            <label for="deleted-checkbox-4" id="deleted-checkbox-label-4" class="deleted-checkbox-label">delete</label>
             <label for="done-checkbox-4" id="mark-done-checkbox-label-4" class="mark-done-checkbox-label"></label>
             <label for="done-checkbox-4" id="mark-undone-checkbox-label-4" class="mark-undone-checkbox-label"></label>
             <input type="text" value="" id="todo-input-4" class="todo-input" placeholder="What needs to be done?"/>
+            <label for="deleted-checkbox-4" id="deleted-checkbox-label-4" class="deleted-checkbox-label"></label>
             
         <div id="todo-5" class="todo">
             <input type="checkbox" id="created-checkbox-5"  />
             <label for="created-checkbox-5" class="created-checkbox-label" id="created-checkbox-label-5">Add</label>
             <input type="checkbox" class="deleted-checkbox" id="deleted-checkbox-5" />
             <input type="checkbox" class="done-checkbox" id="done-checkbox-5"  />
-            <label for="deleted-checkbox-5" id="deleted-checkbox-label-5" class="deleted-checkbox-label">delete</label>
             <label for="done-checkbox-5" id="mark-done-checkbox-label-5" class="mark-done-checkbox-label"></label>
             <label for="done-checkbox-5" id="mark-undone-checkbox-label-5" class="mark-undone-checkbox-label"></label>
             <input type="text" value="" id="todo-input-5" class="todo-input" placeholder="What needs to be done?"/>
+            <label for="deleted-checkbox-5" id="deleted-checkbox-label-5" class="deleted-checkbox-label"></label>
             
         </div>
     
@@ -102,14 +102,20 @@ body  {
     counter-reset: items-left;
 }
 .todo-input {
-    left: 45px;
-    padding: 16px 16px 16px 60px;
+    white-space: pre-line;
+    word-break: break-all;
+    padding: 15px 60px 15px 15px;
+    margin-left: 45px;
+    display: block;
+    line-height: 1.2;
+    transition: color 0.4s;
+
     border: none;
     background: rgba(0, 0, 0, 0.003);
     box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
     position: relative;
     margin: 0;
-    width: 60%;
+    width: calc(100% - 40px - 120px);
     font-size: 24px;
     font-family: inherit;
     font-weight: inherit;
@@ -117,10 +123,6 @@ body  {
     border: 0;
     outline: none;
     color: inherit;
-    padding: 6px;
-    border: 1px solid #999;
-    box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
-    box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
     font-smoothing: antialiased;
@@ -159,6 +161,33 @@ body  {
 .mark-done-checkbox-label {
     counter-increment: items-left;
 }
+
+
+.deleted-checkbox-label {
+    display: none;
+	width: 40px;
+	height: 40px;
+	margin: auto 0;
+	font-size: 30px;
+	color: #cc9a9a;
+	margin-bottom: 11px;
+	transition: color 0.2s ease-out;
+    text-align: center;
+}
+
+.deleted-checkbox-label:hover {
+	color: #af5b5e;
+}
+
+.deleted-checkbox-label:after {
+	content: '×';
+}
+
+
+.deleted-checkbox-label {
+    cursor: pointer;
+}
+
 
         #created-checkbox-1:not(:checked) ~ #todo-input-1 {
             position: absolute;
@@ -202,8 +231,12 @@ body  {
             order: 1190;
         }
 
-        #created-checkbox-1:checked ~ #deleted-checkbox-label-1 {
+        #created-checkbox-1:checked ~ #deleted-checkbox-label-1:hover,
+        #created-checkbox-1:checked ~ .mark-undone-checkbox-label:hover ~ #deleted-checkbox-label-1,
+        #created-checkbox-1:checked ~ .mark-done-checkbox-label:hover ~ #deleted-checkbox-label-1,
+        #created-checkbox-1:checked ~ #todo-input-1:hover ~ #deleted-checkbox-label-1 {
             display: inline-block;
+            order: 1111
         }
 
         #deleted-checkbox-1:checked ~ .mark-done-checkbox-label,
@@ -269,8 +302,12 @@ body  {
             order: 1290;
         }
 
-        #created-checkbox-2:checked ~ #deleted-checkbox-label-2 {
+        #created-checkbox-2:checked ~ #deleted-checkbox-label-2:hover,
+        #created-checkbox-2:checked ~ .mark-undone-checkbox-label:hover ~ #deleted-checkbox-label-2,
+        #created-checkbox-2:checked ~ .mark-done-checkbox-label:hover ~ #deleted-checkbox-label-2,
+        #created-checkbox-2:checked ~ #todo-input-2:hover ~ #deleted-checkbox-label-2 {
             display: inline-block;
+            order: 1211
         }
 
         #deleted-checkbox-2:checked ~ .mark-done-checkbox-label,
@@ -342,8 +379,12 @@ body  {
             order: 1390;
         }
 
-        #created-checkbox-3:checked ~ #deleted-checkbox-label-3 {
+        #created-checkbox-3:checked ~ #deleted-checkbox-label-3:hover,
+        #created-checkbox-3:checked ~ .mark-undone-checkbox-label:hover ~ #deleted-checkbox-label-3,
+        #created-checkbox-3:checked ~ .mark-done-checkbox-label:hover ~ #deleted-checkbox-label-3,
+        #created-checkbox-3:checked ~ #todo-input-3:hover ~ #deleted-checkbox-label-3 {
             display: inline-block;
+            order: 1311
         }
 
         #deleted-checkbox-3:checked ~ .mark-done-checkbox-label,
@@ -415,8 +456,12 @@ body  {
             order: 1490;
         }
 
-        #created-checkbox-4:checked ~ #deleted-checkbox-label-4 {
+        #created-checkbox-4:checked ~ #deleted-checkbox-label-4:hover,
+        #created-checkbox-4:checked ~ .mark-undone-checkbox-label:hover ~ #deleted-checkbox-label-4,
+        #created-checkbox-4:checked ~ .mark-done-checkbox-label:hover ~ #deleted-checkbox-label-4,
+        #created-checkbox-4:checked ~ #todo-input-4:hover ~ #deleted-checkbox-label-4 {
             display: inline-block;
+            order: 1411
         }
 
         #deleted-checkbox-4:checked ~ .mark-done-checkbox-label,
@@ -488,8 +533,12 @@ body  {
             order: 1590;
         }
 
-        #created-checkbox-5:checked ~ #deleted-checkbox-label-5 {
+        #created-checkbox-5:checked ~ #deleted-checkbox-label-5:hover,
+        #created-checkbox-5:checked ~ .mark-undone-checkbox-label:hover ~ #deleted-checkbox-label-5,
+        #created-checkbox-5:checked ~ .mark-done-checkbox-label:hover ~ #deleted-checkbox-label-5,
+        #created-checkbox-5:checked ~ #todo-input-5:hover ~ #deleted-checkbox-label-5 {
             display: inline-block;
+            order: 1511
         }
 
         #deleted-checkbox-5:checked ~ .mark-done-checkbox-label,

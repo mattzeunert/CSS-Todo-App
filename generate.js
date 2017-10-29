@@ -10,14 +10,20 @@ body  {
     counter-reset: items-left;
 }
 .todo-input {
-    left: 45px;
-    padding: 16px 16px 16px 60px;
+    white-space: pre-line;
+    word-break: break-all;
+    padding: 15px 60px 15px 15px;
+    margin-left: 45px;
+    display: block;
+    line-height: 1.2;
+    transition: color 0.4s;
+
     border: none;
     background: rgba(0, 0, 0, 0.003);
     box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
     position: relative;
     margin: 0;
-    width: 60%;
+    width: calc(100% - 40px - 120px);
     font-size: 24px;
     font-family: inherit;
     font-weight: inherit;
@@ -25,10 +31,6 @@ body  {
     border: 0;
     outline: none;
     color: inherit;
-    padding: 6px;
-    border: 1px solid #999;
-    box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
-    box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
     font-smoothing: antialiased;
@@ -67,6 +69,33 @@ body  {
 .mark-done-checkbox-label {
     counter-increment: items-left;
 }
+
+
+.deleted-checkbox-label {
+    display: none;
+	width: 40px;
+	height: 40px;
+	margin: auto 0;
+	font-size: 30px;
+	color: #cc9a9a;
+	margin-bottom: 11px;
+	transition: color 0.2s ease-out;
+    text-align: center;
+}
+
+.deleted-checkbox-label:hover {
+	color: #af5b5e;
+}
+
+.deleted-checkbox-label:after {
+	content: '×';
+}
+
+
+.deleted-checkbox-label {
+    cursor: pointer;
+}
+
 `
 
 const MAX_ITEMS = 5
@@ -126,8 +155,12 @@ function generateTodo(i) {
             order: ${getOrder(90)};
         }
 
-        #created-checkbox-${i}:checked ~ #deleted-checkbox-label-${i} {
+        #created-checkbox-${i}:checked ~ #deleted-checkbox-label-${i}:hover,
+        #created-checkbox-${i}:checked ~ .mark-undone-checkbox-label:hover ~ #deleted-checkbox-label-${i},
+        #created-checkbox-${i}:checked ~ .mark-done-checkbox-label:hover ~ #deleted-checkbox-label-${i},
+        #created-checkbox-${i}:checked ~ #todo-input-${i}:hover ~ #deleted-checkbox-label-${i} {
             display: inline-block;
+            order: ${getOrder(11)}
         }
 
         #deleted-checkbox-${i}:checked ~ .mark-done-checkbox-label,
@@ -168,10 +201,10 @@ function generateTodo(i) {
             <label for="created-checkbox-${i}" class="created-checkbox-label" id="created-checkbox-label-${i}">Add</label>
             <input type="checkbox" class="deleted-checkbox" id="deleted-checkbox-${i}" />
             <input type="checkbox" class="done-checkbox" id="done-checkbox-${i}" ${i <= 1 ? ' checked': ''} />
-            <label for="deleted-checkbox-${i}" id="deleted-checkbox-label-${i}" class="deleted-checkbox-label">delete</label>
             <label for="done-checkbox-${i}" id="mark-done-checkbox-label-${i}" class="mark-done-checkbox-label"></label>
             <label for="done-checkbox-${i}" id="mark-undone-checkbox-label-${i}" class="mark-undone-checkbox-label"></label>
             <input type="text" value="${ {1: 'Build Todo CSS', 2: 'Eat cookies'}[i] || ''}" id="todo-input-${i}" class="todo-input" placeholder="What needs to be done?"/>
+            <label for="deleted-checkbox-${i}" id="deleted-checkbox-label-${i}" class="deleted-checkbox-label"></label>
             ${generateTodo(i + 1)}
         </div>
     `
