@@ -116,6 +116,14 @@ body  {
     cursor: pointer;
 }
 
+/* Show the delete icon on hover over any of the item elements */
+.created-checkbox:checked ~ .deleted-checkbox-label:hover,
+.created-checkbox:checked ~ .mark-undone-checkbox-label:hover ~ .deleted-checkbox-label,
+.created-checkbox:checked ~ .mark-done-checkbox-label:hover ~ .deleted-checkbox-label,
+.created-checkbox:checked ~ .todo-input:hover ~ .deleted-checkbox-label {
+    opacity: 1;
+}
+
 `
 
 const MAX_ITEMS = 50
@@ -189,14 +197,7 @@ function generateTodo(i) {
             order: ${getOrder(11)}
         }
 
-        #created-checkbox-${i}:checked ~ #deleted-checkbox-label-${i}:hover,
-        #created-checkbox-${i}:checked ~ .mark-undone-checkbox-label:hover ~ #deleted-checkbox-label-${i},
-        #created-checkbox-${i}:checked ~ .mark-done-checkbox-label:hover ~ #deleted-checkbox-label-${i},
-        #created-checkbox-${i}:checked ~ #todo-input-${i}:hover ~ #deleted-checkbox-label-${i} {
-            opacity: 1;
 
-
-        }
 
         #deleted-checkbox-${i}:checked ~ .mark-done-checkbox-label,
         #deleted-checkbox-${i}:checked ~ .mark-undone-checkbox-label,
@@ -232,7 +233,7 @@ function generateTodo(i) {
 
     return `
         <div id="todo-${i}" class="todo">
-            <input type="checkbox" id="created-checkbox-${i}" ${i <= 2 ? ' checked': ''} />
+            <input type="checkbox" class="created-checkbox" id="created-checkbox-${i}" ${i <= 2 ? ' checked': ''} />
             <label for="created-checkbox-${i}" class="created-checkbox-label" id="created-checkbox-label-${i}">Add</label>
             <input type="checkbox" class="deleted-checkbox" id="deleted-checkbox-${i}" />
             <input type="checkbox" class="done-checkbox" id="done-checkbox-${i}" ${i <= 1 ? ' checked': ''} />
