@@ -4,7 +4,7 @@ html = ''
 css = `
 #todo-1 {
     position: relative;
-    padding-top: 40px;
+    padding-top: 65px;
 }
 body  {
     counter-reset: items-left;
@@ -39,8 +39,17 @@ body  {
     position: absolute;
     top: 0;
     right: 0px;
-    width: 20%;
+    width: 40px;
     cursor: pointer;
+    background: #d6d6d6;
+    font-weight: bold;
+    padding: 22px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+}
+.created-checkbox-label:hover {
+    background: #ddd;
 }
 .todo-input:not(#todo-input-1) {
     display: none;
@@ -70,6 +79,10 @@ body  {
     counter-increment: items-left;
 }
 
+.mark-done-checkbox-label,
+.mark-undone-checkbox-label {
+    cursor: pointer;
+}
 
 .deleted-checkbox-label {
     display: none;
@@ -78,9 +91,16 @@ body  {
 	margin: auto 0;
 	font-size: 30px;
 	color: #cc9a9a;
-	margin-bottom: 11px;
 	transition: color 0.2s ease-out;
     text-align: center;
+    opacity: 0;
+    padding-top: 12px;
+    padding-bottom: 11px;
+}
+.mark-done-checkbox-label,
+.mark-undone-checkbox-label {
+    padding-top: 10px;
+    padding-bottom: 9px;
 }
 
 .deleted-checkbox-label:hover {
@@ -116,7 +136,16 @@ function generateTodo(i) {
         #created-checkbox-${i}:not(:checked) ~ #todo-input-${i} {
             position: absolute;
             top: 0;
+            padding-left: calc(15px + 40px);
+            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
+
         }
+
+        #created-checkbox-${i}:not(:checked) ~ #todo-input-${i},
+        #created-checkbox-${i}:not(:checked) ~ .created-checkbox-label {
+            border-bottom: 1px solid #e6e6e6;
+        }
+
         #todo-input-${i} {
             order: ${getOrder(10)};
         }
@@ -155,12 +184,18 @@ function generateTodo(i) {
             order: ${getOrder(90)};
         }
 
+        #created-checkbox-${i}:checked ~ #deleted-checkbox-label-${i} {
+            display: inline-block;
+            order: ${getOrder(11)}
+        }
+
         #created-checkbox-${i}:checked ~ #deleted-checkbox-label-${i}:hover,
         #created-checkbox-${i}:checked ~ .mark-undone-checkbox-label:hover ~ #deleted-checkbox-label-${i},
         #created-checkbox-${i}:checked ~ .mark-done-checkbox-label:hover ~ #deleted-checkbox-label-${i},
         #created-checkbox-${i}:checked ~ #todo-input-${i}:hover ~ #deleted-checkbox-label-${i} {
-            display: inline-block;
-            order: ${getOrder(11)}
+            opacity: 1;
+
+
         }
 
         #deleted-checkbox-${i}:checked ~ .mark-done-checkbox-label,
@@ -239,11 +274,16 @@ html += `<!doctype html>
             				</li>
             			</ul>
             		</footer>
-
-                    <div>
-                        Styles based on <a href="https://github.com/tastejs/todomvc/blob/master/app-spec.md">TodoMVC CSS</a>.
-                    </div>
                 </section>
+                <div style="line-height: 18px;background: #fafafa;border: 1px solid #eaeaea;padding: 15px;">
+                    <p style="margin-top: 0">
+                        This todo app is built using just HTML and CSS, no JavaScript. It works by using pre-rendered HTML,
+                        the ~ combinator, and the :checked and :target pseudo selectors.
+                    </p>
+                    <p style="margin-bottom: 0">
+                        Styles based on <a href="http://todomvc.com/">TodoMVC</a>.
+                    </p>
+                </div>
             </div>
         </div>
     </body>

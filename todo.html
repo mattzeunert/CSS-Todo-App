@@ -85,18 +85,23 @@
             				</li>
             			</ul>
             		</footer>
-
-                    <div>
-                        Styles based on <a href="https://github.com/tastejs/todomvc/blob/master/app-spec.md">TodoMVC CSS</a>.
-                    </div>
                 </section>
+                <div style="line-height: 18px;background: #fafafa;border: 1px solid #eaeaea;padding: 15px;">
+                    <p style="margin-top: 0">
+                        This todo app is built using just HTML and CSS, no JavaScript. It works by using pre-rendered HTML,
+                        the ~ combinator, and the :checked and :target pseudo selectors.
+                    </p>
+                    <p style="margin-bottom: 0">
+                        Styles based on <a href="http://todomvc.com/">TodoMVC</a>.
+                    </p>
+                </div>
             </div>
         </div>
     </body>
 </html><style>
 #todo-1 {
     position: relative;
-    padding-top: 40px;
+    padding-top: 65px;
 }
 body  {
     counter-reset: items-left;
@@ -131,8 +136,17 @@ body  {
     position: absolute;
     top: 0;
     right: 0px;
-    width: 20%;
+    width: 40px;
     cursor: pointer;
+    background: #d6d6d6;
+    font-weight: bold;
+    padding: 22px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+}
+.created-checkbox-label:hover {
+    background: #ddd;
 }
 .todo-input:not(#todo-input-1) {
     display: none;
@@ -162,6 +176,10 @@ body  {
     counter-increment: items-left;
 }
 
+.mark-done-checkbox-label,
+.mark-undone-checkbox-label {
+    cursor: pointer;
+}
 
 .deleted-checkbox-label {
     display: none;
@@ -170,9 +188,16 @@ body  {
 	margin: auto 0;
 	font-size: 30px;
 	color: #cc9a9a;
-	margin-bottom: 11px;
 	transition: color 0.2s ease-out;
     text-align: center;
+    opacity: 0;
+    padding-top: 12px;
+    padding-bottom: 11px;
+}
+.mark-done-checkbox-label,
+.mark-undone-checkbox-label {
+    padding-top: 10px;
+    padding-bottom: 9px;
 }
 
 .deleted-checkbox-label:hover {
@@ -192,7 +217,16 @@ body  {
         #created-checkbox-1:not(:checked) ~ #todo-input-1 {
             position: absolute;
             top: 0;
+            padding-left: calc(15px + 40px);
+            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
+
         }
+
+        #created-checkbox-1:not(:checked) ~ #todo-input-1,
+        #created-checkbox-1:not(:checked) ~ .created-checkbox-label {
+            border-bottom: 1px solid #e6e6e6;
+        }
+
         #todo-input-1 {
             order: 1110;
         }
@@ -231,12 +265,18 @@ body  {
             order: 1190;
         }
 
+        #created-checkbox-1:checked ~ #deleted-checkbox-label-1 {
+            display: inline-block;
+            order: 1111
+        }
+
         #created-checkbox-1:checked ~ #deleted-checkbox-label-1:hover,
         #created-checkbox-1:checked ~ .mark-undone-checkbox-label:hover ~ #deleted-checkbox-label-1,
         #created-checkbox-1:checked ~ .mark-done-checkbox-label:hover ~ #deleted-checkbox-label-1,
         #created-checkbox-1:checked ~ #todo-input-1:hover ~ #deleted-checkbox-label-1 {
-            display: inline-block;
-            order: 1111
+            opacity: 1;
+
+
         }
 
         #deleted-checkbox-1:checked ~ .mark-done-checkbox-label,
@@ -263,7 +303,16 @@ body  {
         #created-checkbox-2:not(:checked) ~ #todo-input-2 {
             position: absolute;
             top: 0;
+            padding-left: calc(15px + 40px);
+            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
+
         }
+
+        #created-checkbox-2:not(:checked) ~ #todo-input-2,
+        #created-checkbox-2:not(:checked) ~ .created-checkbox-label {
+            border-bottom: 1px solid #e6e6e6;
+        }
+
         #todo-input-2 {
             order: 1210;
         }
@@ -302,12 +351,18 @@ body  {
             order: 1290;
         }
 
+        #created-checkbox-2:checked ~ #deleted-checkbox-label-2 {
+            display: inline-block;
+            order: 1211
+        }
+
         #created-checkbox-2:checked ~ #deleted-checkbox-label-2:hover,
         #created-checkbox-2:checked ~ .mark-undone-checkbox-label:hover ~ #deleted-checkbox-label-2,
         #created-checkbox-2:checked ~ .mark-done-checkbox-label:hover ~ #deleted-checkbox-label-2,
         #created-checkbox-2:checked ~ #todo-input-2:hover ~ #deleted-checkbox-label-2 {
-            display: inline-block;
-            order: 1211
+            opacity: 1;
+
+
         }
 
         #deleted-checkbox-2:checked ~ .mark-done-checkbox-label,
@@ -340,7 +395,16 @@ body  {
         #created-checkbox-3:not(:checked) ~ #todo-input-3 {
             position: absolute;
             top: 0;
+            padding-left: calc(15px + 40px);
+            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
+
         }
+
+        #created-checkbox-3:not(:checked) ~ #todo-input-3,
+        #created-checkbox-3:not(:checked) ~ .created-checkbox-label {
+            border-bottom: 1px solid #e6e6e6;
+        }
+
         #todo-input-3 {
             order: 1310;
         }
@@ -379,12 +443,18 @@ body  {
             order: 1390;
         }
 
+        #created-checkbox-3:checked ~ #deleted-checkbox-label-3 {
+            display: inline-block;
+            order: 1311
+        }
+
         #created-checkbox-3:checked ~ #deleted-checkbox-label-3:hover,
         #created-checkbox-3:checked ~ .mark-undone-checkbox-label:hover ~ #deleted-checkbox-label-3,
         #created-checkbox-3:checked ~ .mark-done-checkbox-label:hover ~ #deleted-checkbox-label-3,
         #created-checkbox-3:checked ~ #todo-input-3:hover ~ #deleted-checkbox-label-3 {
-            display: inline-block;
-            order: 1311
+            opacity: 1;
+
+
         }
 
         #deleted-checkbox-3:checked ~ .mark-done-checkbox-label,
@@ -417,7 +487,16 @@ body  {
         #created-checkbox-4:not(:checked) ~ #todo-input-4 {
             position: absolute;
             top: 0;
+            padding-left: calc(15px + 40px);
+            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
+
         }
+
+        #created-checkbox-4:not(:checked) ~ #todo-input-4,
+        #created-checkbox-4:not(:checked) ~ .created-checkbox-label {
+            border-bottom: 1px solid #e6e6e6;
+        }
+
         #todo-input-4 {
             order: 1410;
         }
@@ -456,12 +535,18 @@ body  {
             order: 1490;
         }
 
+        #created-checkbox-4:checked ~ #deleted-checkbox-label-4 {
+            display: inline-block;
+            order: 1411
+        }
+
         #created-checkbox-4:checked ~ #deleted-checkbox-label-4:hover,
         #created-checkbox-4:checked ~ .mark-undone-checkbox-label:hover ~ #deleted-checkbox-label-4,
         #created-checkbox-4:checked ~ .mark-done-checkbox-label:hover ~ #deleted-checkbox-label-4,
         #created-checkbox-4:checked ~ #todo-input-4:hover ~ #deleted-checkbox-label-4 {
-            display: inline-block;
-            order: 1411
+            opacity: 1;
+
+
         }
 
         #deleted-checkbox-4:checked ~ .mark-done-checkbox-label,
@@ -494,7 +579,16 @@ body  {
         #created-checkbox-5:not(:checked) ~ #todo-input-5 {
             position: absolute;
             top: 0;
+            padding-left: calc(15px + 40px);
+            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
+
         }
+
+        #created-checkbox-5:not(:checked) ~ #todo-input-5,
+        #created-checkbox-5:not(:checked) ~ .created-checkbox-label {
+            border-bottom: 1px solid #e6e6e6;
+        }
+
         #todo-input-5 {
             order: 1510;
         }
@@ -533,12 +627,18 @@ body  {
             order: 1590;
         }
 
+        #created-checkbox-5:checked ~ #deleted-checkbox-label-5 {
+            display: inline-block;
+            order: 1511
+        }
+
         #created-checkbox-5:checked ~ #deleted-checkbox-label-5:hover,
         #created-checkbox-5:checked ~ .mark-undone-checkbox-label:hover ~ #deleted-checkbox-label-5,
         #created-checkbox-5:checked ~ .mark-done-checkbox-label:hover ~ #deleted-checkbox-label-5,
         #created-checkbox-5:checked ~ #todo-input-5:hover ~ #deleted-checkbox-label-5 {
-            display: inline-block;
-            order: 1511
+            opacity: 1;
+
+
         }
 
         #deleted-checkbox-5:checked ~ .mark-done-checkbox-label,
