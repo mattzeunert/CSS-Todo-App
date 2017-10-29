@@ -13,9 +13,14 @@ Styling based on [TodoMVC](http://todomvc.com/).
 - Delete items
 - Filter items (done/not done)
 - Show number of items left to do
+- Don't allow add empty items
 
 ## What doesn't work
 
 - Persistence after page reload
 - Mark all as done
 - Create item by pressing enter
+
+## Source code
+
+`node generate.js` creates the `index.html` file. `todos.css` contains the styles.
