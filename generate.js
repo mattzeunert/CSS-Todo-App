@@ -60,9 +60,10 @@ html += `<!doctype html>
                     <p style="margin-top: 0">
                         This is a todo app built using just HTML and CSS, no JavaScript. It works by using pre-rendered HTML,
                         the ~ combinator, CSS counters, and the :checked and :target pseudo selectors.
+
                     </p>
                     <p style="margin-bottom: 0">
-                        Styles based on <a href="http://todomvc.com/">TodoMVC</a>.
+                        <a href="https://github.com/mattzeunert/CSS-Todo-App">TodoCSS</a> on Github. Styles based on <a href="http://todomvc.com/">TodoMVC</a>.
                     </p>
                 </div>
             </div>
