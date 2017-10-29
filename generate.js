@@ -116,6 +116,36 @@ body  {
     cursor: pointer;
 }
 
+/* Styling for new todo item input */
+.created-checkbox:not(:checked) ~ .todo-input {
+    position: absolute;
+    top: 0;
+    padding-left: calc(15px + 40px);
+    box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
+}
+.created-checkbox:not(:checked) ~ .todo-input,
+.created-checkbox:not(:checked) ~ .created-checkbox-label {
+    border-bottom: 1px solid #e6e6e6;
+}
+
+
+/* Hide mark as done/undone by default */
+.done-checkbox,
+.mark-done-checkbox-label,
+.mark-undone-checkbox-label {
+    display: none;
+}
+/* Show mark as done if item is created and not marked as done yet */
+.created-checkbox:checked ~ .done-checkbox:not(:checked) ~ .mark-done-checkbox-label {
+    display: inline-block;
+    order: 1
+}
+/* Show mark as undone if item is created and marked as done */
+.created-checkbox:checked ~ .done-checkbox:checked ~ .mark-undone-checkbox-label {
+    display: inline-block;
+    order: 1
+}
+
 /* Show the delete icon on hover over any of the item elements */
 .created-checkbox:checked ~ .deleted-checkbox-label:hover,
 .created-checkbox:checked ~ .mark-undone-checkbox-label:hover ~ .deleted-checkbox-label,
@@ -147,6 +177,8 @@ body  {
 .completed-filter:target .created-checkbox:checked ~ .done-checkbox:not(:checked) ~ .deleted-checkbox-label {
     display: none !important;
 }
+
+
 `
 
 const MAX_ITEMS = 50
@@ -164,19 +196,6 @@ function generateTodo(i) {
     }
 
     css += `
-        #created-checkbox-${i}:not(:checked) ~ #todo-input-${i} {
-            position: absolute;
-            top: 0;
-            padding-left: calc(15px + 40px);
-            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-
-        }
-
-        #created-checkbox-${i}:not(:checked) ~ #todo-input-${i},
-        #created-checkbox-${i}:not(:checked) ~ .created-checkbox-label {
-            border-bottom: 1px solid #e6e6e6;
-        }
-
         #todo-input-${i} {
             order: ${getOrder(10)};
         }
@@ -193,24 +212,11 @@ function generateTodo(i) {
         #created-checkbox-${i}:checked ~ #created-checkbox-label-${i} {
             display: none !important;
         }
-        #done-checkbox-${i} {
-            display: none;
-        }
-        #mark-done-checkbox-label-${i},
-        #mark-undone-checkbox-label-${i} {
-            display: none;
-        }
+
         #deleted-checkbox-label-${i} {
             display: none;
         }
-        #created-checkbox-${i}:checked ~ #done-checkbox-${i}:not(:checked) ~ #mark-done-checkbox-label-${i} {
-            display: inline-block;
-            order: ${getOrder(1)};
-        }
-        #created-checkbox-${i}:checked ~ #done-checkbox-${i}:checked ~ #mark-undone-checkbox-label-${i} {
-            display: inline-block;
-            order: ${getOrder(1)};
-        }
+
         #todo-${i + 1} {
             order: ${getOrder(90)};
         }

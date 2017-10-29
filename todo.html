@@ -755,6 +755,36 @@ body  {
     cursor: pointer;
 }
 
+/* Styling for new todo item input */
+.created-checkbox:not(:checked) ~ .todo-input {
+    position: absolute;
+    top: 0;
+    padding-left: calc(15px + 40px);
+    box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
+}
+.created-checkbox:not(:checked) ~ .todo-input,
+.created-checkbox:not(:checked) ~ .created-checkbox-label {
+    border-bottom: 1px solid #e6e6e6;
+}
+
+
+/* Hide mark as done/undone by default */
+.done-checkbox,
+.mark-done-checkbox-label,
+.mark-undone-checkbox-label {
+    display: none;
+}
+/* Show mark as done if item is created and not marked as done yet */
+.created-checkbox:checked ~ .done-checkbox:not(:checked) ~ .mark-done-checkbox-label {
+    display: inline-block;
+    order: 1
+}
+/* Show mark as undone if item is created and marked as done */
+.created-checkbox:checked ~ .done-checkbox:checked ~ .mark-undone-checkbox-label {
+    display: inline-block;
+    order: 1
+}
+
 /* Show the delete icon on hover over any of the item elements */
 .created-checkbox:checked ~ .deleted-checkbox-label:hover,
 .created-checkbox:checked ~ .mark-undone-checkbox-label:hover ~ .deleted-checkbox-label,
@@ -787,18 +817,7 @@ body  {
     display: none !important;
 }
 
-        #created-checkbox-1:not(:checked) ~ #todo-input-1 {
-            position: absolute;
-            top: 0;
-            padding-left: calc(15px + 40px);
-            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
 
-        }
-
-        #created-checkbox-1:not(:checked) ~ #todo-input-1,
-        #created-checkbox-1:not(:checked) ~ .created-checkbox-label {
-            border-bottom: 1px solid #e6e6e6;
-        }
 
         #todo-input-1 {
             order: 1110;
@@ -816,24 +835,11 @@ body  {
         #created-checkbox-1:checked ~ #created-checkbox-label-1 {
             display: none !important;
         }
-        #done-checkbox-1 {
-            display: none;
-        }
-        #mark-done-checkbox-label-1,
-        #mark-undone-checkbox-label-1 {
-            display: none;
-        }
+
         #deleted-checkbox-label-1 {
             display: none;
         }
-        #created-checkbox-1:checked ~ #done-checkbox-1:not(:checked) ~ #mark-done-checkbox-label-1 {
-            display: inline-block;
-            order: 1101;
-        }
-        #created-checkbox-1:checked ~ #done-checkbox-1:checked ~ #mark-undone-checkbox-label-1 {
-            display: inline-block;
-            order: 1101;
-        }
+
         #todo-2 {
             order: 1190;
         }
@@ -843,19 +849,6 @@ body  {
             order: 1111
         }
     
-        #created-checkbox-2:not(:checked) ~ #todo-input-2 {
-            position: absolute;
-            top: 0;
-            padding-left: calc(15px + 40px);
-            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-
-        }
-
-        #created-checkbox-2:not(:checked) ~ #todo-input-2,
-        #created-checkbox-2:not(:checked) ~ .created-checkbox-label {
-            border-bottom: 1px solid #e6e6e6;
-        }
-
         #todo-input-2 {
             order: 1210;
         }
@@ -872,24 +865,11 @@ body  {
         #created-checkbox-2:checked ~ #created-checkbox-label-2 {
             display: none !important;
         }
-        #done-checkbox-2 {
-            display: none;
-        }
-        #mark-done-checkbox-label-2,
-        #mark-undone-checkbox-label-2 {
-            display: none;
-        }
+
         #deleted-checkbox-label-2 {
             display: none;
         }
-        #created-checkbox-2:checked ~ #done-checkbox-2:not(:checked) ~ #mark-done-checkbox-label-2 {
-            display: inline-block;
-            order: 1201;
-        }
-        #created-checkbox-2:checked ~ #done-checkbox-2:checked ~ #mark-undone-checkbox-label-2 {
-            display: inline-block;
-            order: 1201;
-        }
+
         #todo-3 {
             order: 1290;
         }
@@ -905,19 +885,6 @@ body  {
             }
 
         
-        #created-checkbox-3:not(:checked) ~ #todo-input-3 {
-            position: absolute;
-            top: 0;
-            padding-left: calc(15px + 40px);
-            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-
-        }
-
-        #created-checkbox-3:not(:checked) ~ #todo-input-3,
-        #created-checkbox-3:not(:checked) ~ .created-checkbox-label {
-            border-bottom: 1px solid #e6e6e6;
-        }
-
         #todo-input-3 {
             order: 1310;
         }
@@ -934,24 +901,11 @@ body  {
         #created-checkbox-3:checked ~ #created-checkbox-label-3 {
             display: none !important;
         }
-        #done-checkbox-3 {
-            display: none;
-        }
-        #mark-done-checkbox-label-3,
-        #mark-undone-checkbox-label-3 {
-            display: none;
-        }
+
         #deleted-checkbox-label-3 {
             display: none;
         }
-        #created-checkbox-3:checked ~ #done-checkbox-3:not(:checked) ~ #mark-done-checkbox-label-3 {
-            display: inline-block;
-            order: 1301;
-        }
-        #created-checkbox-3:checked ~ #done-checkbox-3:checked ~ #mark-undone-checkbox-label-3 {
-            display: inline-block;
-            order: 1301;
-        }
+
         #todo-4 {
             order: 1390;
         }
@@ -967,19 +921,6 @@ body  {
             }
 
         
-        #created-checkbox-4:not(:checked) ~ #todo-input-4 {
-            position: absolute;
-            top: 0;
-            padding-left: calc(15px + 40px);
-            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-
-        }
-
-        #created-checkbox-4:not(:checked) ~ #todo-input-4,
-        #created-checkbox-4:not(:checked) ~ .created-checkbox-label {
-            border-bottom: 1px solid #e6e6e6;
-        }
-
         #todo-input-4 {
             order: 1410;
         }
@@ -996,24 +937,11 @@ body  {
         #created-checkbox-4:checked ~ #created-checkbox-label-4 {
             display: none !important;
         }
-        #done-checkbox-4 {
-            display: none;
-        }
-        #mark-done-checkbox-label-4,
-        #mark-undone-checkbox-label-4 {
-            display: none;
-        }
+
         #deleted-checkbox-label-4 {
             display: none;
         }
-        #created-checkbox-4:checked ~ #done-checkbox-4:not(:checked) ~ #mark-done-checkbox-label-4 {
-            display: inline-block;
-            order: 1401;
-        }
-        #created-checkbox-4:checked ~ #done-checkbox-4:checked ~ #mark-undone-checkbox-label-4 {
-            display: inline-block;
-            order: 1401;
-        }
+
         #todo-5 {
             order: 1490;
         }
@@ -1029,19 +957,6 @@ body  {
             }
 
         
-        #created-checkbox-5:not(:checked) ~ #todo-input-5 {
-            position: absolute;
-            top: 0;
-            padding-left: calc(15px + 40px);
-            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-
-        }
-
-        #created-checkbox-5:not(:checked) ~ #todo-input-5,
-        #created-checkbox-5:not(:checked) ~ .created-checkbox-label {
-            border-bottom: 1px solid #e6e6e6;
-        }
-
         #todo-input-5 {
             order: 1510;
         }
@@ -1058,24 +973,11 @@ body  {
         #created-checkbox-5:checked ~ #created-checkbox-label-5 {
             display: none !important;
         }
-        #done-checkbox-5 {
-            display: none;
-        }
-        #mark-done-checkbox-label-5,
-        #mark-undone-checkbox-label-5 {
-            display: none;
-        }
+
         #deleted-checkbox-label-5 {
             display: none;
         }
-        #created-checkbox-5:checked ~ #done-checkbox-5:not(:checked) ~ #mark-done-checkbox-label-5 {
-            display: inline-block;
-            order: 1501;
-        }
-        #created-checkbox-5:checked ~ #done-checkbox-5:checked ~ #mark-undone-checkbox-label-5 {
-            display: inline-block;
-            order: 1501;
-        }
+
         #todo-6 {
             order: 1590;
         }
@@ -1091,19 +993,6 @@ body  {
             }
 
         
-        #created-checkbox-6:not(:checked) ~ #todo-input-6 {
-            position: absolute;
-            top: 0;
-            padding-left: calc(15px + 40px);
-            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-
-        }
-
-        #created-checkbox-6:not(:checked) ~ #todo-input-6,
-        #created-checkbox-6:not(:checked) ~ .created-checkbox-label {
-            border-bottom: 1px solid #e6e6e6;
-        }
-
         #todo-input-6 {
             order: 1610;
         }
@@ -1120,24 +1009,11 @@ body  {
         #created-checkbox-6:checked ~ #created-checkbox-label-6 {
             display: none !important;
         }
-        #done-checkbox-6 {
-            display: none;
-        }
-        #mark-done-checkbox-label-6,
-        #mark-undone-checkbox-label-6 {
-            display: none;
-        }
+
         #deleted-checkbox-label-6 {
             display: none;
         }
-        #created-checkbox-6:checked ~ #done-checkbox-6:not(:checked) ~ #mark-done-checkbox-label-6 {
-            display: inline-block;
-            order: 1601;
-        }
-        #created-checkbox-6:checked ~ #done-checkbox-6:checked ~ #mark-undone-checkbox-label-6 {
-            display: inline-block;
-            order: 1601;
-        }
+
         #todo-7 {
             order: 1690;
         }
@@ -1153,19 +1029,6 @@ body  {
             }
 
         
-        #created-checkbox-7:not(:checked) ~ #todo-input-7 {
-            position: absolute;
-            top: 0;
-            padding-left: calc(15px + 40px);
-            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-
-        }
-
-        #created-checkbox-7:not(:checked) ~ #todo-input-7,
-        #created-checkbox-7:not(:checked) ~ .created-checkbox-label {
-            border-bottom: 1px solid #e6e6e6;
-        }
-
         #todo-input-7 {
             order: 1710;
         }
@@ -1182,24 +1045,11 @@ body  {
         #created-checkbox-7:checked ~ #created-checkbox-label-7 {
             display: none !important;
         }
-        #done-checkbox-7 {
-            display: none;
-        }
-        #mark-done-checkbox-label-7,
-        #mark-undone-checkbox-label-7 {
-            display: none;
-        }
+
         #deleted-checkbox-label-7 {
             display: none;
         }
-        #created-checkbox-7:checked ~ #done-checkbox-7:not(:checked) ~ #mark-done-checkbox-label-7 {
-            display: inline-block;
-            order: 1701;
-        }
-        #created-checkbox-7:checked ~ #done-checkbox-7:checked ~ #mark-undone-checkbox-label-7 {
-            display: inline-block;
-            order: 1701;
-        }
+
         #todo-8 {
             order: 1790;
         }
@@ -1215,19 +1065,6 @@ body  {
             }
 
         
-        #created-checkbox-8:not(:checked) ~ #todo-input-8 {
-            position: absolute;
-            top: 0;
-            padding-left: calc(15px + 40px);
-            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-
-        }
-
-        #created-checkbox-8:not(:checked) ~ #todo-input-8,
-        #created-checkbox-8:not(:checked) ~ .created-checkbox-label {
-            border-bottom: 1px solid #e6e6e6;
-        }
-
         #todo-input-8 {
             order: 1810;
         }
@@ -1244,24 +1081,11 @@ body  {
         #created-checkbox-8:checked ~ #created-checkbox-label-8 {
             display: none !important;
         }
-        #done-checkbox-8 {
-            display: none;
-        }
-        #mark-done-checkbox-label-8,
-        #mark-undone-checkbox-label-8 {
-            display: none;
-        }
+
         #deleted-checkbox-label-8 {
             display: none;
         }
-        #created-checkbox-8:checked ~ #done-checkbox-8:not(:checked) ~ #mark-done-checkbox-label-8 {
-            display: inline-block;
-            order: 1801;
-        }
-        #created-checkbox-8:checked ~ #done-checkbox-8:checked ~ #mark-undone-checkbox-label-8 {
-            display: inline-block;
-            order: 1801;
-        }
+
         #todo-9 {
             order: 1890;
         }
@@ -1277,19 +1101,6 @@ body  {
             }
 
         
-        #created-checkbox-9:not(:checked) ~ #todo-input-9 {
-            position: absolute;
-            top: 0;
-            padding-left: calc(15px + 40px);
-            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-
-        }
-
-        #created-checkbox-9:not(:checked) ~ #todo-input-9,
-        #created-checkbox-9:not(:checked) ~ .created-checkbox-label {
-            border-bottom: 1px solid #e6e6e6;
-        }
-
         #todo-input-9 {
             order: 1910;
         }
@@ -1306,24 +1117,11 @@ body  {
         #created-checkbox-9:checked ~ #created-checkbox-label-9 {
             display: none !important;
         }
-        #done-checkbox-9 {
-            display: none;
-        }
-        #mark-done-checkbox-label-9,
-        #mark-undone-checkbox-label-9 {
-            display: none;
-        }
+
         #deleted-checkbox-label-9 {
             display: none;
         }
-        #created-checkbox-9:checked ~ #done-checkbox-9:not(:checked) ~ #mark-done-checkbox-label-9 {
-            display: inline-block;
-            order: 1901;
-        }
-        #created-checkbox-9:checked ~ #done-checkbox-9:checked ~ #mark-undone-checkbox-label-9 {
-            display: inline-block;
-            order: 1901;
-        }
+
         #todo-10 {
             order: 1990;
         }
@@ -1339,19 +1137,6 @@ body  {
             }
 
         
-        #created-checkbox-10:not(:checked) ~ #todo-input-10 {
-            position: absolute;
-            top: 0;
-            padding-left: calc(15px + 40px);
-            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-
-        }
-
-        #created-checkbox-10:not(:checked) ~ #todo-input-10,
-        #created-checkbox-10:not(:checked) ~ .created-checkbox-label {
-            border-bottom: 1px solid #e6e6e6;
-        }
-
         #todo-input-10 {
             order: 2010;
         }
@@ -1368,24 +1153,11 @@ body  {
         #created-checkbox-10:checked ~ #created-checkbox-label-10 {
             display: none !important;
         }
-        #done-checkbox-10 {
-            display: none;
-        }
-        #mark-done-checkbox-label-10,
-        #mark-undone-checkbox-label-10 {
-            display: none;
-        }
+
         #deleted-checkbox-label-10 {
             display: none;
         }
-        #created-checkbox-10:checked ~ #done-checkbox-10:not(:checked) ~ #mark-done-checkbox-label-10 {
-            display: inline-block;
-            order: 2001;
-        }
-        #created-checkbox-10:checked ~ #done-checkbox-10:checked ~ #mark-undone-checkbox-label-10 {
-            display: inline-block;
-            order: 2001;
-        }
+
         #todo-11 {
             order: 2090;
         }
@@ -1401,19 +1173,6 @@ body  {
             }
 
         
-        #created-checkbox-11:not(:checked) ~ #todo-input-11 {
-            position: absolute;
-            top: 0;
-            padding-left: calc(15px + 40px);
-            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-
-        }
-
-        #created-checkbox-11:not(:checked) ~ #todo-input-11,
-        #created-checkbox-11:not(:checked) ~ .created-checkbox-label {
-            border-bottom: 1px solid #e6e6e6;
-        }
-
         #todo-input-11 {
             order: 2110;
         }
@@ -1430,24 +1189,11 @@ body  {
         #created-checkbox-11:checked ~ #created-checkbox-label-11 {
             display: none !important;
         }
-        #done-checkbox-11 {
-            display: none;
-        }
-        #mark-done-checkbox-label-11,
-        #mark-undone-checkbox-label-11 {
-            display: none;
-        }
+
         #deleted-checkbox-label-11 {
             display: none;
         }
-        #created-checkbox-11:checked ~ #done-checkbox-11:not(:checked) ~ #mark-done-checkbox-label-11 {
-            display: inline-block;
-            order: 2101;
-        }
-        #created-checkbox-11:checked ~ #done-checkbox-11:checked ~ #mark-undone-checkbox-label-11 {
-            display: inline-block;
-            order: 2101;
-        }
+
         #todo-12 {
             order: 2190;
         }
@@ -1463,19 +1209,6 @@ body  {
             }
 
         
-        #created-checkbox-12:not(:checked) ~ #todo-input-12 {
-            position: absolute;
-            top: 0;
-            padding-left: calc(15px + 40px);
-            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-
-        }
-
-        #created-checkbox-12:not(:checked) ~ #todo-input-12,
-        #created-checkbox-12:not(:checked) ~ .created-checkbox-label {
-            border-bottom: 1px solid #e6e6e6;
-        }
-
         #todo-input-12 {
             order: 2210;
         }
@@ -1492,24 +1225,11 @@ body  {
         #created-checkbox-12:checked ~ #created-checkbox-label-12 {
             display: none !important;
         }
-        #done-checkbox-12 {
-            display: none;
-        }
-        #mark-done-checkbox-label-12,
-        #mark-undone-checkbox-label-12 {
-            display: none;
-        }
+
         #deleted-checkbox-label-12 {
             display: none;
         }
-        #created-checkbox-12:checked ~ #done-checkbox-12:not(:checked) ~ #mark-done-checkbox-label-12 {
-            display: inline-block;
-            order: 2201;
-        }
-        #created-checkbox-12:checked ~ #done-checkbox-12:checked ~ #mark-undone-checkbox-label-12 {
-            display: inline-block;
-            order: 2201;
-        }
+
         #todo-13 {
             order: 2290;
         }
@@ -1525,19 +1245,6 @@ body  {
             }
 
         
-        #created-checkbox-13:not(:checked) ~ #todo-input-13 {
-            position: absolute;
-            top: 0;
-            padding-left: calc(15px + 40px);
-            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-
-        }
-
-        #created-checkbox-13:not(:checked) ~ #todo-input-13,
-        #created-checkbox-13:not(:checked) ~ .created-checkbox-label {
-            border-bottom: 1px solid #e6e6e6;
-        }
-
         #todo-input-13 {
             order: 2310;
         }
@@ -1554,24 +1261,11 @@ body  {
         #created-checkbox-13:checked ~ #created-checkbox-label-13 {
             display: none !important;
         }
-        #done-checkbox-13 {
-            display: none;
-        }
-        #mark-done-checkbox-label-13,
-        #mark-undone-checkbox-label-13 {
-            display: none;
-        }
+
         #deleted-checkbox-label-13 {
             display: none;
         }
-        #created-checkbox-13:checked ~ #done-checkbox-13:not(:checked) ~ #mark-done-checkbox-label-13 {
-            display: inline-block;
-            order: 2301;
-        }
-        #created-checkbox-13:checked ~ #done-checkbox-13:checked ~ #mark-undone-checkbox-label-13 {
-            display: inline-block;
-            order: 2301;
-        }
+
         #todo-14 {
             order: 2390;
         }
@@ -1587,19 +1281,6 @@ body  {
             }
 
         
-        #created-checkbox-14:not(:checked) ~ #todo-input-14 {
-            position: absolute;
-            top: 0;
-            padding-left: calc(15px + 40px);
-            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-
-        }
-
-        #created-checkbox-14:not(:checked) ~ #todo-input-14,
-        #created-checkbox-14:not(:checked) ~ .created-checkbox-label {
-            border-bottom: 1px solid #e6e6e6;
-        }
-
         #todo-input-14 {
             order: 2410;
         }
@@ -1616,24 +1297,11 @@ body  {
         #created-checkbox-14:checked ~ #created-checkbox-label-14 {
             display: none !important;
         }
-        #done-checkbox-14 {
-            display: none;
-        }
-        #mark-done-checkbox-label-14,
-        #mark-undone-checkbox-label-14 {
-            display: none;
-        }
+
         #deleted-checkbox-label-14 {
             display: none;
         }
-        #created-checkbox-14:checked ~ #done-checkbox-14:not(:checked) ~ #mark-done-checkbox-label-14 {
-            display: inline-block;
-            order: 2401;
-        }
-        #created-checkbox-14:checked ~ #done-checkbox-14:checked ~ #mark-undone-checkbox-label-14 {
-            display: inline-block;
-            order: 2401;
-        }
+
         #todo-15 {
             order: 2490;
         }
@@ -1649,19 +1317,6 @@ body  {
             }
 
         
-        #created-checkbox-15:not(:checked) ~ #todo-input-15 {
-            position: absolute;
-            top: 0;
-            padding-left: calc(15px + 40px);
-            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-
-        }
-
-        #created-checkbox-15:not(:checked) ~ #todo-input-15,
-        #created-checkbox-15:not(:checked) ~ .created-checkbox-label {
-            border-bottom: 1px solid #e6e6e6;
-        }
-
         #todo-input-15 {
             order: 2510;
         }
@@ -1678,24 +1333,11 @@ body  {
         #created-checkbox-15:checked ~ #created-checkbox-label-15 {
             display: none !important;
         }
-        #done-checkbox-15 {
-            display: none;
-        }
-        #mark-done-checkbox-label-15,
-        #mark-undone-checkbox-label-15 {
-            display: none;
-        }
+
         #deleted-checkbox-label-15 {
             display: none;
         }
-        #created-checkbox-15:checked ~ #done-checkbox-15:not(:checked) ~ #mark-done-checkbox-label-15 {
-            display: inline-block;
-            order: 2501;
-        }
-        #created-checkbox-15:checked ~ #done-checkbox-15:checked ~ #mark-undone-checkbox-label-15 {
-            display: inline-block;
-            order: 2501;
-        }
+
         #todo-16 {
             order: 2590;
         }
@@ -1711,19 +1353,6 @@ body  {
             }
 
         
-        #created-checkbox-16:not(:checked) ~ #todo-input-16 {
-            position: absolute;
-            top: 0;
-            padding-left: calc(15px + 40px);
-            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-
-        }
-
-        #created-checkbox-16:not(:checked) ~ #todo-input-16,
-        #created-checkbox-16:not(:checked) ~ .created-checkbox-label {
-            border-bottom: 1px solid #e6e6e6;
-        }
-
         #todo-input-16 {
             order: 2610;
         }
@@ -1740,24 +1369,11 @@ body  {
         #created-checkbox-16:checked ~ #created-checkbox-label-16 {
             display: none !important;
         }
-        #done-checkbox-16 {
-            display: none;
-        }
-        #mark-done-checkbox-label-16,
-        #mark-undone-checkbox-label-16 {
-            display: none;
-        }
+
         #deleted-checkbox-label-16 {
             display: none;
         }
-        #created-checkbox-16:checked ~ #done-checkbox-16:not(:checked) ~ #mark-done-checkbox-label-16 {
-            display: inline-block;
-            order: 2601;
-        }
-        #created-checkbox-16:checked ~ #done-checkbox-16:checked ~ #mark-undone-checkbox-label-16 {
-            display: inline-block;
-            order: 2601;
-        }
+
         #todo-17 {
             order: 2690;
         }
@@ -1773,19 +1389,6 @@ body  {
             }
 
         
-        #created-checkbox-17:not(:checked) ~ #todo-input-17 {
-            position: absolute;
-            top: 0;
-            padding-left: calc(15px + 40px);
-            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-
-        }
-
-        #created-checkbox-17:not(:checked) ~ #todo-input-17,
-        #created-checkbox-17:not(:checked) ~ .created-checkbox-label {
-            border-bottom: 1px solid #e6e6e6;
-        }
-
         #todo-input-17 {
             order: 2710;
         }
@@ -1802,24 +1405,11 @@ body  {
         #created-checkbox-17:checked ~ #created-checkbox-label-17 {
             display: none !important;
         }
-        #done-checkbox-17 {
-            display: none;
-        }
-        #mark-done-checkbox-label-17,
-        #mark-undone-checkbox-label-17 {
-            display: none;
-        }
+
         #deleted-checkbox-label-17 {
             display: none;
         }
-        #created-checkbox-17:checked ~ #done-checkbox-17:not(:checked) ~ #mark-done-checkbox-label-17 {
-            display: inline-block;
-            order: 2701;
-        }
-        #created-checkbox-17:checked ~ #done-checkbox-17:checked ~ #mark-undone-checkbox-label-17 {
-            display: inline-block;
-            order: 2701;
-        }
+
         #todo-18 {
             order: 2790;
         }
@@ -1835,19 +1425,6 @@ body  {
             }
 
         
-        #created-checkbox-18:not(:checked) ~ #todo-input-18 {
-            position: absolute;
-            top: 0;
-            padding-left: calc(15px + 40px);
-            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-
-        }
-
-        #created-checkbox-18:not(:checked) ~ #todo-input-18,
-        #created-checkbox-18:not(:checked) ~ .created-checkbox-label {
-            border-bottom: 1px solid #e6e6e6;
-        }
-
         #todo-input-18 {
             order: 2810;
         }
@@ -1864,24 +1441,11 @@ body  {
         #created-checkbox-18:checked ~ #created-checkbox-label-18 {
             display: none !important;
         }
-        #done-checkbox-18 {
-            display: none;
-        }
-        #mark-done-checkbox-label-18,
-        #mark-undone-checkbox-label-18 {
-            display: none;
-        }
+
         #deleted-checkbox-label-18 {
             display: none;
         }
-        #created-checkbox-18:checked ~ #done-checkbox-18:not(:checked) ~ #mark-done-checkbox-label-18 {
-            display: inline-block;
-            order: 2801;
-        }
-        #created-checkbox-18:checked ~ #done-checkbox-18:checked ~ #mark-undone-checkbox-label-18 {
-            display: inline-block;
-            order: 2801;
-        }
+
         #todo-19 {
             order: 2890;
         }
@@ -1897,19 +1461,6 @@ body  {
             }
 
         
-        #created-checkbox-19:not(:checked) ~ #todo-input-19 {
-            position: absolute;
-            top: 0;
-            padding-left: calc(15px + 40px);
-            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-
-        }
-
-        #created-checkbox-19:not(:checked) ~ #todo-input-19,
-        #created-checkbox-19:not(:checked) ~ .created-checkbox-label {
-            border-bottom: 1px solid #e6e6e6;
-        }
-
         #todo-input-19 {
             order: 2910;
         }
@@ -1926,24 +1477,11 @@ body  {
         #created-checkbox-19:checked ~ #created-checkbox-label-19 {
             display: none !important;
         }
-        #done-checkbox-19 {
-            display: none;
-        }
-        #mark-done-checkbox-label-19,
-        #mark-undone-checkbox-label-19 {
-            display: none;
-        }
+
         #deleted-checkbox-label-19 {
             display: none;
         }
-        #created-checkbox-19:checked ~ #done-checkbox-19:not(:checked) ~ #mark-done-checkbox-label-19 {
-            display: inline-block;
-            order: 2901;
-        }
-        #created-checkbox-19:checked ~ #done-checkbox-19:checked ~ #mark-undone-checkbox-label-19 {
-            display: inline-block;
-            order: 2901;
-        }
+
         #todo-20 {
             order: 2990;
         }
@@ -1959,19 +1497,6 @@ body  {
             }
 
         
-        #created-checkbox-20:not(:checked) ~ #todo-input-20 {
-            position: absolute;
-            top: 0;
-            padding-left: calc(15px + 40px);
-            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-
-        }
-
-        #created-checkbox-20:not(:checked) ~ #todo-input-20,
-        #created-checkbox-20:not(:checked) ~ .created-checkbox-label {
-            border-bottom: 1px solid #e6e6e6;
-        }
-
         #todo-input-20 {
             order: 3010;
         }
@@ -1988,24 +1513,11 @@ body  {
         #created-checkbox-20:checked ~ #created-checkbox-label-20 {
             display: none !important;
         }
-        #done-checkbox-20 {
-            display: none;
-        }
-        #mark-done-checkbox-label-20,
-        #mark-undone-checkbox-label-20 {
-            display: none;
-        }
+
         #deleted-checkbox-label-20 {
             display: none;
         }
-        #created-checkbox-20:checked ~ #done-checkbox-20:not(:checked) ~ #mark-done-checkbox-label-20 {
-            display: inline-block;
-            order: 3001;
-        }
-        #created-checkbox-20:checked ~ #done-checkbox-20:checked ~ #mark-undone-checkbox-label-20 {
-            display: inline-block;
-            order: 3001;
-        }
+
         #todo-21 {
             order: 3090;
         }
@@ -2021,19 +1533,6 @@ body  {
             }
 
         
-        #created-checkbox-21:not(:checked) ~ #todo-input-21 {
-            position: absolute;
-            top: 0;
-            padding-left: calc(15px + 40px);
-            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-
-        }
-
-        #created-checkbox-21:not(:checked) ~ #todo-input-21,
-        #created-checkbox-21:not(:checked) ~ .created-checkbox-label {
-            border-bottom: 1px solid #e6e6e6;
-        }
-
         #todo-input-21 {
             order: 3110;
         }
@@ -2050,24 +1549,11 @@ body  {
         #created-checkbox-21:checked ~ #created-checkbox-label-21 {
             display: none !important;
         }
-        #done-checkbox-21 {
-            display: none;
-        }
-        #mark-done-checkbox-label-21,
-        #mark-undone-checkbox-label-21 {
-            display: none;
-        }
+
         #deleted-checkbox-label-21 {
             display: none;
         }
-        #created-checkbox-21:checked ~ #done-checkbox-21:not(:checked) ~ #mark-done-checkbox-label-21 {
-            display: inline-block;
-            order: 3101;
-        }
-        #created-checkbox-21:checked ~ #done-checkbox-21:checked ~ #mark-undone-checkbox-label-21 {
-            display: inline-block;
-            order: 3101;
-        }
+
         #todo-22 {
             order: 3190;
         }
@@ -2083,19 +1569,6 @@ body  {
             }
 
         
-        #created-checkbox-22:not(:checked) ~ #todo-input-22 {
-            position: absolute;
-            top: 0;
-            padding-left: calc(15px + 40px);
-            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-
-        }
-
-        #created-checkbox-22:not(:checked) ~ #todo-input-22,
-        #created-checkbox-22:not(:checked) ~ .created-checkbox-label {
-            border-bottom: 1px solid #e6e6e6;
-        }
-
         #todo-input-22 {
             order: 3210;
         }
@@ -2112,24 +1585,11 @@ body  {
         #created-checkbox-22:checked ~ #created-checkbox-label-22 {
             display: none !important;
         }
-        #done-checkbox-22 {
-            display: none;
-        }
-        #mark-done-checkbox-label-22,
-        #mark-undone-checkbox-label-22 {
-            display: none;
-        }
+
         #deleted-checkbox-label-22 {
             display: none;
         }
-        #created-checkbox-22:checked ~ #done-checkbox-22:not(:checked) ~ #mark-done-checkbox-label-22 {
-            display: inline-block;
-            order: 3201;
-        }
-        #created-checkbox-22:checked ~ #done-checkbox-22:checked ~ #mark-undone-checkbox-label-22 {
-            display: inline-block;
-            order: 3201;
-        }
+
         #todo-23 {
             order: 3290;
         }
@@ -2145,19 +1605,6 @@ body  {
             }
 
         
-        #created-checkbox-23:not(:checked) ~ #todo-input-23 {
-            position: absolute;
-            top: 0;
-            padding-left: calc(15px + 40px);
-            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-
-        }
-
-        #created-checkbox-23:not(:checked) ~ #todo-input-23,
-        #created-checkbox-23:not(:checked) ~ .created-checkbox-label {
-            border-bottom: 1px solid #e6e6e6;
-        }
-
         #todo-input-23 {
             order: 3310;
         }
@@ -2174,24 +1621,11 @@ body  {
         #created-checkbox-23:checked ~ #created-checkbox-label-23 {
             display: none !important;
         }
-        #done-checkbox-23 {
-            display: none;
-        }
-        #mark-done-checkbox-label-23,
-        #mark-undone-checkbox-label-23 {
-            display: none;
-        }
+
         #deleted-checkbox-label-23 {
             display: none;
         }
-        #created-checkbox-23:checked ~ #done-checkbox-23:not(:checked) ~ #mark-done-checkbox-label-23 {
-            display: inline-block;
-            order: 3301;
-        }
-        #created-checkbox-23:checked ~ #done-checkbox-23:checked ~ #mark-undone-checkbox-label-23 {
-            display: inline-block;
-            order: 3301;
-        }
+
         #todo-24 {
             order: 3390;
         }
@@ -2207,19 +1641,6 @@ body  {
             }
 
         
-        #created-checkbox-24:not(:checked) ~ #todo-input-24 {
-            position: absolute;
-            top: 0;
-            padding-left: calc(15px + 40px);
-            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-
-        }
-
-        #created-checkbox-24:not(:checked) ~ #todo-input-24,
-        #created-checkbox-24:not(:checked) ~ .created-checkbox-label {
-            border-bottom: 1px solid #e6e6e6;
-        }
-
         #todo-input-24 {
             order: 3410;
         }
@@ -2236,24 +1657,11 @@ body  {
         #created-checkbox-24:checked ~ #created-checkbox-label-24 {
             display: none !important;
         }
-        #done-checkbox-24 {
-            display: none;
-        }
-        #mark-done-checkbox-label-24,
-        #mark-undone-checkbox-label-24 {
-            display: none;
-        }
+
         #deleted-checkbox-label-24 {
             display: none;
         }
-        #created-checkbox-24:checked ~ #done-checkbox-24:not(:checked) ~ #mark-done-checkbox-label-24 {
-            display: inline-block;
-            order: 3401;
-        }
-        #created-checkbox-24:checked ~ #done-checkbox-24:checked ~ #mark-undone-checkbox-label-24 {
-            display: inline-block;
-            order: 3401;
-        }
+
         #todo-25 {
             order: 3490;
         }
@@ -2269,19 +1677,6 @@ body  {
             }
 
         
-        #created-checkbox-25:not(:checked) ~ #todo-input-25 {
-            position: absolute;
-            top: 0;
-            padding-left: calc(15px + 40px);
-            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-
-        }
-
-        #created-checkbox-25:not(:checked) ~ #todo-input-25,
-        #created-checkbox-25:not(:checked) ~ .created-checkbox-label {
-            border-bottom: 1px solid #e6e6e6;
-        }
-
         #todo-input-25 {
             order: 3510;
         }
@@ -2298,24 +1693,11 @@ body  {
         #created-checkbox-25:checked ~ #created-checkbox-label-25 {
             display: none !important;
         }
-        #done-checkbox-25 {
-            display: none;
-        }
-        #mark-done-checkbox-label-25,
-        #mark-undone-checkbox-label-25 {
-            display: none;
-        }
+
         #deleted-checkbox-label-25 {
             display: none;
         }
-        #created-checkbox-25:checked ~ #done-checkbox-25:not(:checked) ~ #mark-done-checkbox-label-25 {
-            display: inline-block;
-            order: 3501;
-        }
-        #created-checkbox-25:checked ~ #done-checkbox-25:checked ~ #mark-undone-checkbox-label-25 {
-            display: inline-block;
-            order: 3501;
-        }
+
         #todo-26 {
             order: 3590;
         }
@@ -2331,19 +1713,6 @@ body  {
             }
 
         
-        #created-checkbox-26:not(:checked) ~ #todo-input-26 {
-            position: absolute;
-            top: 0;
-            padding-left: calc(15px + 40px);
-            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-
-        }
-
-        #created-checkbox-26:not(:checked) ~ #todo-input-26,
-        #created-checkbox-26:not(:checked) ~ .created-checkbox-label {
-            border-bottom: 1px solid #e6e6e6;
-        }
-
         #todo-input-26 {
             order: 3610;
         }
@@ -2360,24 +1729,11 @@ body  {
         #created-checkbox-26:checked ~ #created-checkbox-label-26 {
             display: none !important;
         }
-        #done-checkbox-26 {
-            display: none;
-        }
-        #mark-done-checkbox-label-26,
-        #mark-undone-checkbox-label-26 {
-            display: none;
-        }
+
         #deleted-checkbox-label-26 {
             display: none;
         }
-        #created-checkbox-26:checked ~ #done-checkbox-26:not(:checked) ~ #mark-done-checkbox-label-26 {
-            display: inline-block;
-            order: 3601;
-        }
-        #created-checkbox-26:checked ~ #done-checkbox-26:checked ~ #mark-undone-checkbox-label-26 {
-            display: inline-block;
-            order: 3601;
-        }
+
         #todo-27 {
             order: 3690;
         }
@@ -2393,19 +1749,6 @@ body  {
             }
 
         
-        #created-checkbox-27:not(:checked) ~ #todo-input-27 {
-            position: absolute;
-            top: 0;
-            padding-left: calc(15px + 40px);
-            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-
-        }
-
-        #created-checkbox-27:not(:checked) ~ #todo-input-27,
-        #created-checkbox-27:not(:checked) ~ .created-checkbox-label {
-            border-bottom: 1px solid #e6e6e6;
-        }
-
         #todo-input-27 {
             order: 3710;
         }
@@ -2422,24 +1765,11 @@ body  {
         #created-checkbox-27:checked ~ #created-checkbox-label-27 {
             display: none !important;
         }
-        #done-checkbox-27 {
-            display: none;
-        }
-        #mark-done-checkbox-label-27,
-        #mark-undone-checkbox-label-27 {
-            display: none;
-        }
+
         #deleted-checkbox-label-27 {
             display: none;
         }
-        #created-checkbox-27:checked ~ #done-checkbox-27:not(:checked) ~ #mark-done-checkbox-label-27 {
-            display: inline-block;
-            order: 3701;
-        }
-        #created-checkbox-27:checked ~ #done-checkbox-27:checked ~ #mark-undone-checkbox-label-27 {
-            display: inline-block;
-            order: 3701;
-        }
+
         #todo-28 {
             order: 3790;
         }
@@ -2455,19 +1785,6 @@ body  {
             }
 
         
-        #created-checkbox-28:not(:checked) ~ #todo-input-28 {
-            position: absolute;
-            top: 0;
-            padding-left: calc(15px + 40px);
-            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-
-        }
-
-        #created-checkbox-28:not(:checked) ~ #todo-input-28,
-        #created-checkbox-28:not(:checked) ~ .created-checkbox-label {
-            border-bottom: 1px solid #e6e6e6;
-        }
-
         #todo-input-28 {
             order: 3810;
         }
@@ -2484,24 +1801,11 @@ body  {
         #created-checkbox-28:checked ~ #created-checkbox-label-28 {
             display: none !important;
         }
-        #done-checkbox-28 {
-            display: none;
-        }
-        #mark-done-checkbox-label-28,
-        #mark-undone-checkbox-label-28 {
-            display: none;
-        }
+
         #deleted-checkbox-label-28 {
             display: none;
         }
-        #created-checkbox-28:checked ~ #done-checkbox-28:not(:checked) ~ #mark-done-checkbox-label-28 {
-            display: inline-block;
-            order: 3801;
-        }
-        #created-checkbox-28:checked ~ #done-checkbox-28:checked ~ #mark-undone-checkbox-label-28 {
-            display: inline-block;
-            order: 3801;
-        }
+
         #todo-29 {
             order: 3890;
         }
@@ -2517,19 +1821,6 @@ body  {
             }
 
         
-        #created-checkbox-29:not(:checked) ~ #todo-input-29 {
-            position: absolute;
-            top: 0;
-            padding-left: calc(15px + 40px);
-            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-
-        }
-
-        #created-checkbox-29:not(:checked) ~ #todo-input-29,
-        #created-checkbox-29:not(:checked) ~ .created-checkbox-label {
-            border-bottom: 1px solid #e6e6e6;
-        }
-
         #todo-input-29 {
             order: 3910;
         }
@@ -2546,24 +1837,11 @@ body  {
         #created-checkbox-29:checked ~ #created-checkbox-label-29 {
             display: none !important;
         }
-        #done-checkbox-29 {
-            display: none;
-        }
-        #mark-done-checkbox-label-29,
-        #mark-undone-checkbox-label-29 {
-            display: none;
-        }
+
         #deleted-checkbox-label-29 {
             display: none;
         }
-        #created-checkbox-29:checked ~ #done-checkbox-29:not(:checked) ~ #mark-done-checkbox-label-29 {
-            display: inline-block;
-            order: 3901;
-        }
-        #created-checkbox-29:checked ~ #done-checkbox-29:checked ~ #mark-undone-checkbox-label-29 {
-            display: inline-block;
-            order: 3901;
-        }
+
         #todo-30 {
             order: 3990;
         }
@@ -2579,19 +1857,6 @@ body  {
             }
 
         
-        #created-checkbox-30:not(:checked) ~ #todo-input-30 {
-            position: absolute;
-            top: 0;
-            padding-left: calc(15px + 40px);
-            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-
-        }
-
-        #created-checkbox-30:not(:checked) ~ #todo-input-30,
-        #created-checkbox-30:not(:checked) ~ .created-checkbox-label {
-            border-bottom: 1px solid #e6e6e6;
-        }
-
         #todo-input-30 {
             order: 4010;
         }
@@ -2608,24 +1873,11 @@ body  {
         #created-checkbox-30:checked ~ #created-checkbox-label-30 {
             display: none !important;
         }
-        #done-checkbox-30 {
-            display: none;
-        }
-        #mark-done-checkbox-label-30,
-        #mark-undone-checkbox-label-30 {
-            display: none;
-        }
+
         #deleted-checkbox-label-30 {
             display: none;
         }
-        #created-checkbox-30:checked ~ #done-checkbox-30:not(:checked) ~ #mark-done-checkbox-label-30 {
-            display: inline-block;
-            order: 4001;
-        }
-        #created-checkbox-30:checked ~ #done-checkbox-30:checked ~ #mark-undone-checkbox-label-30 {
-            display: inline-block;
-            order: 4001;
-        }
+
         #todo-31 {
             order: 4090;
         }
@@ -2641,19 +1893,6 @@ body  {
             }
 
         
-        #created-checkbox-31:not(:checked) ~ #todo-input-31 {
-            position: absolute;
-            top: 0;
-            padding-left: calc(15px + 40px);
-            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-
-        }
-
-        #created-checkbox-31:not(:checked) ~ #todo-input-31,
-        #created-checkbox-31:not(:checked) ~ .created-checkbox-label {
-            border-bottom: 1px solid #e6e6e6;
-        }
-
         #todo-input-31 {
             order: 4110;
         }
@@ -2670,24 +1909,11 @@ body  {
         #created-checkbox-31:checked ~ #created-checkbox-label-31 {
             display: none !important;
         }
-        #done-checkbox-31 {
-            display: none;
-        }
-        #mark-done-checkbox-label-31,
-        #mark-undone-checkbox-label-31 {
-            display: none;
-        }
+
         #deleted-checkbox-label-31 {
             display: none;
         }
-        #created-checkbox-31:checked ~ #done-checkbox-31:not(:checked) ~ #mark-done-checkbox-label-31 {
-            display: inline-block;
-            order: 4101;
-        }
-        #created-checkbox-31:checked ~ #done-checkbox-31:checked ~ #mark-undone-checkbox-label-31 {
-            display: inline-block;
-            order: 4101;
-        }
+
         #todo-32 {
             order: 4190;
         }
@@ -2703,19 +1929,6 @@ body  {
             }
 
         
-        #created-checkbox-32:not(:checked) ~ #todo-input-32 {
-            position: absolute;
-            top: 0;
-            padding-left: calc(15px + 40px);
-            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-
-        }
-
-        #created-checkbox-32:not(:checked) ~ #todo-input-32,
-        #created-checkbox-32:not(:checked) ~ .created-checkbox-label {
-            border-bottom: 1px solid #e6e6e6;
-        }
-
         #todo-input-32 {
             order: 4210;
         }
@@ -2732,24 +1945,11 @@ body  {
         #created-checkbox-32:checked ~ #created-checkbox-label-32 {
             display: none !important;
         }
-        #done-checkbox-32 {
-            display: none;
-        }
-        #mark-done-checkbox-label-32,
-        #mark-undone-checkbox-label-32 {
-            display: none;
-        }
+
         #deleted-checkbox-label-32 {
             display: none;
         }
-        #created-checkbox-32:checked ~ #done-checkbox-32:not(:checked) ~ #mark-done-checkbox-label-32 {
-            display: inline-block;
-            order: 4201;
-        }
-        #created-checkbox-32:checked ~ #done-checkbox-32:checked ~ #mark-undone-checkbox-label-32 {
-            display: inline-block;
-            order: 4201;
-        }
+
         #todo-33 {
             order: 4290;
         }
@@ -2765,19 +1965,6 @@ body  {
             }
 
         
-        #created-checkbox-33:not(:checked) ~ #todo-input-33 {
-            position: absolute;
-            top: 0;
-            padding-left: calc(15px + 40px);
-            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-
-        }
-
-        #created-checkbox-33:not(:checked) ~ #todo-input-33,
-        #created-checkbox-33:not(:checked) ~ .created-checkbox-label {
-            border-bottom: 1px solid #e6e6e6;
-        }
-
         #todo-input-33 {
             order: 4310;
         }
@@ -2794,24 +1981,11 @@ body  {
         #created-checkbox-33:checked ~ #created-checkbox-label-33 {
             display: none !important;
         }
-        #done-checkbox-33 {
-            display: none;
-        }
-        #mark-done-checkbox-label-33,
-        #mark-undone-checkbox-label-33 {
-            display: none;
-        }
+
         #deleted-checkbox-label-33 {
             display: none;
         }
-        #created-checkbox-33:checked ~ #done-checkbox-33:not(:checked) ~ #mark-done-checkbox-label-33 {
-            display: inline-block;
-            order: 4301;
-        }
-        #created-checkbox-33:checked ~ #done-checkbox-33:checked ~ #mark-undone-checkbox-label-33 {
-            display: inline-block;
-            order: 4301;
-        }
+
         #todo-34 {
             order: 4390;
         }
@@ -2827,19 +2001,6 @@ body  {
             }
 
         
-        #created-checkbox-34:not(:checked) ~ #todo-input-34 {
-            position: absolute;
-            top: 0;
-            padding-left: calc(15px + 40px);
-            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-
-        }
-
-        #created-checkbox-34:not(:checked) ~ #todo-input-34,
-        #created-checkbox-34:not(:checked) ~ .created-checkbox-label {
-            border-bottom: 1px solid #e6e6e6;
-        }
-
         #todo-input-34 {
             order: 4410;
         }
@@ -2856,24 +2017,11 @@ body  {
         #created-checkbox-34:checked ~ #created-checkbox-label-34 {
             display: none !important;
         }
-        #done-checkbox-34 {
-            display: none;
-        }
-        #mark-done-checkbox-label-34,
-        #mark-undone-checkbox-label-34 {
-            display: none;
-        }
+
         #deleted-checkbox-label-34 {
             display: none;
         }
-        #created-checkbox-34:checked ~ #done-checkbox-34:not(:checked) ~ #mark-done-checkbox-label-34 {
-            display: inline-block;
-            order: 4401;
-        }
-        #created-checkbox-34:checked ~ #done-checkbox-34:checked ~ #mark-undone-checkbox-label-34 {
-            display: inline-block;
-            order: 4401;
-        }
+
         #todo-35 {
             order: 4490;
         }
@@ -2889,19 +2037,6 @@ body  {
             }
 
         
-        #created-checkbox-35:not(:checked) ~ #todo-input-35 {
-            position: absolute;
-            top: 0;
-            padding-left: calc(15px + 40px);
-            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-
-        }
-
-        #created-checkbox-35:not(:checked) ~ #todo-input-35,
-        #created-checkbox-35:not(:checked) ~ .created-checkbox-label {
-            border-bottom: 1px solid #e6e6e6;
-        }
-
         #todo-input-35 {
             order: 4510;
         }
@@ -2918,24 +2053,11 @@ body  {
         #created-checkbox-35:checked ~ #created-checkbox-label-35 {
             display: none !important;
         }
-        #done-checkbox-35 {
-            display: none;
-        }
-        #mark-done-checkbox-label-35,
-        #mark-undone-checkbox-label-35 {
-            display: none;
-        }
+
         #deleted-checkbox-label-35 {
             display: none;
         }
-        #created-checkbox-35:checked ~ #done-checkbox-35:not(:checked) ~ #mark-done-checkbox-label-35 {
-            display: inline-block;
-            order: 4501;
-        }
-        #created-checkbox-35:checked ~ #done-checkbox-35:checked ~ #mark-undone-checkbox-label-35 {
-            display: inline-block;
-            order: 4501;
-        }
+
         #todo-36 {
             order: 4590;
         }
@@ -2951,19 +2073,6 @@ body  {
             }
 
         
-        #created-checkbox-36:not(:checked) ~ #todo-input-36 {
-            position: absolute;
-            top: 0;
-            padding-left: calc(15px + 40px);
-            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-
-        }
-
-        #created-checkbox-36:not(:checked) ~ #todo-input-36,
-        #created-checkbox-36:not(:checked) ~ .created-checkbox-label {
-            border-bottom: 1px solid #e6e6e6;
-        }
-
         #todo-input-36 {
             order: 4610;
         }
@@ -2980,24 +2089,11 @@ body  {
         #created-checkbox-36:checked ~ #created-checkbox-label-36 {
             display: none !important;
         }
-        #done-checkbox-36 {
-            display: none;
-        }
-        #mark-done-checkbox-label-36,
-        #mark-undone-checkbox-label-36 {
-            display: none;
-        }
+
         #deleted-checkbox-label-36 {
             display: none;
         }
-        #created-checkbox-36:checked ~ #done-checkbox-36:not(:checked) ~ #mark-done-checkbox-label-36 {
-            display: inline-block;
-            order: 4601;
-        }
-        #created-checkbox-36:checked ~ #done-checkbox-36:checked ~ #mark-undone-checkbox-label-36 {
-            display: inline-block;
-            order: 4601;
-        }
+
         #todo-37 {
             order: 4690;
         }
@@ -3013,19 +2109,6 @@ body  {
             }
 
         
-        #created-checkbox-37:not(:checked) ~ #todo-input-37 {
-            position: absolute;
-            top: 0;
-            padding-left: calc(15px + 40px);
-            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-
-        }
-
-        #created-checkbox-37:not(:checked) ~ #todo-input-37,
-        #created-checkbox-37:not(:checked) ~ .created-checkbox-label {
-            border-bottom: 1px solid #e6e6e6;
-        }
-
         #todo-input-37 {
             order: 4710;
         }
@@ -3042,24 +2125,11 @@ body  {
         #created-checkbox-37:checked ~ #created-checkbox-label-37 {
             display: none !important;
         }
-        #done-checkbox-37 {
-            display: none;
-        }
-        #mark-done-checkbox-label-37,
-        #mark-undone-checkbox-label-37 {
-            display: none;
-        }
+
         #deleted-checkbox-label-37 {
             display: none;
         }
-        #created-checkbox-37:checked ~ #done-checkbox-37:not(:checked) ~ #mark-done-checkbox-label-37 {
-            display: inline-block;
-            order: 4701;
-        }
-        #created-checkbox-37:checked ~ #done-checkbox-37:checked ~ #mark-undone-checkbox-label-37 {
-            display: inline-block;
-            order: 4701;
-        }
+
         #todo-38 {
             order: 4790;
         }
@@ -3075,19 +2145,6 @@ body  {
             }
 
         
-        #created-checkbox-38:not(:checked) ~ #todo-input-38 {
-            position: absolute;
-            top: 0;
-            padding-left: calc(15px + 40px);
-            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-
-        }
-
-        #created-checkbox-38:not(:checked) ~ #todo-input-38,
-        #created-checkbox-38:not(:checked) ~ .created-checkbox-label {
-            border-bottom: 1px solid #e6e6e6;
-        }
-
         #todo-input-38 {
             order: 4810;
         }
@@ -3104,24 +2161,11 @@ body  {
         #created-checkbox-38:checked ~ #created-checkbox-label-38 {
             display: none !important;
         }
-        #done-checkbox-38 {
-            display: none;
-        }
-        #mark-done-checkbox-label-38,
-        #mark-undone-checkbox-label-38 {
-            display: none;
-        }
+
         #deleted-checkbox-label-38 {
             display: none;
         }
-        #created-checkbox-38:checked ~ #done-checkbox-38:not(:checked) ~ #mark-done-checkbox-label-38 {
-            display: inline-block;
-            order: 4801;
-        }
-        #created-checkbox-38:checked ~ #done-checkbox-38:checked ~ #mark-undone-checkbox-label-38 {
-            display: inline-block;
-            order: 4801;
-        }
+
         #todo-39 {
             order: 4890;
         }
@@ -3137,19 +2181,6 @@ body  {
             }
 
         
-        #created-checkbox-39:not(:checked) ~ #todo-input-39 {
-            position: absolute;
-            top: 0;
-            padding-left: calc(15px + 40px);
-            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-
-        }
-
-        #created-checkbox-39:not(:checked) ~ #todo-input-39,
-        #created-checkbox-39:not(:checked) ~ .created-checkbox-label {
-            border-bottom: 1px solid #e6e6e6;
-        }
-
         #todo-input-39 {
             order: 4910;
         }
@@ -3166,24 +2197,11 @@ body  {
         #created-checkbox-39:checked ~ #created-checkbox-label-39 {
             display: none !important;
         }
-        #done-checkbox-39 {
-            display: none;
-        }
-        #mark-done-checkbox-label-39,
-        #mark-undone-checkbox-label-39 {
-            display: none;
-        }
+
         #deleted-checkbox-label-39 {
             display: none;
         }
-        #created-checkbox-39:checked ~ #done-checkbox-39:not(:checked) ~ #mark-done-checkbox-label-39 {
-            display: inline-block;
-            order: 4901;
-        }
-        #created-checkbox-39:checked ~ #done-checkbox-39:checked ~ #mark-undone-checkbox-label-39 {
-            display: inline-block;
-            order: 4901;
-        }
+
         #todo-40 {
             order: 4990;
         }
@@ -3199,19 +2217,6 @@ body  {
             }
 
         
-        #created-checkbox-40:not(:checked) ~ #todo-input-40 {
-            position: absolute;
-            top: 0;
-            padding-left: calc(15px + 40px);
-            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-
-        }
-
-        #created-checkbox-40:not(:checked) ~ #todo-input-40,
-        #created-checkbox-40:not(:checked) ~ .created-checkbox-label {
-            border-bottom: 1px solid #e6e6e6;
-        }
-
         #todo-input-40 {
             order: 5010;
         }
@@ -3228,24 +2233,11 @@ body  {
         #created-checkbox-40:checked ~ #created-checkbox-label-40 {
             display: none !important;
         }
-        #done-checkbox-40 {
-            display: none;
-        }
-        #mark-done-checkbox-label-40,
-        #mark-undone-checkbox-label-40 {
-            display: none;
-        }
+
         #deleted-checkbox-label-40 {
             display: none;
         }
-        #created-checkbox-40:checked ~ #done-checkbox-40:not(:checked) ~ #mark-done-checkbox-label-40 {
-            display: inline-block;
-            order: 5001;
-        }
-        #created-checkbox-40:checked ~ #done-checkbox-40:checked ~ #mark-undone-checkbox-label-40 {
-            display: inline-block;
-            order: 5001;
-        }
+
         #todo-41 {
             order: 5090;
         }
@@ -3261,19 +2253,6 @@ body  {
             }
 
         
-        #created-checkbox-41:not(:checked) ~ #todo-input-41 {
-            position: absolute;
-            top: 0;
-            padding-left: calc(15px + 40px);
-            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-
-        }
-
-        #created-checkbox-41:not(:checked) ~ #todo-input-41,
-        #created-checkbox-41:not(:checked) ~ .created-checkbox-label {
-            border-bottom: 1px solid #e6e6e6;
-        }
-
         #todo-input-41 {
             order: 5110;
         }
@@ -3290,24 +2269,11 @@ body  {
         #created-checkbox-41:checked ~ #created-checkbox-label-41 {
             display: none !important;
         }
-        #done-checkbox-41 {
-            display: none;
-        }
-        #mark-done-checkbox-label-41,
-        #mark-undone-checkbox-label-41 {
-            display: none;
-        }
+
         #deleted-checkbox-label-41 {
             display: none;
         }
-        #created-checkbox-41:checked ~ #done-checkbox-41:not(:checked) ~ #mark-done-checkbox-label-41 {
-            display: inline-block;
-            order: 5101;
-        }
-        #created-checkbox-41:checked ~ #done-checkbox-41:checked ~ #mark-undone-checkbox-label-41 {
-            display: inline-block;
-            order: 5101;
-        }
+
         #todo-42 {
             order: 5190;
         }
@@ -3323,19 +2289,6 @@ body  {
             }
 
         
-        #created-checkbox-42:not(:checked) ~ #todo-input-42 {
-            position: absolute;
-            top: 0;
-            padding-left: calc(15px + 40px);
-            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-
-        }
-
-        #created-checkbox-42:not(:checked) ~ #todo-input-42,
-        #created-checkbox-42:not(:checked) ~ .created-checkbox-label {
-            border-bottom: 1px solid #e6e6e6;
-        }
-
         #todo-input-42 {
             order: 5210;
         }
@@ -3352,24 +2305,11 @@ body  {
         #created-checkbox-42:checked ~ #created-checkbox-label-42 {
             display: none !important;
         }
-        #done-checkbox-42 {
-            display: none;
-        }
-        #mark-done-checkbox-label-42,
-        #mark-undone-checkbox-label-42 {
-            display: none;
-        }
+
         #deleted-checkbox-label-42 {
             display: none;
         }
-        #created-checkbox-42:checked ~ #done-checkbox-42:not(:checked) ~ #mark-done-checkbox-label-42 {
-            display: inline-block;
-            order: 5201;
-        }
-        #created-checkbox-42:checked ~ #done-checkbox-42:checked ~ #mark-undone-checkbox-label-42 {
-            display: inline-block;
-            order: 5201;
-        }
+
         #todo-43 {
             order: 5290;
         }
@@ -3385,19 +2325,6 @@ body  {
             }
 
         
-        #created-checkbox-43:not(:checked) ~ #todo-input-43 {
-            position: absolute;
-            top: 0;
-            padding-left: calc(15px + 40px);
-            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-
-        }
-
-        #created-checkbox-43:not(:checked) ~ #todo-input-43,
-        #created-checkbox-43:not(:checked) ~ .created-checkbox-label {
-            border-bottom: 1px solid #e6e6e6;
-        }
-
         #todo-input-43 {
             order: 5310;
         }
@@ -3414,24 +2341,11 @@ body  {
         #created-checkbox-43:checked ~ #created-checkbox-label-43 {
             display: none !important;
         }
-        #done-checkbox-43 {
-            display: none;
-        }
-        #mark-done-checkbox-label-43,
-        #mark-undone-checkbox-label-43 {
-            display: none;
-        }
+
         #deleted-checkbox-label-43 {
             display: none;
         }
-        #created-checkbox-43:checked ~ #done-checkbox-43:not(:checked) ~ #mark-done-checkbox-label-43 {
-            display: inline-block;
-            order: 5301;
-        }
-        #created-checkbox-43:checked ~ #done-checkbox-43:checked ~ #mark-undone-checkbox-label-43 {
-            display: inline-block;
-            order: 5301;
-        }
+
         #todo-44 {
             order: 5390;
         }
@@ -3447,19 +2361,6 @@ body  {
             }
 
         
-        #created-checkbox-44:not(:checked) ~ #todo-input-44 {
-            position: absolute;
-            top: 0;
-            padding-left: calc(15px + 40px);
-            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-
-        }
-
-        #created-checkbox-44:not(:checked) ~ #todo-input-44,
-        #created-checkbox-44:not(:checked) ~ .created-checkbox-label {
-            border-bottom: 1px solid #e6e6e6;
-        }
-
         #todo-input-44 {
             order: 5410;
         }
@@ -3476,24 +2377,11 @@ body  {
         #created-checkbox-44:checked ~ #created-checkbox-label-44 {
             display: none !important;
         }
-        #done-checkbox-44 {
-            display: none;
-        }
-        #mark-done-checkbox-label-44,
-        #mark-undone-checkbox-label-44 {
-            display: none;
-        }
+
         #deleted-checkbox-label-44 {
             display: none;
         }
-        #created-checkbox-44:checked ~ #done-checkbox-44:not(:checked) ~ #mark-done-checkbox-label-44 {
-            display: inline-block;
-            order: 5401;
-        }
-        #created-checkbox-44:checked ~ #done-checkbox-44:checked ~ #mark-undone-checkbox-label-44 {
-            display: inline-block;
-            order: 5401;
-        }
+
         #todo-45 {
             order: 5490;
         }
@@ -3509,19 +2397,6 @@ body  {
             }
 
         
-        #created-checkbox-45:not(:checked) ~ #todo-input-45 {
-            position: absolute;
-            top: 0;
-            padding-left: calc(15px + 40px);
-            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-
-        }
-
-        #created-checkbox-45:not(:checked) ~ #todo-input-45,
-        #created-checkbox-45:not(:checked) ~ .created-checkbox-label {
-            border-bottom: 1px solid #e6e6e6;
-        }
-
         #todo-input-45 {
             order: 5510;
         }
@@ -3538,24 +2413,11 @@ body  {
         #created-checkbox-45:checked ~ #created-checkbox-label-45 {
             display: none !important;
         }
-        #done-checkbox-45 {
-            display: none;
-        }
-        #mark-done-checkbox-label-45,
-        #mark-undone-checkbox-label-45 {
-            display: none;
-        }
+
         #deleted-checkbox-label-45 {
             display: none;
         }
-        #created-checkbox-45:checked ~ #done-checkbox-45:not(:checked) ~ #mark-done-checkbox-label-45 {
-            display: inline-block;
-            order: 5501;
-        }
-        #created-checkbox-45:checked ~ #done-checkbox-45:checked ~ #mark-undone-checkbox-label-45 {
-            display: inline-block;
-            order: 5501;
-        }
+
         #todo-46 {
             order: 5590;
         }
@@ -3571,19 +2433,6 @@ body  {
             }
 
         
-        #created-checkbox-46:not(:checked) ~ #todo-input-46 {
-            position: absolute;
-            top: 0;
-            padding-left: calc(15px + 40px);
-            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-
-        }
-
-        #created-checkbox-46:not(:checked) ~ #todo-input-46,
-        #created-checkbox-46:not(:checked) ~ .created-checkbox-label {
-            border-bottom: 1px solid #e6e6e6;
-        }
-
         #todo-input-46 {
             order: 5610;
         }
@@ -3600,24 +2449,11 @@ body  {
         #created-checkbox-46:checked ~ #created-checkbox-label-46 {
             display: none !important;
         }
-        #done-checkbox-46 {
-            display: none;
-        }
-        #mark-done-checkbox-label-46,
-        #mark-undone-checkbox-label-46 {
-            display: none;
-        }
+
         #deleted-checkbox-label-46 {
             display: none;
         }
-        #created-checkbox-46:checked ~ #done-checkbox-46:not(:checked) ~ #mark-done-checkbox-label-46 {
-            display: inline-block;
-            order: 5601;
-        }
-        #created-checkbox-46:checked ~ #done-checkbox-46:checked ~ #mark-undone-checkbox-label-46 {
-            display: inline-block;
-            order: 5601;
-        }
+
         #todo-47 {
             order: 5690;
         }
@@ -3633,19 +2469,6 @@ body  {
             }
 
         
-        #created-checkbox-47:not(:checked) ~ #todo-input-47 {
-            position: absolute;
-            top: 0;
-            padding-left: calc(15px + 40px);
-            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-
-        }
-
-        #created-checkbox-47:not(:checked) ~ #todo-input-47,
-        #created-checkbox-47:not(:checked) ~ .created-checkbox-label {
-            border-bottom: 1px solid #e6e6e6;
-        }
-
         #todo-input-47 {
             order: 5710;
         }
@@ -3662,24 +2485,11 @@ body  {
         #created-checkbox-47:checked ~ #created-checkbox-label-47 {
             display: none !important;
         }
-        #done-checkbox-47 {
-            display: none;
-        }
-        #mark-done-checkbox-label-47,
-        #mark-undone-checkbox-label-47 {
-            display: none;
-        }
+
         #deleted-checkbox-label-47 {
             display: none;
         }
-        #created-checkbox-47:checked ~ #done-checkbox-47:not(:checked) ~ #mark-done-checkbox-label-47 {
-            display: inline-block;
-            order: 5701;
-        }
-        #created-checkbox-47:checked ~ #done-checkbox-47:checked ~ #mark-undone-checkbox-label-47 {
-            display: inline-block;
-            order: 5701;
-        }
+
         #todo-48 {
             order: 5790;
         }
@@ -3695,19 +2505,6 @@ body  {
             }
 
         
-        #created-checkbox-48:not(:checked) ~ #todo-input-48 {
-            position: absolute;
-            top: 0;
-            padding-left: calc(15px + 40px);
-            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-
-        }
-
-        #created-checkbox-48:not(:checked) ~ #todo-input-48,
-        #created-checkbox-48:not(:checked) ~ .created-checkbox-label {
-            border-bottom: 1px solid #e6e6e6;
-        }
-
         #todo-input-48 {
             order: 5810;
         }
@@ -3724,24 +2521,11 @@ body  {
         #created-checkbox-48:checked ~ #created-checkbox-label-48 {
             display: none !important;
         }
-        #done-checkbox-48 {
-            display: none;
-        }
-        #mark-done-checkbox-label-48,
-        #mark-undone-checkbox-label-48 {
-            display: none;
-        }
+
         #deleted-checkbox-label-48 {
             display: none;
         }
-        #created-checkbox-48:checked ~ #done-checkbox-48:not(:checked) ~ #mark-done-checkbox-label-48 {
-            display: inline-block;
-            order: 5801;
-        }
-        #created-checkbox-48:checked ~ #done-checkbox-48:checked ~ #mark-undone-checkbox-label-48 {
-            display: inline-block;
-            order: 5801;
-        }
+
         #todo-49 {
             order: 5890;
         }
@@ -3757,19 +2541,6 @@ body  {
             }
 
         
-        #created-checkbox-49:not(:checked) ~ #todo-input-49 {
-            position: absolute;
-            top: 0;
-            padding-left: calc(15px + 40px);
-            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-
-        }
-
-        #created-checkbox-49:not(:checked) ~ #todo-input-49,
-        #created-checkbox-49:not(:checked) ~ .created-checkbox-label {
-            border-bottom: 1px solid #e6e6e6;
-        }
-
         #todo-input-49 {
             order: 5910;
         }
@@ -3786,24 +2557,11 @@ body  {
         #created-checkbox-49:checked ~ #created-checkbox-label-49 {
             display: none !important;
         }
-        #done-checkbox-49 {
-            display: none;
-        }
-        #mark-done-checkbox-label-49,
-        #mark-undone-checkbox-label-49 {
-            display: none;
-        }
+
         #deleted-checkbox-label-49 {
             display: none;
         }
-        #created-checkbox-49:checked ~ #done-checkbox-49:not(:checked) ~ #mark-done-checkbox-label-49 {
-            display: inline-block;
-            order: 5901;
-        }
-        #created-checkbox-49:checked ~ #done-checkbox-49:checked ~ #mark-undone-checkbox-label-49 {
-            display: inline-block;
-            order: 5901;
-        }
+
         #todo-50 {
             order: 5990;
         }
@@ -3819,19 +2577,6 @@ body  {
             }
 
         
-        #created-checkbox-50:not(:checked) ~ #todo-input-50 {
-            position: absolute;
-            top: 0;
-            padding-left: calc(15px + 40px);
-            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-
-        }
-
-        #created-checkbox-50:not(:checked) ~ #todo-input-50,
-        #created-checkbox-50:not(:checked) ~ .created-checkbox-label {
-            border-bottom: 1px solid #e6e6e6;
-        }
-
         #todo-input-50 {
             order: 6010;
         }
@@ -3848,24 +2593,11 @@ body  {
         #created-checkbox-50:checked ~ #created-checkbox-label-50 {
             display: none !important;
         }
-        #done-checkbox-50 {
-            display: none;
-        }
-        #mark-done-checkbox-label-50,
-        #mark-undone-checkbox-label-50 {
-            display: none;
-        }
+
         #deleted-checkbox-label-50 {
             display: none;
         }
-        #created-checkbox-50:checked ~ #done-checkbox-50:not(:checked) ~ #mark-done-checkbox-label-50 {
-            display: inline-block;
-            order: 6001;
-        }
-        #created-checkbox-50:checked ~ #done-checkbox-50:checked ~ #mark-undone-checkbox-label-50 {
-            display: inline-block;
-            order: 6001;
-        }
+
         #todo-51 {
             order: 6090;
         }
