@@ -6,6 +6,8 @@ the :checked and :target pseudo selectors.
 
 Styling based on [TodoMVC](http://todomvc.com/).
 
+[Live demo](http://www.mattzeunert.com/TodoCSS/#/)
+
 ## What works
 
 - Add new todo item (up to 50 items)
