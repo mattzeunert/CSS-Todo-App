@@ -27,12 +27,10 @@
 /* Show mark as done if item is created and not marked as done yet */
 .created-checkbox:checked ~ .done-checkbox:not(:checked) ~ .mark-done-checkbox-label {
     display: inline-block;
-    order: 1
 }
 /* Show mark as undone if item is created and marked as done */
 .created-checkbox:checked ~ .done-checkbox:checked ~ .mark-undone-checkbox-label {
     display: inline-block;
-    order: 1
 }
 
 /* Item creation */
@@ -104,7 +102,6 @@ input:not(:valid) ~ .created-checkbox-label {
 
 .created-checkbox:checked ~ .deleted-checkbox-label {
     display: inline-block;
-    order: 11
 }
 
 /* Show the delete icon on hover over any of the item elements */
@@ -193,8 +190,6 @@ body  {
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
     font-smoothing: antialiased;
-
-    order: 10;
 }
 
 .todo-input,
@@ -206,12 +201,8 @@ body  {
     display: flex;
     width: 100%;
     flex-wrap: wrap;
-    order: 20;
 }
 
-.created-checkbox:checked + input {
-    order: 2
-}
 
 @media (max-width: 600px) {
     body {
