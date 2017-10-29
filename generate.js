@@ -32,6 +32,7 @@ html += `<!doctype html>
 		<title>Todo CSS</title>
         <link rel="stylesheet" href="./todomvc-app.css" />
         <link rel="stylesheet" href="./todo.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
         <div id="/completed" class="completed-filter">

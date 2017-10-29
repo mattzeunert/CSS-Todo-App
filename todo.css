@@ -212,3 +212,9 @@ body  {
 .created-checkbox:checked + input {
     order: 2
 }
+
+@media (max-width: 600px) {
+    body {
+        padding: 5px;
+    }
+}
