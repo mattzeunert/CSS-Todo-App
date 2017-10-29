@@ -33,7 +33,7 @@ body  {
     -moz-font-smoothing: antialiased;
     font-smoothing: antialiased;
 }
-.add-checkbox-label {
+.created-checkbox-label {
     position: absolute;
     top: 0;
     right: 0px;
@@ -43,7 +43,7 @@ body  {
 .todo-input:not(#todo-input-1) {
     display: none;
 }
-.add-checkbox-label:not(#add-checkbox-label-1) {
+.created-checkbox-label:not(#created-checkbox-label-1) {
     display: none;
 }
 .todo {
@@ -81,24 +81,24 @@ function generateTodo(i) {
     }
 
     css += `
-        #add-checkbox-${i}:not(:checked) ~ #todo-input-${i} {
+        #created-checkbox-${i}:not(:checked) ~ #todo-input-${i} {
             position: absolute;
             top: 0;
         }
         #todo-input-${i} {
             order: ${getOrder(10)};
         }
-        #add-checkbox-${i} {
+        #created-checkbox-${i} {
             display: none;
         }
 
-        #add-checkbox-${i}:checked + input {
+        #created-checkbox-${i}:checked + input {
             border: none;
         }
-        #add-checkbox-${i}:checked + input {
+        #created-checkbox-${i}:checked + input {
             order: ${getOrder(2)};
         }
-        #add-checkbox-${i}:checked ~ #add-checkbox-label-${i} {
+        #created-checkbox-${i}:checked ~ #created-checkbox-label-${i} {
             display: none !important;
         }
         #done-checkbox-${i} {
@@ -108,11 +108,11 @@ function generateTodo(i) {
         #mark-undone-checkbox-label-${i} {
             display: none;
         }
-        #add-checkbox-${i}:checked ~ #done-checkbox-${i}:not(:checked) ~ #mark-done-checkbox-label-${i} {
+        #created-checkbox-${i}:checked ~ #done-checkbox-${i}:not(:checked) ~ #mark-done-checkbox-label-${i} {
             display: inline-block;
             order: ${getOrder(1)};
         }
-        #add-checkbox-${i}:checked ~ #done-checkbox-${i}:checked ~ #mark-undone-checkbox-label-${i} {
+        #created-checkbox-${i}:checked ~ #done-checkbox-${i}:checked ~ #mark-undone-checkbox-label-${i} {
             display: inline-block;
             order: ${getOrder(1)};
         }
@@ -120,23 +120,23 @@ function generateTodo(i) {
             order: ${getOrder(90)};
         }
 
-        .active-filter:target #add-checkbox-${i}:checked ~ #done-checkbox-${i}:checked ~ #todo-input-${i},
-        .active-filter:target #add-checkbox-${i}:checked ~ #done-checkbox-${i}:checked ~ #mark-done-checkbox-label-${i},
-        .active-filter:target #add-checkbox-${i}:checked ~ #done-checkbox-${i}:checked ~ #mark-undone-checkbox-label-${i} {
+        .active-filter:target #created-checkbox-${i}:checked ~ #done-checkbox-${i}:checked ~ #todo-input-${i},
+        .active-filter:target #created-checkbox-${i}:checked ~ #done-checkbox-${i}:checked ~ #mark-done-checkbox-label-${i},
+        .active-filter:target #created-checkbox-${i}:checked ~ #done-checkbox-${i}:checked ~ #mark-undone-checkbox-label-${i} {
             display: none !important;
         }
 
-        .completed-filter:target #add-checkbox-${i}:checked ~ #done-checkbox-${i}:not(:checked) ~ #todo-input-${i},
-        .completed-filter:target #add-checkbox-${i}:checked ~ #done-checkbox-${i}:not(:checked) ~ #mark-done-checkbox-label-${i},
-        .completed-filter:target #add-checkbox-${i}:checked ~ #done-checkbox-${i}:not(:checked) ~ #mark-undone-checkbox-label-${i} {
+        .completed-filter:target #created-checkbox-${i}:checked ~ #done-checkbox-${i}:not(:checked) ~ #todo-input-${i},
+        .completed-filter:target #created-checkbox-${i}:checked ~ #done-checkbox-${i}:not(:checked) ~ #mark-done-checkbox-label-${i},
+        .completed-filter:target #created-checkbox-${i}:checked ~ #done-checkbox-${i}:not(:checked) ~ #mark-undone-checkbox-label-${i} {
             display: none !important;
         }
     `
     if (i > 1) {
         const previousI = i - 1;
         css += `
-            #add-checkbox-${previousI}:checked ~ #todo-${i} > #todo-input-${i},
-            #add-checkbox-${previousI}:checked ~ #todo-${i} > #add-checkbox-label-${i} {
+            #created-checkbox-${previousI}:checked ~ #todo-${i} > #todo-input-${i},
+            #created-checkbox-${previousI}:checked ~ #todo-${i} > #created-checkbox-label-${i} {
                 display: inline-block;
             }
 
@@ -145,8 +145,8 @@ function generateTodo(i) {
 
     return `
         <div id="todo-${i}" class="todo">
-            <input type="checkbox" id="add-checkbox-${i}" ${i <= 2 ? ' checked': ''} />
-            <label for="add-checkbox-${i}" class="add-checkbox-label" id="add-checkbox-label-${i}">Add</label>
+            <input type="checkbox" id="created-checkbox-${i}" ${i <= 2 ? ' checked': ''} />
+            <label for="created-checkbox-${i}" class="created-checkbox-label" id="created-checkbox-label-${i}">Add</label>
             <input type="checkbox" class="done-checkbox" id="done-checkbox-${i}" ${i <= 1 ? ' checked': ''} />
             <label for="done-checkbox-${i}" id="mark-done-checkbox-label-${i}" class="mark-done-checkbox-label"></label>
             <label for="done-checkbox-${i}" id="mark-undone-checkbox-label-${i}" class="mark-undone-checkbox-label"></label>
