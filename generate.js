@@ -73,4 +73,4 @@ html += `<!doctype html>
     </body>
 </html>`
 
-fs.writeFileSync('todo.html', html);
+fs.writeFileSync('index.html', html);
