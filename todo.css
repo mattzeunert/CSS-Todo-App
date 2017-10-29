@@ -20,8 +20,8 @@
 .mark-done-checkbox-label,
 .mark-undone-checkbox-label {
     cursor: pointer;
-    padding-top: 10px;
-    padding-bottom: 9px;
+    padding-top: 13px;
+    padding-bottom: 11px;
     border-bottom: 1px solid #ededed;
 }
 /* Show mark as done if item is created and not marked as done yet */
@@ -92,8 +92,9 @@ input:not(:valid) ~ .created-checkbox-label {
     color: transparent;
     border-bottom: 1px solid #ededed;
     box-sizing: border-box;
-    padding-top: 22px;
-    padding-bottom: 22px;
+    /* unequal padding because the x icon itself is not centered on the line of text*/
+    padding-top: 17px;
+    padding-bottom: 28px;
     cursor: pointer;
 }
 
