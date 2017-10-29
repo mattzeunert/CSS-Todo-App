@@ -154,7 +154,7 @@ input:not(:valid) ~ .created-checkbox-label {
 body  {
     counter-reset: items-left;
 }
-.created-checkbox:checked ~ .done-checkbox:not(:checked) ~ .items-left-counter-helper {
+.created-checkbox:checked ~ .deleted-checkbox:not(:checked) ~ .done-checkbox:not(:checked) ~ .items-left-counter-helper {
     /* items-left-counter-helper is an empty element that's not hidden by filters */
     counter-increment: items-left;
 }
