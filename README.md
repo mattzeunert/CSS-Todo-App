@@ -1,7 +1,7 @@
 # CSS Todo App
 
-Basic todo app functionality without using JavaScript. Instead it uses
-pre-rendered HTML, the ~ combinator, CSS counters, and
+Basic todo app functionality implemented without using JavaScript.
+Instead it uses pre-rendered HTML, the ~ combinator, CSS counters, and
 the :checked and :target pseudo selectors.
 
 Styling based on [TodoMVC](http://todomvc.com/).

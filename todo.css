@@ -22,6 +22,7 @@
     cursor: pointer;
     padding-top: 10px;
     padding-bottom: 9px;
+    border-bottom: 1px solid #ededed;
 }
 /* Show mark as done if item is created and not marked as done yet */
 .created-checkbox:checked ~ .done-checkbox:not(:checked) ~ .mark-done-checkbox-label {
@@ -82,28 +83,26 @@ input:not(:valid) ~ .created-checkbox-label {
 
 .deleted-checkbox-label {
     display: none;
-	width: 40px;
-	height: 40px;
+	width: 60px;
 	margin: auto 0;
 	font-size: 30px;
-	color: #cc9a9a;
+
 	transition: color 0.2s ease-out;
     text-align: center;
-    opacity: 0;
-    padding-top: 12px;
-    padding-bottom: 11px;
+    color: transparent;
+    border-bottom: 1px solid #ededed;
+    box-sizing: border-box;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    cursor: pointer;
 }
 
 .deleted-checkbox-label:hover {
-	color: #af5b5e;
+	color: #af5b5e !important;
 }
 
 .deleted-checkbox-label:after {
 	content: '×';
-}
-
-.deleted-checkbox-label {
-    cursor: pointer;
 }
 
 .created-checkbox:checked ~ .deleted-checkbox-label {
@@ -116,7 +115,7 @@ input:not(:valid) ~ .created-checkbox-label {
 .created-checkbox:checked ~ .mark-undone-checkbox-label:hover ~ .deleted-checkbox-label,
 .created-checkbox:checked ~ .mark-done-checkbox-label:hover ~ .deleted-checkbox-label,
 .created-checkbox:checked ~ .todo-input:hover ~ .deleted-checkbox-label {
-    opacity: 1;
+    color: #cc9a9a;
 }
 
 /* If item is deleted hide its elements */
@@ -180,8 +179,10 @@ body  {
     display: block;
     line-height: 1.2;
     transition: color 0.4s;
-
+    border: 0;
     border: none;
+    border-bottom: 1px solid #ededed;
+
     background: rgba(0, 0, 0, 0.003);
     box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
     position: relative;
@@ -191,7 +192,6 @@ body  {
     font-family: inherit;
     font-weight: inherit;
     line-height: 1.4em;
-    border: 0;
     outline: none;
     color: inherit;
     -webkit-font-smoothing: antialiased;
