@@ -145,12 +145,12 @@ function generateTodo(i) {
 
     return `
         <div id="todo-${i}" class="todo">
-            <input type="checkbox" id="add-checkbox-${i}" />
+            <input type="checkbox" id="add-checkbox-${i}" ${i <= 2 ? ' checked': ''} />
             <label for="add-checkbox-${i}" class="add-checkbox-label" id="add-checkbox-label-${i}">Add</label>
-            <input type="checkbox" class="done-checkbox" id="done-checkbox-${i}"/>
+            <input type="checkbox" class="done-checkbox" id="done-checkbox-${i}" ${i <= 1 ? ' checked': ''} />
             <label for="done-checkbox-${i}" id="mark-done-checkbox-label-${i}" class="mark-done-checkbox-label"></label>
             <label for="done-checkbox-${i}" id="mark-undone-checkbox-label-${i}" class="mark-undone-checkbox-label"></label>
-            <input type="text" value="todo ${i}" id="todo-input-${i}" class="todo-input" placeholder="What needs to be done?"/>
+            <input type="text" value="${ {1: 'Build Todo CSS', 2: 'Eat cookies'}[i] || ''}" id="todo-input-${i}" class="todo-input" placeholder="What needs to be done?"/>
             ${generateTodo(i + 1)}
         </div>
     `
