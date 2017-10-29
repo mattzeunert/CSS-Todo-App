@@ -132,6 +132,21 @@ body  {
     display: none !important;
 }
 
+/* Hide items marked as done if filter is active */
+.active-filter:target .created-checkbox:checked ~ .done-checkbox:checked ~ .todo-input,
+.active-filter:target .created-checkbox:checked ~ .done-checkbox:checked ~ .mark-done-checkbox-label,
+.active-filter:target .created-checkbox:checked ~ .done-checkbox:checked ~ .mark-undone-checkbox-label,
+.active-filter:target .created-checkbox:checked ~ .done-checkbox:checked ~ .deleted-checkbox-label {
+    display: none !important;
+}
+
+/* Hide items not marked done if filter is completed */
+.completed-filter:target .created-checkbox:checked ~ .done-checkbox:not(:checked) ~ .todo-input,
+.completed-filter:target .created-checkbox:checked ~ .done-checkbox:not(:checked) ~ .mark-done-checkbox-label,
+.completed-filter:target .created-checkbox:checked ~ .done-checkbox:not(:checked) ~ .mark-undone-checkbox-label,
+.completed-filter:target .created-checkbox:checked ~ .done-checkbox:not(:checked) ~ .deleted-checkbox-label {
+    display: none !important;
+}
 `
 
 const MAX_ITEMS = 50
@@ -203,21 +218,6 @@ function generateTodo(i) {
         #created-checkbox-${i}:checked ~ #deleted-checkbox-label-${i} {
             display: inline-block;
             order: ${getOrder(11)}
-        }
-
-
-        .active-filter:target #created-checkbox-${i}:checked ~ #done-checkbox-${i}:checked ~ #todo-input-${i},
-        .active-filter:target #created-checkbox-${i}:checked ~ #done-checkbox-${i}:checked ~ #mark-done-checkbox-label-${i},
-        .active-filter:target #created-checkbox-${i}:checked ~ #done-checkbox-${i}:checked ~ #mark-undone-checkbox-label-${i},
-        .active-filter:target #created-checkbox-${i}:checked ~ #done-checkbox-${i}:checked ~ .deleted-checkbox-label {
-            display: none !important;
-        }
-
-        .completed-filter:target #created-checkbox-${i}:checked ~ #done-checkbox-${i}:not(:checked) ~ #todo-input-${i},
-        .completed-filter:target #created-checkbox-${i}:checked ~ #done-checkbox-${i}:not(:checked) ~ #mark-done-checkbox-label-${i},
-        .completed-filter:target #created-checkbox-${i}:checked ~ #done-checkbox-${i}:not(:checked) ~ #mark-undone-checkbox-label-${i},
-        .completed-filter:target #created-checkbox-${i}:checked ~ #done-checkbox-${i}:not(:checked) ~ .deleted-checkbox-label {
-            display: none !important;
         }
     `
     if (i > 1) {

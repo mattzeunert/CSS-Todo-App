@@ -771,6 +771,21 @@ body  {
     display: none !important;
 }
 
+/* Hide items marked as done if filter is active */
+.active-filter:target .created-checkbox:checked ~ .done-checkbox:checked ~ .todo-input,
+.active-filter:target .created-checkbox:checked ~ .done-checkbox:checked ~ .mark-done-checkbox-label,
+.active-filter:target .created-checkbox:checked ~ .done-checkbox:checked ~ .mark-undone-checkbox-label,
+.active-filter:target .created-checkbox:checked ~ .done-checkbox:checked ~ .deleted-checkbox-label {
+    display: none !important;
+}
+
+/* Hide items not marked done if filter is completed */
+.completed-filter:target .created-checkbox:checked ~ .done-checkbox:not(:checked) ~ .todo-input,
+.completed-filter:target .created-checkbox:checked ~ .done-checkbox:not(:checked) ~ .mark-done-checkbox-label,
+.completed-filter:target .created-checkbox:checked ~ .done-checkbox:not(:checked) ~ .mark-undone-checkbox-label,
+.completed-filter:target .created-checkbox:checked ~ .done-checkbox:not(:checked) ~ .deleted-checkbox-label {
+    display: none !important;
+}
 
         #created-checkbox-1:not(:checked) ~ #todo-input-1 {
             position: absolute;
@@ -827,21 +842,6 @@ body  {
             display: inline-block;
             order: 1111
         }
-
-
-        .active-filter:target #created-checkbox-1:checked ~ #done-checkbox-1:checked ~ #todo-input-1,
-        .active-filter:target #created-checkbox-1:checked ~ #done-checkbox-1:checked ~ #mark-done-checkbox-label-1,
-        .active-filter:target #created-checkbox-1:checked ~ #done-checkbox-1:checked ~ #mark-undone-checkbox-label-1,
-        .active-filter:target #created-checkbox-1:checked ~ #done-checkbox-1:checked ~ .deleted-checkbox-label {
-            display: none !important;
-        }
-
-        .completed-filter:target #created-checkbox-1:checked ~ #done-checkbox-1:not(:checked) ~ #todo-input-1,
-        .completed-filter:target #created-checkbox-1:checked ~ #done-checkbox-1:not(:checked) ~ #mark-done-checkbox-label-1,
-        .completed-filter:target #created-checkbox-1:checked ~ #done-checkbox-1:not(:checked) ~ #mark-undone-checkbox-label-1,
-        .completed-filter:target #created-checkbox-1:checked ~ #done-checkbox-1:not(:checked) ~ .deleted-checkbox-label {
-            display: none !important;
-        }
     
         #created-checkbox-2:not(:checked) ~ #todo-input-2 {
             position: absolute;
@@ -897,21 +897,6 @@ body  {
         #created-checkbox-2:checked ~ #deleted-checkbox-label-2 {
             display: inline-block;
             order: 1211
-        }
-
-
-        .active-filter:target #created-checkbox-2:checked ~ #done-checkbox-2:checked ~ #todo-input-2,
-        .active-filter:target #created-checkbox-2:checked ~ #done-checkbox-2:checked ~ #mark-done-checkbox-label-2,
-        .active-filter:target #created-checkbox-2:checked ~ #done-checkbox-2:checked ~ #mark-undone-checkbox-label-2,
-        .active-filter:target #created-checkbox-2:checked ~ #done-checkbox-2:checked ~ .deleted-checkbox-label {
-            display: none !important;
-        }
-
-        .completed-filter:target #created-checkbox-2:checked ~ #done-checkbox-2:not(:checked) ~ #todo-input-2,
-        .completed-filter:target #created-checkbox-2:checked ~ #done-checkbox-2:not(:checked) ~ #mark-done-checkbox-label-2,
-        .completed-filter:target #created-checkbox-2:checked ~ #done-checkbox-2:not(:checked) ~ #mark-undone-checkbox-label-2,
-        .completed-filter:target #created-checkbox-2:checked ~ #done-checkbox-2:not(:checked) ~ .deleted-checkbox-label {
-            display: none !important;
         }
     
             #created-checkbox-1:checked ~ #todo-2 > #todo-input-2,
@@ -975,21 +960,6 @@ body  {
             display: inline-block;
             order: 1311
         }
-
-
-        .active-filter:target #created-checkbox-3:checked ~ #done-checkbox-3:checked ~ #todo-input-3,
-        .active-filter:target #created-checkbox-3:checked ~ #done-checkbox-3:checked ~ #mark-done-checkbox-label-3,
-        .active-filter:target #created-checkbox-3:checked ~ #done-checkbox-3:checked ~ #mark-undone-checkbox-label-3,
-        .active-filter:target #created-checkbox-3:checked ~ #done-checkbox-3:checked ~ .deleted-checkbox-label {
-            display: none !important;
-        }
-
-        .completed-filter:target #created-checkbox-3:checked ~ #done-checkbox-3:not(:checked) ~ #todo-input-3,
-        .completed-filter:target #created-checkbox-3:checked ~ #done-checkbox-3:not(:checked) ~ #mark-done-checkbox-label-3,
-        .completed-filter:target #created-checkbox-3:checked ~ #done-checkbox-3:not(:checked) ~ #mark-undone-checkbox-label-3,
-        .completed-filter:target #created-checkbox-3:checked ~ #done-checkbox-3:not(:checked) ~ .deleted-checkbox-label {
-            display: none !important;
-        }
     
             #created-checkbox-2:checked ~ #todo-3 > #todo-input-3,
             #created-checkbox-2:checked ~ #todo-3 > #created-checkbox-label-3 {
@@ -1051,21 +1021,6 @@ body  {
         #created-checkbox-4:checked ~ #deleted-checkbox-label-4 {
             display: inline-block;
             order: 1411
-        }
-
-
-        .active-filter:target #created-checkbox-4:checked ~ #done-checkbox-4:checked ~ #todo-input-4,
-        .active-filter:target #created-checkbox-4:checked ~ #done-checkbox-4:checked ~ #mark-done-checkbox-label-4,
-        .active-filter:target #created-checkbox-4:checked ~ #done-checkbox-4:checked ~ #mark-undone-checkbox-label-4,
-        .active-filter:target #created-checkbox-4:checked ~ #done-checkbox-4:checked ~ .deleted-checkbox-label {
-            display: none !important;
-        }
-
-        .completed-filter:target #created-checkbox-4:checked ~ #done-checkbox-4:not(:checked) ~ #todo-input-4,
-        .completed-filter:target #created-checkbox-4:checked ~ #done-checkbox-4:not(:checked) ~ #mark-done-checkbox-label-4,
-        .completed-filter:target #created-checkbox-4:checked ~ #done-checkbox-4:not(:checked) ~ #mark-undone-checkbox-label-4,
-        .completed-filter:target #created-checkbox-4:checked ~ #done-checkbox-4:not(:checked) ~ .deleted-checkbox-label {
-            display: none !important;
         }
     
             #created-checkbox-3:checked ~ #todo-4 > #todo-input-4,
@@ -1129,21 +1084,6 @@ body  {
             display: inline-block;
             order: 1511
         }
-
-
-        .active-filter:target #created-checkbox-5:checked ~ #done-checkbox-5:checked ~ #todo-input-5,
-        .active-filter:target #created-checkbox-5:checked ~ #done-checkbox-5:checked ~ #mark-done-checkbox-label-5,
-        .active-filter:target #created-checkbox-5:checked ~ #done-checkbox-5:checked ~ #mark-undone-checkbox-label-5,
-        .active-filter:target #created-checkbox-5:checked ~ #done-checkbox-5:checked ~ .deleted-checkbox-label {
-            display: none !important;
-        }
-
-        .completed-filter:target #created-checkbox-5:checked ~ #done-checkbox-5:not(:checked) ~ #todo-input-5,
-        .completed-filter:target #created-checkbox-5:checked ~ #done-checkbox-5:not(:checked) ~ #mark-done-checkbox-label-5,
-        .completed-filter:target #created-checkbox-5:checked ~ #done-checkbox-5:not(:checked) ~ #mark-undone-checkbox-label-5,
-        .completed-filter:target #created-checkbox-5:checked ~ #done-checkbox-5:not(:checked) ~ .deleted-checkbox-label {
-            display: none !important;
-        }
     
             #created-checkbox-4:checked ~ #todo-5 > #todo-input-5,
             #created-checkbox-4:checked ~ #todo-5 > #created-checkbox-label-5 {
@@ -1205,21 +1145,6 @@ body  {
         #created-checkbox-6:checked ~ #deleted-checkbox-label-6 {
             display: inline-block;
             order: 1611
-        }
-
-
-        .active-filter:target #created-checkbox-6:checked ~ #done-checkbox-6:checked ~ #todo-input-6,
-        .active-filter:target #created-checkbox-6:checked ~ #done-checkbox-6:checked ~ #mark-done-checkbox-label-6,
-        .active-filter:target #created-checkbox-6:checked ~ #done-checkbox-6:checked ~ #mark-undone-checkbox-label-6,
-        .active-filter:target #created-checkbox-6:checked ~ #done-checkbox-6:checked ~ .deleted-checkbox-label {
-            display: none !important;
-        }
-
-        .completed-filter:target #created-checkbox-6:checked ~ #done-checkbox-6:not(:checked) ~ #todo-input-6,
-        .completed-filter:target #created-checkbox-6:checked ~ #done-checkbox-6:not(:checked) ~ #mark-done-checkbox-label-6,
-        .completed-filter:target #created-checkbox-6:checked ~ #done-checkbox-6:not(:checked) ~ #mark-undone-checkbox-label-6,
-        .completed-filter:target #created-checkbox-6:checked ~ #done-checkbox-6:not(:checked) ~ .deleted-checkbox-label {
-            display: none !important;
         }
     
             #created-checkbox-5:checked ~ #todo-6 > #todo-input-6,
@@ -1283,21 +1208,6 @@ body  {
             display: inline-block;
             order: 1711
         }
-
-
-        .active-filter:target #created-checkbox-7:checked ~ #done-checkbox-7:checked ~ #todo-input-7,
-        .active-filter:target #created-checkbox-7:checked ~ #done-checkbox-7:checked ~ #mark-done-checkbox-label-7,
-        .active-filter:target #created-checkbox-7:checked ~ #done-checkbox-7:checked ~ #mark-undone-checkbox-label-7,
-        .active-filter:target #created-checkbox-7:checked ~ #done-checkbox-7:checked ~ .deleted-checkbox-label {
-            display: none !important;
-        }
-
-        .completed-filter:target #created-checkbox-7:checked ~ #done-checkbox-7:not(:checked) ~ #todo-input-7,
-        .completed-filter:target #created-checkbox-7:checked ~ #done-checkbox-7:not(:checked) ~ #mark-done-checkbox-label-7,
-        .completed-filter:target #created-checkbox-7:checked ~ #done-checkbox-7:not(:checked) ~ #mark-undone-checkbox-label-7,
-        .completed-filter:target #created-checkbox-7:checked ~ #done-checkbox-7:not(:checked) ~ .deleted-checkbox-label {
-            display: none !important;
-        }
     
             #created-checkbox-6:checked ~ #todo-7 > #todo-input-7,
             #created-checkbox-6:checked ~ #todo-7 > #created-checkbox-label-7 {
@@ -1359,21 +1269,6 @@ body  {
         #created-checkbox-8:checked ~ #deleted-checkbox-label-8 {
             display: inline-block;
             order: 1811
-        }
-
-
-        .active-filter:target #created-checkbox-8:checked ~ #done-checkbox-8:checked ~ #todo-input-8,
-        .active-filter:target #created-checkbox-8:checked ~ #done-checkbox-8:checked ~ #mark-done-checkbox-label-8,
-        .active-filter:target #created-checkbox-8:checked ~ #done-checkbox-8:checked ~ #mark-undone-checkbox-label-8,
-        .active-filter:target #created-checkbox-8:checked ~ #done-checkbox-8:checked ~ .deleted-checkbox-label {
-            display: none !important;
-        }
-
-        .completed-filter:target #created-checkbox-8:checked ~ #done-checkbox-8:not(:checked) ~ #todo-input-8,
-        .completed-filter:target #created-checkbox-8:checked ~ #done-checkbox-8:not(:checked) ~ #mark-done-checkbox-label-8,
-        .completed-filter:target #created-checkbox-8:checked ~ #done-checkbox-8:not(:checked) ~ #mark-undone-checkbox-label-8,
-        .completed-filter:target #created-checkbox-8:checked ~ #done-checkbox-8:not(:checked) ~ .deleted-checkbox-label {
-            display: none !important;
         }
     
             #created-checkbox-7:checked ~ #todo-8 > #todo-input-8,
@@ -1437,21 +1332,6 @@ body  {
             display: inline-block;
             order: 1911
         }
-
-
-        .active-filter:target #created-checkbox-9:checked ~ #done-checkbox-9:checked ~ #todo-input-9,
-        .active-filter:target #created-checkbox-9:checked ~ #done-checkbox-9:checked ~ #mark-done-checkbox-label-9,
-        .active-filter:target #created-checkbox-9:checked ~ #done-checkbox-9:checked ~ #mark-undone-checkbox-label-9,
-        .active-filter:target #created-checkbox-9:checked ~ #done-checkbox-9:checked ~ .deleted-checkbox-label {
-            display: none !important;
-        }
-
-        .completed-filter:target #created-checkbox-9:checked ~ #done-checkbox-9:not(:checked) ~ #todo-input-9,
-        .completed-filter:target #created-checkbox-9:checked ~ #done-checkbox-9:not(:checked) ~ #mark-done-checkbox-label-9,
-        .completed-filter:target #created-checkbox-9:checked ~ #done-checkbox-9:not(:checked) ~ #mark-undone-checkbox-label-9,
-        .completed-filter:target #created-checkbox-9:checked ~ #done-checkbox-9:not(:checked) ~ .deleted-checkbox-label {
-            display: none !important;
-        }
     
             #created-checkbox-8:checked ~ #todo-9 > #todo-input-9,
             #created-checkbox-8:checked ~ #todo-9 > #created-checkbox-label-9 {
@@ -1513,21 +1393,6 @@ body  {
         #created-checkbox-10:checked ~ #deleted-checkbox-label-10 {
             display: inline-block;
             order: 2011
-        }
-
-
-        .active-filter:target #created-checkbox-10:checked ~ #done-checkbox-10:checked ~ #todo-input-10,
-        .active-filter:target #created-checkbox-10:checked ~ #done-checkbox-10:checked ~ #mark-done-checkbox-label-10,
-        .active-filter:target #created-checkbox-10:checked ~ #done-checkbox-10:checked ~ #mark-undone-checkbox-label-10,
-        .active-filter:target #created-checkbox-10:checked ~ #done-checkbox-10:checked ~ .deleted-checkbox-label {
-            display: none !important;
-        }
-
-        .completed-filter:target #created-checkbox-10:checked ~ #done-checkbox-10:not(:checked) ~ #todo-input-10,
-        .completed-filter:target #created-checkbox-10:checked ~ #done-checkbox-10:not(:checked) ~ #mark-done-checkbox-label-10,
-        .completed-filter:target #created-checkbox-10:checked ~ #done-checkbox-10:not(:checked) ~ #mark-undone-checkbox-label-10,
-        .completed-filter:target #created-checkbox-10:checked ~ #done-checkbox-10:not(:checked) ~ .deleted-checkbox-label {
-            display: none !important;
         }
     
             #created-checkbox-9:checked ~ #todo-10 > #todo-input-10,
@@ -1591,21 +1456,6 @@ body  {
             display: inline-block;
             order: 2111
         }
-
-
-        .active-filter:target #created-checkbox-11:checked ~ #done-checkbox-11:checked ~ #todo-input-11,
-        .active-filter:target #created-checkbox-11:checked ~ #done-checkbox-11:checked ~ #mark-done-checkbox-label-11,
-        .active-filter:target #created-checkbox-11:checked ~ #done-checkbox-11:checked ~ #mark-undone-checkbox-label-11,
-        .active-filter:target #created-checkbox-11:checked ~ #done-checkbox-11:checked ~ .deleted-checkbox-label {
-            display: none !important;
-        }
-
-        .completed-filter:target #created-checkbox-11:checked ~ #done-checkbox-11:not(:checked) ~ #todo-input-11,
-        .completed-filter:target #created-checkbox-11:checked ~ #done-checkbox-11:not(:checked) ~ #mark-done-checkbox-label-11,
-        .completed-filter:target #created-checkbox-11:checked ~ #done-checkbox-11:not(:checked) ~ #mark-undone-checkbox-label-11,
-        .completed-filter:target #created-checkbox-11:checked ~ #done-checkbox-11:not(:checked) ~ .deleted-checkbox-label {
-            display: none !important;
-        }
     
             #created-checkbox-10:checked ~ #todo-11 > #todo-input-11,
             #created-checkbox-10:checked ~ #todo-11 > #created-checkbox-label-11 {
@@ -1667,21 +1517,6 @@ body  {
         #created-checkbox-12:checked ~ #deleted-checkbox-label-12 {
             display: inline-block;
             order: 2211
-        }
-
-
-        .active-filter:target #created-checkbox-12:checked ~ #done-checkbox-12:checked ~ #todo-input-12,
-        .active-filter:target #created-checkbox-12:checked ~ #done-checkbox-12:checked ~ #mark-done-checkbox-label-12,
-        .active-filter:target #created-checkbox-12:checked ~ #done-checkbox-12:checked ~ #mark-undone-checkbox-label-12,
-        .active-filter:target #created-checkbox-12:checked ~ #done-checkbox-12:checked ~ .deleted-checkbox-label {
-            display: none !important;
-        }
-
-        .completed-filter:target #created-checkbox-12:checked ~ #done-checkbox-12:not(:checked) ~ #todo-input-12,
-        .completed-filter:target #created-checkbox-12:checked ~ #done-checkbox-12:not(:checked) ~ #mark-done-checkbox-label-12,
-        .completed-filter:target #created-checkbox-12:checked ~ #done-checkbox-12:not(:checked) ~ #mark-undone-checkbox-label-12,
-        .completed-filter:target #created-checkbox-12:checked ~ #done-checkbox-12:not(:checked) ~ .deleted-checkbox-label {
-            display: none !important;
         }
     
             #created-checkbox-11:checked ~ #todo-12 > #todo-input-12,
@@ -1745,21 +1580,6 @@ body  {
             display: inline-block;
             order: 2311
         }
-
-
-        .active-filter:target #created-checkbox-13:checked ~ #done-checkbox-13:checked ~ #todo-input-13,
-        .active-filter:target #created-checkbox-13:checked ~ #done-checkbox-13:checked ~ #mark-done-checkbox-label-13,
-        .active-filter:target #created-checkbox-13:checked ~ #done-checkbox-13:checked ~ #mark-undone-checkbox-label-13,
-        .active-filter:target #created-checkbox-13:checked ~ #done-checkbox-13:checked ~ .deleted-checkbox-label {
-            display: none !important;
-        }
-
-        .completed-filter:target #created-checkbox-13:checked ~ #done-checkbox-13:not(:checked) ~ #todo-input-13,
-        .completed-filter:target #created-checkbox-13:checked ~ #done-checkbox-13:not(:checked) ~ #mark-done-checkbox-label-13,
-        .completed-filter:target #created-checkbox-13:checked ~ #done-checkbox-13:not(:checked) ~ #mark-undone-checkbox-label-13,
-        .completed-filter:target #created-checkbox-13:checked ~ #done-checkbox-13:not(:checked) ~ .deleted-checkbox-label {
-            display: none !important;
-        }
     
             #created-checkbox-12:checked ~ #todo-13 > #todo-input-13,
             #created-checkbox-12:checked ~ #todo-13 > #created-checkbox-label-13 {
@@ -1821,21 +1641,6 @@ body  {
         #created-checkbox-14:checked ~ #deleted-checkbox-label-14 {
             display: inline-block;
             order: 2411
-        }
-
-
-        .active-filter:target #created-checkbox-14:checked ~ #done-checkbox-14:checked ~ #todo-input-14,
-        .active-filter:target #created-checkbox-14:checked ~ #done-checkbox-14:checked ~ #mark-done-checkbox-label-14,
-        .active-filter:target #created-checkbox-14:checked ~ #done-checkbox-14:checked ~ #mark-undone-checkbox-label-14,
-        .active-filter:target #created-checkbox-14:checked ~ #done-checkbox-14:checked ~ .deleted-checkbox-label {
-            display: none !important;
-        }
-
-        .completed-filter:target #created-checkbox-14:checked ~ #done-checkbox-14:not(:checked) ~ #todo-input-14,
-        .completed-filter:target #created-checkbox-14:checked ~ #done-checkbox-14:not(:checked) ~ #mark-done-checkbox-label-14,
-        .completed-filter:target #created-checkbox-14:checked ~ #done-checkbox-14:not(:checked) ~ #mark-undone-checkbox-label-14,
-        .completed-filter:target #created-checkbox-14:checked ~ #done-checkbox-14:not(:checked) ~ .deleted-checkbox-label {
-            display: none !important;
         }
     
             #created-checkbox-13:checked ~ #todo-14 > #todo-input-14,
@@ -1899,21 +1704,6 @@ body  {
             display: inline-block;
             order: 2511
         }
-
-
-        .active-filter:target #created-checkbox-15:checked ~ #done-checkbox-15:checked ~ #todo-input-15,
-        .active-filter:target #created-checkbox-15:checked ~ #done-checkbox-15:checked ~ #mark-done-checkbox-label-15,
-        .active-filter:target #created-checkbox-15:checked ~ #done-checkbox-15:checked ~ #mark-undone-checkbox-label-15,
-        .active-filter:target #created-checkbox-15:checked ~ #done-checkbox-15:checked ~ .deleted-checkbox-label {
-            display: none !important;
-        }
-
-        .completed-filter:target #created-checkbox-15:checked ~ #done-checkbox-15:not(:checked) ~ #todo-input-15,
-        .completed-filter:target #created-checkbox-15:checked ~ #done-checkbox-15:not(:checked) ~ #mark-done-checkbox-label-15,
-        .completed-filter:target #created-checkbox-15:checked ~ #done-checkbox-15:not(:checked) ~ #mark-undone-checkbox-label-15,
-        .completed-filter:target #created-checkbox-15:checked ~ #done-checkbox-15:not(:checked) ~ .deleted-checkbox-label {
-            display: none !important;
-        }
     
             #created-checkbox-14:checked ~ #todo-15 > #todo-input-15,
             #created-checkbox-14:checked ~ #todo-15 > #created-checkbox-label-15 {
@@ -1975,21 +1765,6 @@ body  {
         #created-checkbox-16:checked ~ #deleted-checkbox-label-16 {
             display: inline-block;
             order: 2611
-        }
-
-
-        .active-filter:target #created-checkbox-16:checked ~ #done-checkbox-16:checked ~ #todo-input-16,
-        .active-filter:target #created-checkbox-16:checked ~ #done-checkbox-16:checked ~ #mark-done-checkbox-label-16,
-        .active-filter:target #created-checkbox-16:checked ~ #done-checkbox-16:checked ~ #mark-undone-checkbox-label-16,
-        .active-filter:target #created-checkbox-16:checked ~ #done-checkbox-16:checked ~ .deleted-checkbox-label {
-            display: none !important;
-        }
-
-        .completed-filter:target #created-checkbox-16:checked ~ #done-checkbox-16:not(:checked) ~ #todo-input-16,
-        .completed-filter:target #created-checkbox-16:checked ~ #done-checkbox-16:not(:checked) ~ #mark-done-checkbox-label-16,
-        .completed-filter:target #created-checkbox-16:checked ~ #done-checkbox-16:not(:checked) ~ #mark-undone-checkbox-label-16,
-        .completed-filter:target #created-checkbox-16:checked ~ #done-checkbox-16:not(:checked) ~ .deleted-checkbox-label {
-            display: none !important;
         }
     
             #created-checkbox-15:checked ~ #todo-16 > #todo-input-16,
@@ -2053,21 +1828,6 @@ body  {
             display: inline-block;
             order: 2711
         }
-
-
-        .active-filter:target #created-checkbox-17:checked ~ #done-checkbox-17:checked ~ #todo-input-17,
-        .active-filter:target #created-checkbox-17:checked ~ #done-checkbox-17:checked ~ #mark-done-checkbox-label-17,
-        .active-filter:target #created-checkbox-17:checked ~ #done-checkbox-17:checked ~ #mark-undone-checkbox-label-17,
-        .active-filter:target #created-checkbox-17:checked ~ #done-checkbox-17:checked ~ .deleted-checkbox-label {
-            display: none !important;
-        }
-
-        .completed-filter:target #created-checkbox-17:checked ~ #done-checkbox-17:not(:checked) ~ #todo-input-17,
-        .completed-filter:target #created-checkbox-17:checked ~ #done-checkbox-17:not(:checked) ~ #mark-done-checkbox-label-17,
-        .completed-filter:target #created-checkbox-17:checked ~ #done-checkbox-17:not(:checked) ~ #mark-undone-checkbox-label-17,
-        .completed-filter:target #created-checkbox-17:checked ~ #done-checkbox-17:not(:checked) ~ .deleted-checkbox-label {
-            display: none !important;
-        }
     
             #created-checkbox-16:checked ~ #todo-17 > #todo-input-17,
             #created-checkbox-16:checked ~ #todo-17 > #created-checkbox-label-17 {
@@ -2129,21 +1889,6 @@ body  {
         #created-checkbox-18:checked ~ #deleted-checkbox-label-18 {
             display: inline-block;
             order: 2811
-        }
-
-
-        .active-filter:target #created-checkbox-18:checked ~ #done-checkbox-18:checked ~ #todo-input-18,
-        .active-filter:target #created-checkbox-18:checked ~ #done-checkbox-18:checked ~ #mark-done-checkbox-label-18,
-        .active-filter:target #created-checkbox-18:checked ~ #done-checkbox-18:checked ~ #mark-undone-checkbox-label-18,
-        .active-filter:target #created-checkbox-18:checked ~ #done-checkbox-18:checked ~ .deleted-checkbox-label {
-            display: none !important;
-        }
-
-        .completed-filter:target #created-checkbox-18:checked ~ #done-checkbox-18:not(:checked) ~ #todo-input-18,
-        .completed-filter:target #created-checkbox-18:checked ~ #done-checkbox-18:not(:checked) ~ #mark-done-checkbox-label-18,
-        .completed-filter:target #created-checkbox-18:checked ~ #done-checkbox-18:not(:checked) ~ #mark-undone-checkbox-label-18,
-        .completed-filter:target #created-checkbox-18:checked ~ #done-checkbox-18:not(:checked) ~ .deleted-checkbox-label {
-            display: none !important;
         }
     
             #created-checkbox-17:checked ~ #todo-18 > #todo-input-18,
@@ -2207,21 +1952,6 @@ body  {
             display: inline-block;
             order: 2911
         }
-
-
-        .active-filter:target #created-checkbox-19:checked ~ #done-checkbox-19:checked ~ #todo-input-19,
-        .active-filter:target #created-checkbox-19:checked ~ #done-checkbox-19:checked ~ #mark-done-checkbox-label-19,
-        .active-filter:target #created-checkbox-19:checked ~ #done-checkbox-19:checked ~ #mark-undone-checkbox-label-19,
-        .active-filter:target #created-checkbox-19:checked ~ #done-checkbox-19:checked ~ .deleted-checkbox-label {
-            display: none !important;
-        }
-
-        .completed-filter:target #created-checkbox-19:checked ~ #done-checkbox-19:not(:checked) ~ #todo-input-19,
-        .completed-filter:target #created-checkbox-19:checked ~ #done-checkbox-19:not(:checked) ~ #mark-done-checkbox-label-19,
-        .completed-filter:target #created-checkbox-19:checked ~ #done-checkbox-19:not(:checked) ~ #mark-undone-checkbox-label-19,
-        .completed-filter:target #created-checkbox-19:checked ~ #done-checkbox-19:not(:checked) ~ .deleted-checkbox-label {
-            display: none !important;
-        }
     
             #created-checkbox-18:checked ~ #todo-19 > #todo-input-19,
             #created-checkbox-18:checked ~ #todo-19 > #created-checkbox-label-19 {
@@ -2283,21 +2013,6 @@ body  {
         #created-checkbox-20:checked ~ #deleted-checkbox-label-20 {
             display: inline-block;
             order: 3011
-        }
-
-
-        .active-filter:target #created-checkbox-20:checked ~ #done-checkbox-20:checked ~ #todo-input-20,
-        .active-filter:target #created-checkbox-20:checked ~ #done-checkbox-20:checked ~ #mark-done-checkbox-label-20,
-        .active-filter:target #created-checkbox-20:checked ~ #done-checkbox-20:checked ~ #mark-undone-checkbox-label-20,
-        .active-filter:target #created-checkbox-20:checked ~ #done-checkbox-20:checked ~ .deleted-checkbox-label {
-            display: none !important;
-        }
-
-        .completed-filter:target #created-checkbox-20:checked ~ #done-checkbox-20:not(:checked) ~ #todo-input-20,
-        .completed-filter:target #created-checkbox-20:checked ~ #done-checkbox-20:not(:checked) ~ #mark-done-checkbox-label-20,
-        .completed-filter:target #created-checkbox-20:checked ~ #done-checkbox-20:not(:checked) ~ #mark-undone-checkbox-label-20,
-        .completed-filter:target #created-checkbox-20:checked ~ #done-checkbox-20:not(:checked) ~ .deleted-checkbox-label {
-            display: none !important;
         }
     
             #created-checkbox-19:checked ~ #todo-20 > #todo-input-20,
@@ -2361,21 +2076,6 @@ body  {
             display: inline-block;
             order: 3111
         }
-
-
-        .active-filter:target #created-checkbox-21:checked ~ #done-checkbox-21:checked ~ #todo-input-21,
-        .active-filter:target #created-checkbox-21:checked ~ #done-checkbox-21:checked ~ #mark-done-checkbox-label-21,
-        .active-filter:target #created-checkbox-21:checked ~ #done-checkbox-21:checked ~ #mark-undone-checkbox-label-21,
-        .active-filter:target #created-checkbox-21:checked ~ #done-checkbox-21:checked ~ .deleted-checkbox-label {
-            display: none !important;
-        }
-
-        .completed-filter:target #created-checkbox-21:checked ~ #done-checkbox-21:not(:checked) ~ #todo-input-21,
-        .completed-filter:target #created-checkbox-21:checked ~ #done-checkbox-21:not(:checked) ~ #mark-done-checkbox-label-21,
-        .completed-filter:target #created-checkbox-21:checked ~ #done-checkbox-21:not(:checked) ~ #mark-undone-checkbox-label-21,
-        .completed-filter:target #created-checkbox-21:checked ~ #done-checkbox-21:not(:checked) ~ .deleted-checkbox-label {
-            display: none !important;
-        }
     
             #created-checkbox-20:checked ~ #todo-21 > #todo-input-21,
             #created-checkbox-20:checked ~ #todo-21 > #created-checkbox-label-21 {
@@ -2437,21 +2137,6 @@ body  {
         #created-checkbox-22:checked ~ #deleted-checkbox-label-22 {
             display: inline-block;
             order: 3211
-        }
-
-
-        .active-filter:target #created-checkbox-22:checked ~ #done-checkbox-22:checked ~ #todo-input-22,
-        .active-filter:target #created-checkbox-22:checked ~ #done-checkbox-22:checked ~ #mark-done-checkbox-label-22,
-        .active-filter:target #created-checkbox-22:checked ~ #done-checkbox-22:checked ~ #mark-undone-checkbox-label-22,
-        .active-filter:target #created-checkbox-22:checked ~ #done-checkbox-22:checked ~ .deleted-checkbox-label {
-            display: none !important;
-        }
-
-        .completed-filter:target #created-checkbox-22:checked ~ #done-checkbox-22:not(:checked) ~ #todo-input-22,
-        .completed-filter:target #created-checkbox-22:checked ~ #done-checkbox-22:not(:checked) ~ #mark-done-checkbox-label-22,
-        .completed-filter:target #created-checkbox-22:checked ~ #done-checkbox-22:not(:checked) ~ #mark-undone-checkbox-label-22,
-        .completed-filter:target #created-checkbox-22:checked ~ #done-checkbox-22:not(:checked) ~ .deleted-checkbox-label {
-            display: none !important;
         }
     
             #created-checkbox-21:checked ~ #todo-22 > #todo-input-22,
@@ -2515,21 +2200,6 @@ body  {
             display: inline-block;
             order: 3311
         }
-
-
-        .active-filter:target #created-checkbox-23:checked ~ #done-checkbox-23:checked ~ #todo-input-23,
-        .active-filter:target #created-checkbox-23:checked ~ #done-checkbox-23:checked ~ #mark-done-checkbox-label-23,
-        .active-filter:target #created-checkbox-23:checked ~ #done-checkbox-23:checked ~ #mark-undone-checkbox-label-23,
-        .active-filter:target #created-checkbox-23:checked ~ #done-checkbox-23:checked ~ .deleted-checkbox-label {
-            display: none !important;
-        }
-
-        .completed-filter:target #created-checkbox-23:checked ~ #done-checkbox-23:not(:checked) ~ #todo-input-23,
-        .completed-filter:target #created-checkbox-23:checked ~ #done-checkbox-23:not(:checked) ~ #mark-done-checkbox-label-23,
-        .completed-filter:target #created-checkbox-23:checked ~ #done-checkbox-23:not(:checked) ~ #mark-undone-checkbox-label-23,
-        .completed-filter:target #created-checkbox-23:checked ~ #done-checkbox-23:not(:checked) ~ .deleted-checkbox-label {
-            display: none !important;
-        }
     
             #created-checkbox-22:checked ~ #todo-23 > #todo-input-23,
             #created-checkbox-22:checked ~ #todo-23 > #created-checkbox-label-23 {
@@ -2591,21 +2261,6 @@ body  {
         #created-checkbox-24:checked ~ #deleted-checkbox-label-24 {
             display: inline-block;
             order: 3411
-        }
-
-
-        .active-filter:target #created-checkbox-24:checked ~ #done-checkbox-24:checked ~ #todo-input-24,
-        .active-filter:target #created-checkbox-24:checked ~ #done-checkbox-24:checked ~ #mark-done-checkbox-label-24,
-        .active-filter:target #created-checkbox-24:checked ~ #done-checkbox-24:checked ~ #mark-undone-checkbox-label-24,
-        .active-filter:target #created-checkbox-24:checked ~ #done-checkbox-24:checked ~ .deleted-checkbox-label {
-            display: none !important;
-        }
-
-        .completed-filter:target #created-checkbox-24:checked ~ #done-checkbox-24:not(:checked) ~ #todo-input-24,
-        .completed-filter:target #created-checkbox-24:checked ~ #done-checkbox-24:not(:checked) ~ #mark-done-checkbox-label-24,
-        .completed-filter:target #created-checkbox-24:checked ~ #done-checkbox-24:not(:checked) ~ #mark-undone-checkbox-label-24,
-        .completed-filter:target #created-checkbox-24:checked ~ #done-checkbox-24:not(:checked) ~ .deleted-checkbox-label {
-            display: none !important;
         }
     
             #created-checkbox-23:checked ~ #todo-24 > #todo-input-24,
@@ -2669,21 +2324,6 @@ body  {
             display: inline-block;
             order: 3511
         }
-
-
-        .active-filter:target #created-checkbox-25:checked ~ #done-checkbox-25:checked ~ #todo-input-25,
-        .active-filter:target #created-checkbox-25:checked ~ #done-checkbox-25:checked ~ #mark-done-checkbox-label-25,
-        .active-filter:target #created-checkbox-25:checked ~ #done-checkbox-25:checked ~ #mark-undone-checkbox-label-25,
-        .active-filter:target #created-checkbox-25:checked ~ #done-checkbox-25:checked ~ .deleted-checkbox-label {
-            display: none !important;
-        }
-
-        .completed-filter:target #created-checkbox-25:checked ~ #done-checkbox-25:not(:checked) ~ #todo-input-25,
-        .completed-filter:target #created-checkbox-25:checked ~ #done-checkbox-25:not(:checked) ~ #mark-done-checkbox-label-25,
-        .completed-filter:target #created-checkbox-25:checked ~ #done-checkbox-25:not(:checked) ~ #mark-undone-checkbox-label-25,
-        .completed-filter:target #created-checkbox-25:checked ~ #done-checkbox-25:not(:checked) ~ .deleted-checkbox-label {
-            display: none !important;
-        }
     
             #created-checkbox-24:checked ~ #todo-25 > #todo-input-25,
             #created-checkbox-24:checked ~ #todo-25 > #created-checkbox-label-25 {
@@ -2745,21 +2385,6 @@ body  {
         #created-checkbox-26:checked ~ #deleted-checkbox-label-26 {
             display: inline-block;
             order: 3611
-        }
-
-
-        .active-filter:target #created-checkbox-26:checked ~ #done-checkbox-26:checked ~ #todo-input-26,
-        .active-filter:target #created-checkbox-26:checked ~ #done-checkbox-26:checked ~ #mark-done-checkbox-label-26,
-        .active-filter:target #created-checkbox-26:checked ~ #done-checkbox-26:checked ~ #mark-undone-checkbox-label-26,
-        .active-filter:target #created-checkbox-26:checked ~ #done-checkbox-26:checked ~ .deleted-checkbox-label {
-            display: none !important;
-        }
-
-        .completed-filter:target #created-checkbox-26:checked ~ #done-checkbox-26:not(:checked) ~ #todo-input-26,
-        .completed-filter:target #created-checkbox-26:checked ~ #done-checkbox-26:not(:checked) ~ #mark-done-checkbox-label-26,
-        .completed-filter:target #created-checkbox-26:checked ~ #done-checkbox-26:not(:checked) ~ #mark-undone-checkbox-label-26,
-        .completed-filter:target #created-checkbox-26:checked ~ #done-checkbox-26:not(:checked) ~ .deleted-checkbox-label {
-            display: none !important;
         }
     
             #created-checkbox-25:checked ~ #todo-26 > #todo-input-26,
@@ -2823,21 +2448,6 @@ body  {
             display: inline-block;
             order: 3711
         }
-
-
-        .active-filter:target #created-checkbox-27:checked ~ #done-checkbox-27:checked ~ #todo-input-27,
-        .active-filter:target #created-checkbox-27:checked ~ #done-checkbox-27:checked ~ #mark-done-checkbox-label-27,
-        .active-filter:target #created-checkbox-27:checked ~ #done-checkbox-27:checked ~ #mark-undone-checkbox-label-27,
-        .active-filter:target #created-checkbox-27:checked ~ #done-checkbox-27:checked ~ .deleted-checkbox-label {
-            display: none !important;
-        }
-
-        .completed-filter:target #created-checkbox-27:checked ~ #done-checkbox-27:not(:checked) ~ #todo-input-27,
-        .completed-filter:target #created-checkbox-27:checked ~ #done-checkbox-27:not(:checked) ~ #mark-done-checkbox-label-27,
-        .completed-filter:target #created-checkbox-27:checked ~ #done-checkbox-27:not(:checked) ~ #mark-undone-checkbox-label-27,
-        .completed-filter:target #created-checkbox-27:checked ~ #done-checkbox-27:not(:checked) ~ .deleted-checkbox-label {
-            display: none !important;
-        }
     
             #created-checkbox-26:checked ~ #todo-27 > #todo-input-27,
             #created-checkbox-26:checked ~ #todo-27 > #created-checkbox-label-27 {
@@ -2899,21 +2509,6 @@ body  {
         #created-checkbox-28:checked ~ #deleted-checkbox-label-28 {
             display: inline-block;
             order: 3811
-        }
-
-
-        .active-filter:target #created-checkbox-28:checked ~ #done-checkbox-28:checked ~ #todo-input-28,
-        .active-filter:target #created-checkbox-28:checked ~ #done-checkbox-28:checked ~ #mark-done-checkbox-label-28,
-        .active-filter:target #created-checkbox-28:checked ~ #done-checkbox-28:checked ~ #mark-undone-checkbox-label-28,
-        .active-filter:target #created-checkbox-28:checked ~ #done-checkbox-28:checked ~ .deleted-checkbox-label {
-            display: none !important;
-        }
-
-        .completed-filter:target #created-checkbox-28:checked ~ #done-checkbox-28:not(:checked) ~ #todo-input-28,
-        .completed-filter:target #created-checkbox-28:checked ~ #done-checkbox-28:not(:checked) ~ #mark-done-checkbox-label-28,
-        .completed-filter:target #created-checkbox-28:checked ~ #done-checkbox-28:not(:checked) ~ #mark-undone-checkbox-label-28,
-        .completed-filter:target #created-checkbox-28:checked ~ #done-checkbox-28:not(:checked) ~ .deleted-checkbox-label {
-            display: none !important;
         }
     
             #created-checkbox-27:checked ~ #todo-28 > #todo-input-28,
@@ -2977,21 +2572,6 @@ body  {
             display: inline-block;
             order: 3911
         }
-
-
-        .active-filter:target #created-checkbox-29:checked ~ #done-checkbox-29:checked ~ #todo-input-29,
-        .active-filter:target #created-checkbox-29:checked ~ #done-checkbox-29:checked ~ #mark-done-checkbox-label-29,
-        .active-filter:target #created-checkbox-29:checked ~ #done-checkbox-29:checked ~ #mark-undone-checkbox-label-29,
-        .active-filter:target #created-checkbox-29:checked ~ #done-checkbox-29:checked ~ .deleted-checkbox-label {
-            display: none !important;
-        }
-
-        .completed-filter:target #created-checkbox-29:checked ~ #done-checkbox-29:not(:checked) ~ #todo-input-29,
-        .completed-filter:target #created-checkbox-29:checked ~ #done-checkbox-29:not(:checked) ~ #mark-done-checkbox-label-29,
-        .completed-filter:target #created-checkbox-29:checked ~ #done-checkbox-29:not(:checked) ~ #mark-undone-checkbox-label-29,
-        .completed-filter:target #created-checkbox-29:checked ~ #done-checkbox-29:not(:checked) ~ .deleted-checkbox-label {
-            display: none !important;
-        }
     
             #created-checkbox-28:checked ~ #todo-29 > #todo-input-29,
             #created-checkbox-28:checked ~ #todo-29 > #created-checkbox-label-29 {
@@ -3053,21 +2633,6 @@ body  {
         #created-checkbox-30:checked ~ #deleted-checkbox-label-30 {
             display: inline-block;
             order: 4011
-        }
-
-
-        .active-filter:target #created-checkbox-30:checked ~ #done-checkbox-30:checked ~ #todo-input-30,
-        .active-filter:target #created-checkbox-30:checked ~ #done-checkbox-30:checked ~ #mark-done-checkbox-label-30,
-        .active-filter:target #created-checkbox-30:checked ~ #done-checkbox-30:checked ~ #mark-undone-checkbox-label-30,
-        .active-filter:target #created-checkbox-30:checked ~ #done-checkbox-30:checked ~ .deleted-checkbox-label {
-            display: none !important;
-        }
-
-        .completed-filter:target #created-checkbox-30:checked ~ #done-checkbox-30:not(:checked) ~ #todo-input-30,
-        .completed-filter:target #created-checkbox-30:checked ~ #done-checkbox-30:not(:checked) ~ #mark-done-checkbox-label-30,
-        .completed-filter:target #created-checkbox-30:checked ~ #done-checkbox-30:not(:checked) ~ #mark-undone-checkbox-label-30,
-        .completed-filter:target #created-checkbox-30:checked ~ #done-checkbox-30:not(:checked) ~ .deleted-checkbox-label {
-            display: none !important;
         }
     
             #created-checkbox-29:checked ~ #todo-30 > #todo-input-30,
@@ -3131,21 +2696,6 @@ body  {
             display: inline-block;
             order: 4111
         }
-
-
-        .active-filter:target #created-checkbox-31:checked ~ #done-checkbox-31:checked ~ #todo-input-31,
-        .active-filter:target #created-checkbox-31:checked ~ #done-checkbox-31:checked ~ #mark-done-checkbox-label-31,
-        .active-filter:target #created-checkbox-31:checked ~ #done-checkbox-31:checked ~ #mark-undone-checkbox-label-31,
-        .active-filter:target #created-checkbox-31:checked ~ #done-checkbox-31:checked ~ .deleted-checkbox-label {
-            display: none !important;
-        }
-
-        .completed-filter:target #created-checkbox-31:checked ~ #done-checkbox-31:not(:checked) ~ #todo-input-31,
-        .completed-filter:target #created-checkbox-31:checked ~ #done-checkbox-31:not(:checked) ~ #mark-done-checkbox-label-31,
-        .completed-filter:target #created-checkbox-31:checked ~ #done-checkbox-31:not(:checked) ~ #mark-undone-checkbox-label-31,
-        .completed-filter:target #created-checkbox-31:checked ~ #done-checkbox-31:not(:checked) ~ .deleted-checkbox-label {
-            display: none !important;
-        }
     
             #created-checkbox-30:checked ~ #todo-31 > #todo-input-31,
             #created-checkbox-30:checked ~ #todo-31 > #created-checkbox-label-31 {
@@ -3207,21 +2757,6 @@ body  {
         #created-checkbox-32:checked ~ #deleted-checkbox-label-32 {
             display: inline-block;
             order: 4211
-        }
-
-
-        .active-filter:target #created-checkbox-32:checked ~ #done-checkbox-32:checked ~ #todo-input-32,
-        .active-filter:target #created-checkbox-32:checked ~ #done-checkbox-32:checked ~ #mark-done-checkbox-label-32,
-        .active-filter:target #created-checkbox-32:checked ~ #done-checkbox-32:checked ~ #mark-undone-checkbox-label-32,
-        .active-filter:target #created-checkbox-32:checked ~ #done-checkbox-32:checked ~ .deleted-checkbox-label {
-            display: none !important;
-        }
-
-        .completed-filter:target #created-checkbox-32:checked ~ #done-checkbox-32:not(:checked) ~ #todo-input-32,
-        .completed-filter:target #created-checkbox-32:checked ~ #done-checkbox-32:not(:checked) ~ #mark-done-checkbox-label-32,
-        .completed-filter:target #created-checkbox-32:checked ~ #done-checkbox-32:not(:checked) ~ #mark-undone-checkbox-label-32,
-        .completed-filter:target #created-checkbox-32:checked ~ #done-checkbox-32:not(:checked) ~ .deleted-checkbox-label {
-            display: none !important;
         }
     
             #created-checkbox-31:checked ~ #todo-32 > #todo-input-32,
@@ -3285,21 +2820,6 @@ body  {
             display: inline-block;
             order: 4311
         }
-
-
-        .active-filter:target #created-checkbox-33:checked ~ #done-checkbox-33:checked ~ #todo-input-33,
-        .active-filter:target #created-checkbox-33:checked ~ #done-checkbox-33:checked ~ #mark-done-checkbox-label-33,
-        .active-filter:target #created-checkbox-33:checked ~ #done-checkbox-33:checked ~ #mark-undone-checkbox-label-33,
-        .active-filter:target #created-checkbox-33:checked ~ #done-checkbox-33:checked ~ .deleted-checkbox-label {
-            display: none !important;
-        }
-
-        .completed-filter:target #created-checkbox-33:checked ~ #done-checkbox-33:not(:checked) ~ #todo-input-33,
-        .completed-filter:target #created-checkbox-33:checked ~ #done-checkbox-33:not(:checked) ~ #mark-done-checkbox-label-33,
-        .completed-filter:target #created-checkbox-33:checked ~ #done-checkbox-33:not(:checked) ~ #mark-undone-checkbox-label-33,
-        .completed-filter:target #created-checkbox-33:checked ~ #done-checkbox-33:not(:checked) ~ .deleted-checkbox-label {
-            display: none !important;
-        }
     
             #created-checkbox-32:checked ~ #todo-33 > #todo-input-33,
             #created-checkbox-32:checked ~ #todo-33 > #created-checkbox-label-33 {
@@ -3361,21 +2881,6 @@ body  {
         #created-checkbox-34:checked ~ #deleted-checkbox-label-34 {
             display: inline-block;
             order: 4411
-        }
-
-
-        .active-filter:target #created-checkbox-34:checked ~ #done-checkbox-34:checked ~ #todo-input-34,
-        .active-filter:target #created-checkbox-34:checked ~ #done-checkbox-34:checked ~ #mark-done-checkbox-label-34,
-        .active-filter:target #created-checkbox-34:checked ~ #done-checkbox-34:checked ~ #mark-undone-checkbox-label-34,
-        .active-filter:target #created-checkbox-34:checked ~ #done-checkbox-34:checked ~ .deleted-checkbox-label {
-            display: none !important;
-        }
-
-        .completed-filter:target #created-checkbox-34:checked ~ #done-checkbox-34:not(:checked) ~ #todo-input-34,
-        .completed-filter:target #created-checkbox-34:checked ~ #done-checkbox-34:not(:checked) ~ #mark-done-checkbox-label-34,
-        .completed-filter:target #created-checkbox-34:checked ~ #done-checkbox-34:not(:checked) ~ #mark-undone-checkbox-label-34,
-        .completed-filter:target #created-checkbox-34:checked ~ #done-checkbox-34:not(:checked) ~ .deleted-checkbox-label {
-            display: none !important;
         }
     
             #created-checkbox-33:checked ~ #todo-34 > #todo-input-34,
@@ -3439,21 +2944,6 @@ body  {
             display: inline-block;
             order: 4511
         }
-
-
-        .active-filter:target #created-checkbox-35:checked ~ #done-checkbox-35:checked ~ #todo-input-35,
-        .active-filter:target #created-checkbox-35:checked ~ #done-checkbox-35:checked ~ #mark-done-checkbox-label-35,
-        .active-filter:target #created-checkbox-35:checked ~ #done-checkbox-35:checked ~ #mark-undone-checkbox-label-35,
-        .active-filter:target #created-checkbox-35:checked ~ #done-checkbox-35:checked ~ .deleted-checkbox-label {
-            display: none !important;
-        }
-
-        .completed-filter:target #created-checkbox-35:checked ~ #done-checkbox-35:not(:checked) ~ #todo-input-35,
-        .completed-filter:target #created-checkbox-35:checked ~ #done-checkbox-35:not(:checked) ~ #mark-done-checkbox-label-35,
-        .completed-filter:target #created-checkbox-35:checked ~ #done-checkbox-35:not(:checked) ~ #mark-undone-checkbox-label-35,
-        .completed-filter:target #created-checkbox-35:checked ~ #done-checkbox-35:not(:checked) ~ .deleted-checkbox-label {
-            display: none !important;
-        }
     
             #created-checkbox-34:checked ~ #todo-35 > #todo-input-35,
             #created-checkbox-34:checked ~ #todo-35 > #created-checkbox-label-35 {
@@ -3515,21 +3005,6 @@ body  {
         #created-checkbox-36:checked ~ #deleted-checkbox-label-36 {
             display: inline-block;
             order: 4611
-        }
-
-
-        .active-filter:target #created-checkbox-36:checked ~ #done-checkbox-36:checked ~ #todo-input-36,
-        .active-filter:target #created-checkbox-36:checked ~ #done-checkbox-36:checked ~ #mark-done-checkbox-label-36,
-        .active-filter:target #created-checkbox-36:checked ~ #done-checkbox-36:checked ~ #mark-undone-checkbox-label-36,
-        .active-filter:target #created-checkbox-36:checked ~ #done-checkbox-36:checked ~ .deleted-checkbox-label {
-            display: none !important;
-        }
-
-        .completed-filter:target #created-checkbox-36:checked ~ #done-checkbox-36:not(:checked) ~ #todo-input-36,
-        .completed-filter:target #created-checkbox-36:checked ~ #done-checkbox-36:not(:checked) ~ #mark-done-checkbox-label-36,
-        .completed-filter:target #created-checkbox-36:checked ~ #done-checkbox-36:not(:checked) ~ #mark-undone-checkbox-label-36,
-        .completed-filter:target #created-checkbox-36:checked ~ #done-checkbox-36:not(:checked) ~ .deleted-checkbox-label {
-            display: none !important;
         }
     
             #created-checkbox-35:checked ~ #todo-36 > #todo-input-36,
@@ -3593,21 +3068,6 @@ body  {
             display: inline-block;
             order: 4711
         }
-
-
-        .active-filter:target #created-checkbox-37:checked ~ #done-checkbox-37:checked ~ #todo-input-37,
-        .active-filter:target #created-checkbox-37:checked ~ #done-checkbox-37:checked ~ #mark-done-checkbox-label-37,
-        .active-filter:target #created-checkbox-37:checked ~ #done-checkbox-37:checked ~ #mark-undone-checkbox-label-37,
-        .active-filter:target #created-checkbox-37:checked ~ #done-checkbox-37:checked ~ .deleted-checkbox-label {
-            display: none !important;
-        }
-
-        .completed-filter:target #created-checkbox-37:checked ~ #done-checkbox-37:not(:checked) ~ #todo-input-37,
-        .completed-filter:target #created-checkbox-37:checked ~ #done-checkbox-37:not(:checked) ~ #mark-done-checkbox-label-37,
-        .completed-filter:target #created-checkbox-37:checked ~ #done-checkbox-37:not(:checked) ~ #mark-undone-checkbox-label-37,
-        .completed-filter:target #created-checkbox-37:checked ~ #done-checkbox-37:not(:checked) ~ .deleted-checkbox-label {
-            display: none !important;
-        }
     
             #created-checkbox-36:checked ~ #todo-37 > #todo-input-37,
             #created-checkbox-36:checked ~ #todo-37 > #created-checkbox-label-37 {
@@ -3669,21 +3129,6 @@ body  {
         #created-checkbox-38:checked ~ #deleted-checkbox-label-38 {
             display: inline-block;
             order: 4811
-        }
-
-
-        .active-filter:target #created-checkbox-38:checked ~ #done-checkbox-38:checked ~ #todo-input-38,
-        .active-filter:target #created-checkbox-38:checked ~ #done-checkbox-38:checked ~ #mark-done-checkbox-label-38,
-        .active-filter:target #created-checkbox-38:checked ~ #done-checkbox-38:checked ~ #mark-undone-checkbox-label-38,
-        .active-filter:target #created-checkbox-38:checked ~ #done-checkbox-38:checked ~ .deleted-checkbox-label {
-            display: none !important;
-        }
-
-        .completed-filter:target #created-checkbox-38:checked ~ #done-checkbox-38:not(:checked) ~ #todo-input-38,
-        .completed-filter:target #created-checkbox-38:checked ~ #done-checkbox-38:not(:checked) ~ #mark-done-checkbox-label-38,
-        .completed-filter:target #created-checkbox-38:checked ~ #done-checkbox-38:not(:checked) ~ #mark-undone-checkbox-label-38,
-        .completed-filter:target #created-checkbox-38:checked ~ #done-checkbox-38:not(:checked) ~ .deleted-checkbox-label {
-            display: none !important;
         }
     
             #created-checkbox-37:checked ~ #todo-38 > #todo-input-38,
@@ -3747,21 +3192,6 @@ body  {
             display: inline-block;
             order: 4911
         }
-
-
-        .active-filter:target #created-checkbox-39:checked ~ #done-checkbox-39:checked ~ #todo-input-39,
-        .active-filter:target #created-checkbox-39:checked ~ #done-checkbox-39:checked ~ #mark-done-checkbox-label-39,
-        .active-filter:target #created-checkbox-39:checked ~ #done-checkbox-39:checked ~ #mark-undone-checkbox-label-39,
-        .active-filter:target #created-checkbox-39:checked ~ #done-checkbox-39:checked ~ .deleted-checkbox-label {
-            display: none !important;
-        }
-
-        .completed-filter:target #created-checkbox-39:checked ~ #done-checkbox-39:not(:checked) ~ #todo-input-39,
-        .completed-filter:target #created-checkbox-39:checked ~ #done-checkbox-39:not(:checked) ~ #mark-done-checkbox-label-39,
-        .completed-filter:target #created-checkbox-39:checked ~ #done-checkbox-39:not(:checked) ~ #mark-undone-checkbox-label-39,
-        .completed-filter:target #created-checkbox-39:checked ~ #done-checkbox-39:not(:checked) ~ .deleted-checkbox-label {
-            display: none !important;
-        }
     
             #created-checkbox-38:checked ~ #todo-39 > #todo-input-39,
             #created-checkbox-38:checked ~ #todo-39 > #created-checkbox-label-39 {
@@ -3823,21 +3253,6 @@ body  {
         #created-checkbox-40:checked ~ #deleted-checkbox-label-40 {
             display: inline-block;
             order: 5011
-        }
-
-
-        .active-filter:target #created-checkbox-40:checked ~ #done-checkbox-40:checked ~ #todo-input-40,
-        .active-filter:target #created-checkbox-40:checked ~ #done-checkbox-40:checked ~ #mark-done-checkbox-label-40,
-        .active-filter:target #created-checkbox-40:checked ~ #done-checkbox-40:checked ~ #mark-undone-checkbox-label-40,
-        .active-filter:target #created-checkbox-40:checked ~ #done-checkbox-40:checked ~ .deleted-checkbox-label {
-            display: none !important;
-        }
-
-        .completed-filter:target #created-checkbox-40:checked ~ #done-checkbox-40:not(:checked) ~ #todo-input-40,
-        .completed-filter:target #created-checkbox-40:checked ~ #done-checkbox-40:not(:checked) ~ #mark-done-checkbox-label-40,
-        .completed-filter:target #created-checkbox-40:checked ~ #done-checkbox-40:not(:checked) ~ #mark-undone-checkbox-label-40,
-        .completed-filter:target #created-checkbox-40:checked ~ #done-checkbox-40:not(:checked) ~ .deleted-checkbox-label {
-            display: none !important;
         }
     
             #created-checkbox-39:checked ~ #todo-40 > #todo-input-40,
@@ -3901,21 +3316,6 @@ body  {
             display: inline-block;
             order: 5111
         }
-
-
-        .active-filter:target #created-checkbox-41:checked ~ #done-checkbox-41:checked ~ #todo-input-41,
-        .active-filter:target #created-checkbox-41:checked ~ #done-checkbox-41:checked ~ #mark-done-checkbox-label-41,
-        .active-filter:target #created-checkbox-41:checked ~ #done-checkbox-41:checked ~ #mark-undone-checkbox-label-41,
-        .active-filter:target #created-checkbox-41:checked ~ #done-checkbox-41:checked ~ .deleted-checkbox-label {
-            display: none !important;
-        }
-
-        .completed-filter:target #created-checkbox-41:checked ~ #done-checkbox-41:not(:checked) ~ #todo-input-41,
-        .completed-filter:target #created-checkbox-41:checked ~ #done-checkbox-41:not(:checked) ~ #mark-done-checkbox-label-41,
-        .completed-filter:target #created-checkbox-41:checked ~ #done-checkbox-41:not(:checked) ~ #mark-undone-checkbox-label-41,
-        .completed-filter:target #created-checkbox-41:checked ~ #done-checkbox-41:not(:checked) ~ .deleted-checkbox-label {
-            display: none !important;
-        }
     
             #created-checkbox-40:checked ~ #todo-41 > #todo-input-41,
             #created-checkbox-40:checked ~ #todo-41 > #created-checkbox-label-41 {
@@ -3977,21 +3377,6 @@ body  {
         #created-checkbox-42:checked ~ #deleted-checkbox-label-42 {
             display: inline-block;
             order: 5211
-        }
-
-
-        .active-filter:target #created-checkbox-42:checked ~ #done-checkbox-42:checked ~ #todo-input-42,
-        .active-filter:target #created-checkbox-42:checked ~ #done-checkbox-42:checked ~ #mark-done-checkbox-label-42,
-        .active-filter:target #created-checkbox-42:checked ~ #done-checkbox-42:checked ~ #mark-undone-checkbox-label-42,
-        .active-filter:target #created-checkbox-42:checked ~ #done-checkbox-42:checked ~ .deleted-checkbox-label {
-            display: none !important;
-        }
-
-        .completed-filter:target #created-checkbox-42:checked ~ #done-checkbox-42:not(:checked) ~ #todo-input-42,
-        .completed-filter:target #created-checkbox-42:checked ~ #done-checkbox-42:not(:checked) ~ #mark-done-checkbox-label-42,
-        .completed-filter:target #created-checkbox-42:checked ~ #done-checkbox-42:not(:checked) ~ #mark-undone-checkbox-label-42,
-        .completed-filter:target #created-checkbox-42:checked ~ #done-checkbox-42:not(:checked) ~ .deleted-checkbox-label {
-            display: none !important;
         }
     
             #created-checkbox-41:checked ~ #todo-42 > #todo-input-42,
@@ -4055,21 +3440,6 @@ body  {
             display: inline-block;
             order: 5311
         }
-
-
-        .active-filter:target #created-checkbox-43:checked ~ #done-checkbox-43:checked ~ #todo-input-43,
-        .active-filter:target #created-checkbox-43:checked ~ #done-checkbox-43:checked ~ #mark-done-checkbox-label-43,
-        .active-filter:target #created-checkbox-43:checked ~ #done-checkbox-43:checked ~ #mark-undone-checkbox-label-43,
-        .active-filter:target #created-checkbox-43:checked ~ #done-checkbox-43:checked ~ .deleted-checkbox-label {
-            display: none !important;
-        }
-
-        .completed-filter:target #created-checkbox-43:checked ~ #done-checkbox-43:not(:checked) ~ #todo-input-43,
-        .completed-filter:target #created-checkbox-43:checked ~ #done-checkbox-43:not(:checked) ~ #mark-done-checkbox-label-43,
-        .completed-filter:target #created-checkbox-43:checked ~ #done-checkbox-43:not(:checked) ~ #mark-undone-checkbox-label-43,
-        .completed-filter:target #created-checkbox-43:checked ~ #done-checkbox-43:not(:checked) ~ .deleted-checkbox-label {
-            display: none !important;
-        }
     
             #created-checkbox-42:checked ~ #todo-43 > #todo-input-43,
             #created-checkbox-42:checked ~ #todo-43 > #created-checkbox-label-43 {
@@ -4131,21 +3501,6 @@ body  {
         #created-checkbox-44:checked ~ #deleted-checkbox-label-44 {
             display: inline-block;
             order: 5411
-        }
-
-
-        .active-filter:target #created-checkbox-44:checked ~ #done-checkbox-44:checked ~ #todo-input-44,
-        .active-filter:target #created-checkbox-44:checked ~ #done-checkbox-44:checked ~ #mark-done-checkbox-label-44,
-        .active-filter:target #created-checkbox-44:checked ~ #done-checkbox-44:checked ~ #mark-undone-checkbox-label-44,
-        .active-filter:target #created-checkbox-44:checked ~ #done-checkbox-44:checked ~ .deleted-checkbox-label {
-            display: none !important;
-        }
-
-        .completed-filter:target #created-checkbox-44:checked ~ #done-checkbox-44:not(:checked) ~ #todo-input-44,
-        .completed-filter:target #created-checkbox-44:checked ~ #done-checkbox-44:not(:checked) ~ #mark-done-checkbox-label-44,
-        .completed-filter:target #created-checkbox-44:checked ~ #done-checkbox-44:not(:checked) ~ #mark-undone-checkbox-label-44,
-        .completed-filter:target #created-checkbox-44:checked ~ #done-checkbox-44:not(:checked) ~ .deleted-checkbox-label {
-            display: none !important;
         }
     
             #created-checkbox-43:checked ~ #todo-44 > #todo-input-44,
@@ -4209,21 +3564,6 @@ body  {
             display: inline-block;
             order: 5511
         }
-
-
-        .active-filter:target #created-checkbox-45:checked ~ #done-checkbox-45:checked ~ #todo-input-45,
-        .active-filter:target #created-checkbox-45:checked ~ #done-checkbox-45:checked ~ #mark-done-checkbox-label-45,
-        .active-filter:target #created-checkbox-45:checked ~ #done-checkbox-45:checked ~ #mark-undone-checkbox-label-45,
-        .active-filter:target #created-checkbox-45:checked ~ #done-checkbox-45:checked ~ .deleted-checkbox-label {
-            display: none !important;
-        }
-
-        .completed-filter:target #created-checkbox-45:checked ~ #done-checkbox-45:not(:checked) ~ #todo-input-45,
-        .completed-filter:target #created-checkbox-45:checked ~ #done-checkbox-45:not(:checked) ~ #mark-done-checkbox-label-45,
-        .completed-filter:target #created-checkbox-45:checked ~ #done-checkbox-45:not(:checked) ~ #mark-undone-checkbox-label-45,
-        .completed-filter:target #created-checkbox-45:checked ~ #done-checkbox-45:not(:checked) ~ .deleted-checkbox-label {
-            display: none !important;
-        }
     
             #created-checkbox-44:checked ~ #todo-45 > #todo-input-45,
             #created-checkbox-44:checked ~ #todo-45 > #created-checkbox-label-45 {
@@ -4285,21 +3625,6 @@ body  {
         #created-checkbox-46:checked ~ #deleted-checkbox-label-46 {
             display: inline-block;
             order: 5611
-        }
-
-
-        .active-filter:target #created-checkbox-46:checked ~ #done-checkbox-46:checked ~ #todo-input-46,
-        .active-filter:target #created-checkbox-46:checked ~ #done-checkbox-46:checked ~ #mark-done-checkbox-label-46,
-        .active-filter:target #created-checkbox-46:checked ~ #done-checkbox-46:checked ~ #mark-undone-checkbox-label-46,
-        .active-filter:target #created-checkbox-46:checked ~ #done-checkbox-46:checked ~ .deleted-checkbox-label {
-            display: none !important;
-        }
-
-        .completed-filter:target #created-checkbox-46:checked ~ #done-checkbox-46:not(:checked) ~ #todo-input-46,
-        .completed-filter:target #created-checkbox-46:checked ~ #done-checkbox-46:not(:checked) ~ #mark-done-checkbox-label-46,
-        .completed-filter:target #created-checkbox-46:checked ~ #done-checkbox-46:not(:checked) ~ #mark-undone-checkbox-label-46,
-        .completed-filter:target #created-checkbox-46:checked ~ #done-checkbox-46:not(:checked) ~ .deleted-checkbox-label {
-            display: none !important;
         }
     
             #created-checkbox-45:checked ~ #todo-46 > #todo-input-46,
@@ -4363,21 +3688,6 @@ body  {
             display: inline-block;
             order: 5711
         }
-
-
-        .active-filter:target #created-checkbox-47:checked ~ #done-checkbox-47:checked ~ #todo-input-47,
-        .active-filter:target #created-checkbox-47:checked ~ #done-checkbox-47:checked ~ #mark-done-checkbox-label-47,
-        .active-filter:target #created-checkbox-47:checked ~ #done-checkbox-47:checked ~ #mark-undone-checkbox-label-47,
-        .active-filter:target #created-checkbox-47:checked ~ #done-checkbox-47:checked ~ .deleted-checkbox-label {
-            display: none !important;
-        }
-
-        .completed-filter:target #created-checkbox-47:checked ~ #done-checkbox-47:not(:checked) ~ #todo-input-47,
-        .completed-filter:target #created-checkbox-47:checked ~ #done-checkbox-47:not(:checked) ~ #mark-done-checkbox-label-47,
-        .completed-filter:target #created-checkbox-47:checked ~ #done-checkbox-47:not(:checked) ~ #mark-undone-checkbox-label-47,
-        .completed-filter:target #created-checkbox-47:checked ~ #done-checkbox-47:not(:checked) ~ .deleted-checkbox-label {
-            display: none !important;
-        }
     
             #created-checkbox-46:checked ~ #todo-47 > #todo-input-47,
             #created-checkbox-46:checked ~ #todo-47 > #created-checkbox-label-47 {
@@ -4439,21 +3749,6 @@ body  {
         #created-checkbox-48:checked ~ #deleted-checkbox-label-48 {
             display: inline-block;
             order: 5811
-        }
-
-
-        .active-filter:target #created-checkbox-48:checked ~ #done-checkbox-48:checked ~ #todo-input-48,
-        .active-filter:target #created-checkbox-48:checked ~ #done-checkbox-48:checked ~ #mark-done-checkbox-label-48,
-        .active-filter:target #created-checkbox-48:checked ~ #done-checkbox-48:checked ~ #mark-undone-checkbox-label-48,
-        .active-filter:target #created-checkbox-48:checked ~ #done-checkbox-48:checked ~ .deleted-checkbox-label {
-            display: none !important;
-        }
-
-        .completed-filter:target #created-checkbox-48:checked ~ #done-checkbox-48:not(:checked) ~ #todo-input-48,
-        .completed-filter:target #created-checkbox-48:checked ~ #done-checkbox-48:not(:checked) ~ #mark-done-checkbox-label-48,
-        .completed-filter:target #created-checkbox-48:checked ~ #done-checkbox-48:not(:checked) ~ #mark-undone-checkbox-label-48,
-        .completed-filter:target #created-checkbox-48:checked ~ #done-checkbox-48:not(:checked) ~ .deleted-checkbox-label {
-            display: none !important;
         }
     
             #created-checkbox-47:checked ~ #todo-48 > #todo-input-48,
@@ -4517,21 +3812,6 @@ body  {
             display: inline-block;
             order: 5911
         }
-
-
-        .active-filter:target #created-checkbox-49:checked ~ #done-checkbox-49:checked ~ #todo-input-49,
-        .active-filter:target #created-checkbox-49:checked ~ #done-checkbox-49:checked ~ #mark-done-checkbox-label-49,
-        .active-filter:target #created-checkbox-49:checked ~ #done-checkbox-49:checked ~ #mark-undone-checkbox-label-49,
-        .active-filter:target #created-checkbox-49:checked ~ #done-checkbox-49:checked ~ .deleted-checkbox-label {
-            display: none !important;
-        }
-
-        .completed-filter:target #created-checkbox-49:checked ~ #done-checkbox-49:not(:checked) ~ #todo-input-49,
-        .completed-filter:target #created-checkbox-49:checked ~ #done-checkbox-49:not(:checked) ~ #mark-done-checkbox-label-49,
-        .completed-filter:target #created-checkbox-49:checked ~ #done-checkbox-49:not(:checked) ~ #mark-undone-checkbox-label-49,
-        .completed-filter:target #created-checkbox-49:checked ~ #done-checkbox-49:not(:checked) ~ .deleted-checkbox-label {
-            display: none !important;
-        }
     
             #created-checkbox-48:checked ~ #todo-49 > #todo-input-49,
             #created-checkbox-48:checked ~ #todo-49 > #created-checkbox-label-49 {
@@ -4593,21 +3873,6 @@ body  {
         #created-checkbox-50:checked ~ #deleted-checkbox-label-50 {
             display: inline-block;
             order: 6011
-        }
-
-
-        .active-filter:target #created-checkbox-50:checked ~ #done-checkbox-50:checked ~ #todo-input-50,
-        .active-filter:target #created-checkbox-50:checked ~ #done-checkbox-50:checked ~ #mark-done-checkbox-label-50,
-        .active-filter:target #created-checkbox-50:checked ~ #done-checkbox-50:checked ~ #mark-undone-checkbox-label-50,
-        .active-filter:target #created-checkbox-50:checked ~ #done-checkbox-50:checked ~ .deleted-checkbox-label {
-            display: none !important;
-        }
-
-        .completed-filter:target #created-checkbox-50:checked ~ #done-checkbox-50:not(:checked) ~ #todo-input-50,
-        .completed-filter:target #created-checkbox-50:checked ~ #done-checkbox-50:not(:checked) ~ #mark-done-checkbox-label-50,
-        .completed-filter:target #created-checkbox-50:checked ~ #done-checkbox-50:not(:checked) ~ #mark-undone-checkbox-label-50,
-        .completed-filter:target #created-checkbox-50:checked ~ #done-checkbox-50:not(:checked) ~ .deleted-checkbox-label {
-            display: none !important;
         }
     
             #created-checkbox-49:checked ~ #todo-50 > #todo-input-50,
