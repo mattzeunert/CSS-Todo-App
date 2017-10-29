@@ -51,6 +51,10 @@
 .created-checkbox-label:hover {
     background: #ddd;
 }
+/* Don't allow creating empty items */
+input:not(:valid) ~ .created-checkbox-label {
+    pointer-events: none;
+}
 
 .created-checkbox {
     display: none;
