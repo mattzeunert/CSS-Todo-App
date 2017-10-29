@@ -124,6 +124,14 @@ body  {
     opacity: 1;
 }
 
+/* If item is deleted hide its elements */
+.deleted-checkbox:checked ~ .mark-done-checkbox-label,
+.deleted-checkbox:checked ~ .mark-undone-checkbox-label,
+.deleted-checkbox:checked ~ .deleted-checkbox-label,
+.deleted-checkbox:checked ~ .todo-input {
+    display: none !important;
+}
+
 `
 
 const MAX_ITEMS = 50
@@ -197,14 +205,6 @@ function generateTodo(i) {
             order: ${getOrder(11)}
         }
 
-
-
-        #deleted-checkbox-${i}:checked ~ .mark-done-checkbox-label,
-        #deleted-checkbox-${i}:checked ~ .mark-undone-checkbox-label,
-        #deleted-checkbox-${i}:checked ~ .deleted-checkbox-label,
-        #deleted-checkbox-${i}:checked ~ #todo-input-${i} {
-            display: none !important;
-        }
 
         .active-filter:target #created-checkbox-${i}:checked ~ #done-checkbox-${i}:checked ~ #todo-input-${i},
         .active-filter:target #created-checkbox-${i}:checked ~ #done-checkbox-${i}:checked ~ #mark-done-checkbox-label-${i},
