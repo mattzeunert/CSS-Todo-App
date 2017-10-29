@@ -118,7 +118,7 @@ body  {
 
 `
 
-const MAX_ITEMS = 5
+const MAX_ITEMS = 50
 
 function generateTodo(i) {
     if (i > MAX_ITEMS) {
@@ -250,6 +250,8 @@ function generateTodo(i) {
 html += `<!doctype html>
 <html>
     <head>
+        <meta charset="utf-8">
+		<title>Todo CSS</title>
         <link rel="stylesheet" href="./todomvc-app.css" />
     </head>
     <body>
