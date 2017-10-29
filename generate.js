@@ -19,7 +19,7 @@ function generateTodo(i) {
             <label for="done-checkbox-${i}" class="mark-undone-checkbox-label"></label>
             <input required type="text" value="${ {1: 'Build Todo CSS', 2: 'Eat cookies'}[i] || ''}" class="todo-input" placeholder="What needs to be done?"/>
             <label for="created-checkbox-${i}" class="created-checkbox-label">Add</label>
-            <label for="deleted-checkbox-${i}" class="deleted-checkbox-label"></label>
+            <label for="deleted-checkbox-${i}" class="deleted-checkbox-label">×</label>
             <div class="items-left-counter-helper"></div>
             ${generateTodo(i + 1)}
         </div>

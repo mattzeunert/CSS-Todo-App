@@ -102,10 +102,6 @@ input:not(:valid) ~ .created-checkbox-label {
 	color: #af5b5e !important;
 }
 
-.deleted-checkbox-label:after {
-	content: '×';
-}
-
 .created-checkbox:checked ~ .deleted-checkbox-label {
     display: inline-block;
     order: 11

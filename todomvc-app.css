@@ -256,10 +256,6 @@ label[for='toggle-all'] {
 	color: #af5b5e;
 }
 
-.todo-list li .destroy:after {
-	content: '×';
-}
-
 .todo-list li:hover .destroy {
 	display: block;
 }
