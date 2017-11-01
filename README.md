@@ -7,6 +7,7 @@ the :checked and :target pseudo selectors.
 Styling based on [TodoMVC](http://todomvc.com/).
 
 [Live demo](http://www.mattzeunert.com/TodoCSS/#/)
+[Blog post on how it works](http://www.mattzeunert.com/2017/10/30/javascript-free-todo-app.html)
 
 ## What works
 
