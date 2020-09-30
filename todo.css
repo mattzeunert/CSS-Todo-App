@@ -141,6 +141,7 @@ input:not(:valid) ~ .created-checkbox-label {
 /* items-left counter */
 body  {
     counter-reset: items-left;
+	background-color:#70e7ec;
 }
 .created-checkbox:checked ~ .deleted-checkbox:not(:checked) ~ .done-checkbox:not(:checked) ~ .items-left-counter-helper {
     /* items-left-counter-helper is an empty element that's not hidden by filters */
@@ -194,13 +195,13 @@ body  {
 
 .todo {
     display: flex;
-    width: 100%;
+    width: 95%;
     flex-wrap: wrap;
 }
 
 
 @media (max-width: 600px) {
     body {
-        padding: 5px;
+        padding: 10px;
     }
 }
