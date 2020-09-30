@@ -1,4 +1,4 @@
-# CSS Todo App
+# CSS Todo App : A Daily Reminder App
 
 Basic todo app functionality implemented without using JavaScript.
 Instead it uses pre-rendered HTML, the ~ combinator, CSS counters, and
