@@ -11,7 +11,7 @@ Styling based on [TodoMVC](http://todomvc.com/).
 
 ## What works
 
-- Add new todo item (up to 50 items)
+- Add new todo item (upto 50 items)
 - Mark items as done
 - Delete items
 - Filter items (done/not done)
