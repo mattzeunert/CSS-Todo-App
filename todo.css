@@ -1,4 +1,9 @@
 /* Styling for new todo item input */
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
 .created-checkbox:not(:checked) ~ .todo-input {
     position: absolute;
     top: 0;
