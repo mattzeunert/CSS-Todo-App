@@ -5,6 +5,9 @@ body {
 	margin: 0;
 	padding: 0;
 }
+header{
+	margin-top: 80px;
+}
 
 button {
 	margin: 0;
@@ -25,9 +28,9 @@ button {
 
 body {
 	font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	line-height: 1.4em;
+	line-height: 0.5em;
 	background: #f5f5f5;
-	color: #4d4d4d;
+	color: black;
 	min-width: 230px;
 	max-width: 550px;
 	margin: 0 auto;
@@ -57,32 +60,36 @@ input[type="checkbox"] {
 .todoapp input::-webkit-input-placeholder {
 	font-style: italic;
 	font-weight: 300;
-	color: #e6e6e6;
+	color: grey;
 }
 
 .todoapp input::-moz-placeholder {
 	font-style: italic;
 	font-weight: 300;
-	color: #e6e6e6;
+	color: grey;
 }
 
 .todoapp input::input-placeholder {
 	font-style: italic;
 	font-weight: 300;
-	color: #e6e6e6;
+	color: grey;
 }
 
 .todoapp h1 {
 	position: absolute;
 	top: -155px;
 	width: 100%;
-	font-size: 100px;
-	font-weight: 100;
+	height:80px;
+	font-size: 90px;
+	font-weight: 200;
 	text-align: center;
-	color: rgba(175, 47, 47, 0.15);
+	color: rgba(175, 100, 100, 0.5);
+	background-color: rgba(175, 100, 100, 0.1);
 	-webkit-text-rendering: optimizeLegibility;
 	-moz-text-rendering: optimizeLegibility;
 	text-rendering: optimizeLegibility;
+	display: inline-block;
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
 }
 
 .new-todo,
@@ -274,6 +281,7 @@ label[for='toggle-all'] {
 	height: 20px;
 	text-align: center;
 	border-top: 1px solid #e6e6e6;
+	box-shadow: 0 2px 0px 1px rgba(0,0,0,.001), 0 4px 2px 0 rgba(0,0,0,.1), 0 1px 0px 1px rgba(0,0,0,.12);
 }
 
 .footer:before {
@@ -310,20 +318,26 @@ label[for='toggle-all'] {
 }
 
 .filters li {
+	line-height: 2px;
+	margin:2px;
+	padding:2px;
 	display: inline;
+	box-shadow: 0 2px 0px 1px rgba(0,0,0,.001), 0 4px 2px 0 rgba(0,0,0,.1), 0 1px 0px 1px rgba(0,0,0,.12);
+	border-radius: 20px;
 }
 
 .filters li a {
-	color: inherit;
+	color: black;
 	margin: 3px;
 	padding: 3px 7px;
 	text-decoration: none;
 	border: 1px solid transparent;
-	border-radius: 3px;
+	border-radius: 20px;
 }
 
 .filters li a:hover {
-	border-color: rgba(175, 47, 47, 0.1);
+	border-color: black;
+	border-radius: 20px;
 }
 
 /* .filters li a.selected, */
@@ -331,7 +345,7 @@ label[for='toggle-all'] {
 
 
 .filters li a.selected {
-	border-color: rgba(175, 47, 47, 0.2);
+	border-color: black;
 }
 
 .clear-completed,

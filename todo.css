@@ -1,3 +1,4 @@
+
 /* Styling for new todo item input */
 .created-checkbox:not(:checked) ~ .todo-input {
     position: absolute;
@@ -22,7 +23,7 @@
     cursor: pointer;
     padding-top: 13px;
     padding-bottom: 11px;
-    border-bottom: 1px solid #ededed;
+    border-bottom: 1px solid black;
 }
 /* Show mark as done if item is created and not marked as done yet */
 .created-checkbox:checked ~ .done-checkbox:not(:checked) ~ .mark-done-checkbox-label {
@@ -121,6 +122,7 @@ input:not(:valid) ~ .created-checkbox-label {
 .active-filter:target .created-checkbox:checked ~ .done-checkbox:checked ~ .mark-undone-checkbox-label,
 .active-filter:target .created-checkbox:checked ~ .done-checkbox:checked ~ .deleted-checkbox-label {
     display: none !important;
+    filter:hue-rotate(-47deg);
 }
 
 /* Hide items not marked done if filter is completed */
@@ -129,6 +131,7 @@ input:not(:valid) ~ .created-checkbox-label {
 .completed-filter:target .created-checkbox:checked ~ .done-checkbox:not(:checked) ~ .mark-undone-checkbox-label,
 .completed-filter:target .created-checkbox:checked ~ .done-checkbox:not(:checked) ~ .deleted-checkbox-label {
     display: none !important;
+    filter:hue-rotate(-47deg);
 }
 
 /* Indicate currently selected filter */
@@ -136,6 +139,7 @@ input:not(:valid) ~ .created-checkbox-label {
 .completed-filter:target .filter-completed,
 .completed-filter:not(:target) .active-filter:not(:target) .filter-all {
     border-color: rgba(175, 47, 47, 0.2);
+    filter:hue-rotate(-47deg);
 }
 
 /* items-left counter */
@@ -193,9 +197,11 @@ body  {
 }
 
 .todo {
+    background-color: rgba(150, 10, 10, 0.05);
     display: flex;
     width: 100%;
     flex-wrap: wrap;
+    box-shadow: 0 2px 0px 1px rgba(0,0,0,.001), 0 1px 2px 0 rgba(0,0,0,.1), 0 1px 0px 1px rgba(0,0,0,.0001);
 }
 
 
